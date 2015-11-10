@@ -17,7 +17,6 @@ public class CameraScript : MonoBehaviour {
 		DetectInputs();
 		CamMove();
 
-		Debug.Log(playerObj.GetComponent<Rigidbody>().velocity.magnitude);
 	}
 
 	public void DetectInputs(){
@@ -30,7 +29,11 @@ public class CameraScript : MonoBehaviour {
 
 	public void CamMove (){
 		desiredPos = playerObj.transform.position - playerObj.transform.forward * camZOffset + playerObj.transform.up * camYOffset;
-		//if (playerObj.GetComponent<Rigidbody>().velocity.magnitude >= )
+		if (playerObj.GetComponent<PlayerScript>().isFullSpeed == true){
+			camSyncRate = 0.04f;
+		} else {
+			camSyncRate = 0.01f;
+		}
 		currentPos = Vector3.Lerp(currentPos, desiredPos, camSyncRate);
 		transform.position = currentPos;
 		transform.rotation = Quaternion.LookRotation(playerObj.transform.position - currentPos, Vector3.up);

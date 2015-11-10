@@ -179,6 +179,7 @@ MonoBehaviour:
   speedMod: 8
   rotateAngle: 90
   jumpForce: 6
+  isFullSpeed: 0
 --- !u!54 &249989870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ MonoBehaviour:
   currentPos: {x: 0, y: 0, z: 0}
   camZOffset: 10
   camYOffset: 4
-  camSyncRate: .00999999978
+  camSyncRate: .100000001
   playerObj: {fileID: 0}
   isFree: 0
 --- !u!81 &1481071177

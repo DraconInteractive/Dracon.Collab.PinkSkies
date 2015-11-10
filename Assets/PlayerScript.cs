@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
 	public float  speed, speedMod, rotateAngle, jumpForce;
+	public bool isFullSpeed;
 	// Use this for initialization
 	void Start () {
 		playerRigid = GetComponent<Rigidbody>();
@@ -20,11 +21,13 @@ public class PlayerScript : MonoBehaviour {
 		speed = Input.GetAxis("Vertical") * speedMod;
 		//Apply the direction to the character, with modifiers of speed and incrementation
 		playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);
-
-
 		playerTrans.Rotate(Vector3.up, rotateAngle * Input.GetAxis("Horizontal") * Time.deltaTime);
 
-
+		if (speed >= 6){
+			isFullSpeed = true;
+		} else {
+			isFullSpeed = false;
+		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		    playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 	}
