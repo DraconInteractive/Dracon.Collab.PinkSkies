@@ -174,7 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigid: {fileID: 0}
-  speed: 6
+  playerTrans: {fileID: 0}
+  speed: 0
+  speedMod: 8
+  rotateAngle: 90
+  jumpForce: 6
 --- !u!54 &249989870
 Rigidbody:
   m_ObjectHideFlags: 0
