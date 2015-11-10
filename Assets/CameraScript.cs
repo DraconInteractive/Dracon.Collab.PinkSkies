@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 	public Vector3 desiredPos, currentPos;
-	public int camZOffset, camYOffset, camSyncRate;
+	public int camZOffset, camYOffset;
+	public float camSyncRate;
 	public GameObject playerObj;
 	public bool isFree;
 	// Use this for initialization
@@ -13,7 +14,8 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		DetectInputs();
+		CamMove();
 	}
 
 	public void DetectInputs(){
@@ -28,6 +30,6 @@ public class CameraScript : MonoBehaviour {
 		desiredPos = playerObj.transform.position - playerObj.transform.forward * camZOffset + playerObj.transform.up * camYOffset;
 		currentPos = Vector3.Lerp(currentPos, desiredPos, camSyncRate);
 		transform.position = currentPos;
-		Quaternion.LookRotation(currentPos - playerObj.transform.position, Vector3.up);
+		transform.rotation = Quaternion.LookRotation(playerObj.transform.position - currentPos, Vector3.up);
 	}
 }
