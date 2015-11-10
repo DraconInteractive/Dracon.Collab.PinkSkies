@@ -13,11 +13,15 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		PlayerInput();
+	void FixedUpdate () {
+		PlayerMovement();
 	}
 
-	public void PlayerInput(){
+	void Update (){
+		PlayerAttack();
+	}
+
+	public void PlayerMovement(){
 		speed = Input.GetAxis("Vertical") * speedMod;
 		//Apply the direction to the character, with modifiers of speed and incrementation
 		playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);
@@ -30,5 +34,9 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		    playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+	}
+
+	public void PlayerAttack(){
+
 	}
 }
