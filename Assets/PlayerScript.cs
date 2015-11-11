@@ -19,7 +19,11 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update (){
-		PlayerAttack();
+		if (Input.GetMouseButtonDown(0)){
+			Debug.Log ("Has Clicked");
+			PlayerAttack();
+		}
+
 	}
 
 	public void PlayerMovement(){
@@ -38,6 +42,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void PlayerAttack(){
-		hitTrigger.GetComponent<HitTrigger>().PlayerAttack();
+		Debug.Log ("has Player attacked");
+		hitTrigger.GetComponent<HitTrigger>().TriggerAttack();
 	}
 }
