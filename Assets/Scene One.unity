@@ -1191,6 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  attackable: 0
 --- !u!1 &1737408643
 GameObject:
   m_ObjectHideFlags: 0

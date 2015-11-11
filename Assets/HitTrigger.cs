@@ -14,18 +14,21 @@ public class HitTrigger : MonoBehaviour {
 	}
 
 	public void TriggerAttack(){
-		Debug.Log ("Has trigger attacked");
 		isAttacking = true;
 	}
 
-	void OnTriggerStay(Collider col){
+	void OnTriggerEnter(Collider col){
 		//if (isAttacking){
 			//isAttacking = false;
-		Debug.Log ("Object in player hit trigger");
 			if (col.gameObject.tag == "Enemy"){
-				Debug.Log ("Has enemy attacked");
-				col.GetComponent<EnemyScript>().AttackSequence();
+				col.GetComponent<EnemyScript>().ToggleAttackable();
 			}
 		//}
+	}
+
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "Enemy"){
+			col.GetComponent<EnemyScript>().ToggleAttackable();
+		}
 	}
 }
