@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
+	public GameObject hitTrigger;
 	public float  speed, speedMod, rotateAngle, jumpForce;
 	public bool isFullSpeed;
 	// Use this for initialization
@@ -37,6 +38,6 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void PlayerAttack(){
-
+		hitTrigger.GetComponent<HitTrigger>().PlayerAttack();
 	}
 }

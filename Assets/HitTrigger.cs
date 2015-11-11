@@ -12,4 +12,8 @@ public class HitTrigger : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void PlayerAttack(){
+
+	}
 }
