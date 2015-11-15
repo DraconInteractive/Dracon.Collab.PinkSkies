@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
-	public int health;
+	public int health, playerDamageRecieved;
 	public bool attackable;
 	// Use this for initialization
 	void Start () {
@@ -13,17 +13,25 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		AttackSequence();
+		HealthCheck();
 	}
 
 	public void AttackSequence(){
 		if (attackable){
 			if (Input.GetMouseButtonDown(0)){
-				health -= 10;
+				health -= playerDamageRecieved;
 			}
 		}
 	}
 
-	public void ToggleAttackable(){
+	public void ToggleAttackable(int d){
+		playerDamageRecieved = d;
 		attackable = !attackable;
+	}
+
+	public void HealthCheck(){
+		if (health <= 0){
+			Destroy(this.gameObject);
+		}
 	}
 }

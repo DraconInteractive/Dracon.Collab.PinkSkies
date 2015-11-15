@@ -1,16 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
-	public GameObject hitTrigger;
+	public GameObject hitTrigger, healthText, healthSlider;
 	public float  speed, speedMod, rotateAngle, jumpForce;
 	public bool isFullSpeed;
+
+	public int health, armour, damage;
 	// Use this for initialization
 	void Start () {
 		playerRigid = GetComponent<Rigidbody>();
 		playerTrans = GetComponent<Transform>();
+		healthText = GameObject.Find("HealthText");
+		healthSlider = GameObject.Find ("HealthSlider");
+
+
+		health = 100;
+		healthSlider.GetComponent<Slider>().maxValue = health;
+		healthSlider.GetComponent<Slider>().minValue = 0;
+
 	}
 	
 	// Update is called once per frame
@@ -19,6 +30,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update (){
+		SetGUI();
+
 		if (Input.GetMouseButtonDown(0)){
 			Debug.Log ("Has Clicked");
 			PlayerAttack();
@@ -43,6 +56,11 @@ public class PlayerScript : MonoBehaviour {
 
 	public void PlayerAttack(){
 		Debug.Log ("has Player attacked");
-		hitTrigger.GetComponent<HitTrigger>().TriggerAttack();
+		hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+	}
+
+	public void SetGUI(){
+		healthText.GetComponent<Text>().text = health.ToString();
+		healthSlider.GetComponent<Slider>().value = health;
 	}
 }
