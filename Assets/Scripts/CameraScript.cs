@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 	public Vector3 desiredPos, currentPos;
-	public int rotateSpeed, camDistance;
+	public int rotateSpeed, camDistance, camYInversionControl;
 	public float camSyncRate;
 	public GameObject playerObj;
 	public bool isFree;
@@ -17,9 +17,19 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		DetectPlayerOptions();
 		DetectInputs();
 		CamMove();
 
+
+	}
+
+	public void DetectPlayerOptions(){
+		if (playerObj.GetComponent<PlayerScript>().isInvertingCamY == true){
+			camYInversionControl = 1;
+		} else {
+			camYInversionControl = -1;
+		}
 	}
 
 	public void DetectInputs(){
@@ -33,7 +43,7 @@ public class CameraScript : MonoBehaviour {
 	public void CamMove (){
 
 		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
-		thisTransform.RotateAround(playerObj.transform.position, transform.right, -Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime);
+		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
 		thisTransform.LookAt(playerObj.transform.position);
 

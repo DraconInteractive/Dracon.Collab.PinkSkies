@@ -5,9 +5,10 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
-	public GameObject hitTrigger, healthText, healthSlider;
+	public Toggle invCamYToggle;
+	public GameObject hitTrigger, healthText, healthSlider, optionsPanel;
 	public float  speed, speedMod, rotateAngle, jumpForce;
-	public bool isFullSpeed, isGrounded, showMenu;
+	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY;
 
 	public int health, armour, damage;
 	// Use this for initialization
@@ -16,11 +17,14 @@ public class PlayerScript : MonoBehaviour {
 		playerTrans = GetComponent<Transform>();
 		healthText = GameObject.Find("HealthText");
 		healthSlider = GameObject.Find ("HealthSlider");
+		optionsPanel = GameObject.Find ("OptionsPanel");
 
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;
 		healthSlider.GetComponent<Slider>().minValue = 0;
+
+		optionsPanel.SetActive(false);
 
 	}
 	
@@ -41,38 +45,51 @@ public class PlayerScript : MonoBehaviour {
 
 	public void PlayerMovement(){
 
-
-		speed = Input.GetAxis("Vertical") * speedMod;
-		//Apply the direction to the character, with modifiers of speed and incrementation
-		playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);
-		playerTrans.Rotate(Vector3.up, rotateAngle * Input.GetAxis("Horizontal") * Time.deltaTime);
-
-		if (speed >= 6){
-			isFullSpeed = true;
-		} else {
-			isFullSpeed = false;
+		if (!menuOpen){
+			speed = Input.GetAxis("Vertical") * speedMod;
+			//Apply the direction to the character, with modifiers of speed and incrementation
+			playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);
+			playerTrans.Rotate(Vector3.up, rotateAngle * Input.GetAxis("Horizontal") * Time.deltaTime);
+			
+			if (speed >= 6){
+				isFullSpeed = true;
+			} else {
+				isFullSpeed = false;
+			}
+			if (Input.GetKeyDown(KeyCode.Space))
+				playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 		}
-		if (Input.GetKeyDown(KeyCode.Space))
-		    playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+
 	}
 
 	public void PlayerAttack(){
-		Debug.Log ("has Player attacked");
-		hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+		if (!menuOpen){
+			hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+		}
 	}
 
 	public void SetGUI(){
-		healthText.GetComponent<Text>().text = health.ToString();
 		healthSlider.GetComponent<Slider>().value = health;
 	}
 
 	public void OpenOptions(){
-		if (Input.GetButton ("Menu")){
-			showMenu = !showMenu;
+		if (Input.GetButtonDown ("Menu")){
+			menuOpen = !menuOpen;
 		}
 
-		if (showMenu == true){
+		if (menuOpen == true){
+			optionsPanel.SetActive(true);
+		} else {
+			optionsPanel.SetActive(false);
+		}
+	}
 
+	public void OnInvYToggle(bool i){
+		if (invCamYToggle.isOn == true){
+			isInvertingCamY = true;
+		} else {
+			isInvertingCamY = false;
 		}
 	}
 }
