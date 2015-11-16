@@ -12,6 +12,7 @@ public class CameraScript : MonoBehaviour {
 	void Start () {
 		playerObj = GameObject.FindGameObjectWithTag("Player");
 		thisTransform = this.gameObject.GetComponent<Transform>();
+		currentPos = playerObj.transform.position - Vector3.back * 10 + Vector3.up * 5;
 	}
 	
 	// Update is called once per frame
@@ -32,15 +33,18 @@ public class CameraScript : MonoBehaviour {
 	public void CamMove (){
 
 		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
-		thisTransform.RotateAround(playerObj.transform.position, Vector3.right, -Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime);
+		thisTransform.RotateAround(playerObj.transform.position, transform.right, -Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime);
 
 		thisTransform.LookAt(playerObj.transform.position);
 
-		desiredPos = playerObj.transform.position - this.gameObject.transform.position;
-		if (Vector3.Distance(playerObj.transform.position, this.transform.position) > camDistance){
-			currentPos = Vector3.Lerp (currentPos, desiredPos, camSyncRate);
-			transform.position = currentPos;
-		}
+		transform.position = playerObj.transform.position - transform.forward*camDistance;
+	//	desiredPos = playerObj.transform.position - thisTransform.position;
+		//Debug.Log(desiredPos.ToString());
+
+		//if (transform.position != transform.position + desiredPos){
+//			currentPos = Vector3.Lerp (currentPos, desiredPos, camSyncRate);
+			
+		//}
 
 
 
