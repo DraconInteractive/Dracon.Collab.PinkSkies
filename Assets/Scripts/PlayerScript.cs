@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	public Transform playerTrans;
 	public GameObject hitTrigger, healthText, healthSlider;
 	public float  speed, speedMod, rotateAngle, jumpForce;
-	public bool isFullSpeed;
+	public bool isFullSpeed, isGrounded;
 
 	public int health, armour, damage;
 	// Use this for initialization
