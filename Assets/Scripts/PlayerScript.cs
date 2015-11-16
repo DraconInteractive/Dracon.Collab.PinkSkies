@@ -6,7 +6,8 @@ public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
 	public Toggle invCamYToggle;
-	public GameObject hitTrigger, healthText, healthSlider, optionsPanel;
+	public GameObject hitTrigger;
+	public GameObject healthText, healthSlider, optionsPanel;
 	public float  speed, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking;
 
@@ -18,7 +19,6 @@ public class PlayerScript : MonoBehaviour {
 		healthText = GameObject.Find("HealthText");
 		healthSlider = GameObject.Find ("HealthSlider");
 		optionsPanel = GameObject.Find ("OptionsPanel");
-
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;

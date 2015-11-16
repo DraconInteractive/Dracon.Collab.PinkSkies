@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 	public Vector3 desiredPos, currentPos;
-	public int rotateSpeed, camDistance, camYInversionControl;
-	public float camSyncRate;
-	public GameObject playerObj;
+	public int rotateSpeed, camYInversionControl;
+	public float camSyncRate, camDistance;
+	public GameObject playerObj, camDistSlider;
 	public bool isFree, isGrounded;
 	public Transform thisTransform;
 	// Use this for initialization
@@ -13,14 +14,16 @@ public class CameraScript : MonoBehaviour {
 		playerObj = GameObject.FindGameObjectWithTag("Player");
 		thisTransform = this.gameObject.GetComponent<Transform>();
 		currentPos = playerObj.transform.position - Vector3.back * 10 + Vector3.up * 5;
+
+		camDistance = camDistSlider.GetComponent<Slider>().value;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		DetectPlayerOptions();
 		DetectInputs();
+		DetectGUI();
 		CamMove();
-
 
 	}
 
@@ -37,6 +40,12 @@ public class CameraScript : MonoBehaviour {
 			isFree = true;
 		} else {
 			isFree = false;
+		}
+	}
+
+	public void DetectGUI(){
+		if (camDistSlider.activeSelf == true){
+			camDistance = camDistSlider.GetComponent<Slider>().value;
 		}
 	}
 
