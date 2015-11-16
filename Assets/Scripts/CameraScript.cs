@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour {
 	public int rotateSpeed, camDistance, camYInversionControl;
 	public float camSyncRate;
 	public GameObject playerObj;
-	public bool isFree;
+	public bool isFree, isGrounded;
 	public Transform thisTransform;
 	// Use this for initialization
 	void Start () {
@@ -45,6 +45,8 @@ public class CameraScript : MonoBehaviour {
 		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
 		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
+
+
 		thisTransform.LookAt(playerObj.transform.position);
 
 		transform.position = playerObj.transform.position - transform.forward*camDistance;
@@ -71,4 +73,6 @@ public class CameraScript : MonoBehaviour {
 
 
 	}
+
+
 }

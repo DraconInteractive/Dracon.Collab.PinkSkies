@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HitTrigger : MonoBehaviour {
 	public bool isAttacking;
 	public int playerDamage;
 	public GameObject player;
+	public List<GameObject> enemiesInRange;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
@@ -15,22 +17,21 @@ public class HitTrigger : MonoBehaviour {
 		playerDamage = player.GetComponent<PlayerScript>().damage;
 	}
 
-	public void TriggerAttack(int d){
-		isAttacking = true;
+	public void TriggerAttack(int damage){
+		foreach (GameObject i in enemiesInRange){
+			i.GetComponent<EnemyScript>().AttackSequence(damage);
+		}
 	}
 
 	void OnTriggerEnter(Collider col){
-		//if (isAttacking){
-			//isAttacking = false;
 			if (col.gameObject.tag == "Enemy"){
-				col.GetComponent<EnemyScript>().ToggleAttackable(playerDamage);
+				enemiesInRange.Add (col.gameObject);
 			}
-		//}
 	}
 
 	void OnTriggerExit(Collider col){
 		if (col.gameObject.tag == "Enemy"){
-			col.GetComponent<EnemyScript>().ToggleAttackable(playerDamage);
+			enemiesInRange.Remove(col.gameObject);
 		}
 	}
 }

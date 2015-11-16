@@ -17,7 +17,6 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void Update () {
-		AttackSequence();
 		HealthCheck();
 		EnemyMovement ();
 	}
@@ -37,17 +36,8 @@ public class EnemyScript : MonoBehaviour {
 		} 
 	}
 
-	public void AttackSequence(){
-		if (attackable){
-			if (Input.GetMouseButtonDown(0)){
-				health -= playerDamageRecieved;
-			}
-		}
-	}
-
-	public void ToggleAttackable(int d){
-		playerDamageRecieved = d;
-		attackable = !attackable;
+	public void AttackSequence(int damage){
+		health -= damage;
 	}
 
 	public void HealthCheck(){

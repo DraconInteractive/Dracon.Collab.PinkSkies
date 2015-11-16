@@ -7,8 +7,8 @@ public class PlayerScript : MonoBehaviour {
 	public Transform playerTrans;
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger, healthText, healthSlider, optionsPanel;
-	public float  speed, speedMod, rotateAngle, jumpForce;
-	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY;
+	public float  speed, speedMod, rotateAngle, jumpForce, attackWait;
+	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking;
 
 	public int health, armour, damage;
 	// Use this for initialization
@@ -36,8 +36,8 @@ public class PlayerScript : MonoBehaviour {
 	void Update (){
 		SetGUI();
 		OpenOptions();
+		DetectGround();
 		if (Input.GetMouseButtonDown(0)){
-			Debug.Log ("Has Clicked");
 			PlayerAttack();
 		}
 
@@ -56,16 +56,22 @@ public class PlayerScript : MonoBehaviour {
 			} else {
 				isFullSpeed = false;
 			}
-			if (Input.GetKeyDown(KeyCode.Space))
-				playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			if (Input.GetKeyDown(KeyCode.Space)){
+				if (isGrounded){
+					playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				}
+			}
 		}
-
-
 	}
 
 	public void PlayerAttack(){
 		if (!menuOpen){
-			hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+			if (!isAttacking){
+				isAttacking = true;
+				hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+				StartCoroutine("AttackTimer");
+			}
+
 		}
 	}
 
@@ -91,5 +97,21 @@ public class PlayerScript : MonoBehaviour {
 		} else {
 			isInvertingCamY = false;
 		}
+	}
+
+	public void DetectGround(){
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
+			if (hit.collider.gameObject.tag == "Ground"){
+				isGrounded = true;
+			}
+		} else {
+			isGrounded = false;
+		}
+	}
+
+	public IEnumerator AttackTimer(){
+		yield return new WaitForSeconds(attackWait);
+		isAttacking = false;
 	}
 }
