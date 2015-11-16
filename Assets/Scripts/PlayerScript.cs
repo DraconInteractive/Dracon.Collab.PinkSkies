@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	public Transform playerTrans;
 	public GameObject hitTrigger, healthText, healthSlider;
 	public float  speed, speedMod, rotateAngle, jumpForce;
-	public bool isFullSpeed, isGrounded;
+	public bool isFullSpeed, isGrounded, showMenu;
 
 	public int health, armour, damage;
 	// Use this for initialization
@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update (){
 		SetGUI();
-
+		OpenOptions();
 		if (Input.GetMouseButtonDown(0)){
 			Debug.Log ("Has Clicked");
 			PlayerAttack();
@@ -64,5 +64,15 @@ public class PlayerScript : MonoBehaviour {
 	public void SetGUI(){
 		healthText.GetComponent<Text>().text = health.ToString();
 		healthSlider.GetComponent<Slider>().value = health;
+	}
+
+	public void OpenOptions(){
+		if (Input.GetButton ("Menu")){
+			showMenu = !showMenu;
+		}
+
+		if (showMenu == true){
+
+		}
 	}
 }
