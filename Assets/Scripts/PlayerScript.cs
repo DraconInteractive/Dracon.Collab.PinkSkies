@@ -40,6 +40,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void PlayerMovement(){
+
+
 		speed = Input.GetAxis("Vertical") * speedMod;
 		//Apply the direction to the character, with modifiers of speed and incrementation
 		playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);

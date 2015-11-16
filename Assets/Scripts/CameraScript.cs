@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 	public Vector3 desiredPos, currentPos;
-	public int camZOffset, camYOffset;
+	public int rotateSpeed, camDistance;
 	public float camSyncRate;
 	public GameObject playerObj;
 	public bool isFree;
@@ -31,7 +31,20 @@ public class CameraScript : MonoBehaviour {
 
 	public void CamMove (){
 
-		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("MouseX"));
+		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
+		thisTransform.RotateAround(playerObj.transform.position, Vector3.right, -Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime);
+
+		thisTransform.LookAt(playerObj.transform.position);
+
+		desiredPos = playerObj.transform.position - this.gameObject.transform.position;
+		if (Vector3.Distance(playerObj.transform.position, this.transform.position) > camDistance){
+			currentPos = Vector3.Lerp (currentPos, desiredPos, camSyncRate);
+			transform.position = currentPos;
+		}
+
+
+
+
 //		desiredPos = playerObj.transform.position - playerObj.transform.forward * camZOffset + playerObj.transform.up * camYOffset;
 //		if (playerObj.GetComponent<PlayerScript>().isFullSpeed == true){
 //			camSyncRate = 0.04f;
