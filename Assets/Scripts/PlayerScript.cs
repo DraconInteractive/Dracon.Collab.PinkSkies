@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject hitTrigger;
 	public GameObject healthText, healthSlider, optionsPanel;
 	public GameObject consolePanel, consoleInput;
-	public float  speed, speedMod, rotateAngle, jumpForce, attackWait;
+	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole;
 
 	public int health, armour, damage;
@@ -51,12 +51,13 @@ public class PlayerScript : MonoBehaviour {
 	public void PlayerMovement(){
 
 		if (!menuOpen){
-			speed = Input.GetAxis("Vertical") * speedMod;
+			speedForward = Input.GetAxis("Vertical") * speedMod;
+			speedStrafe = Input.GetAxis("Horizontal") * speedMod;
 			//Apply the direction to the character, with modifiers of speed and incrementation
-			playerRigid.MovePosition (transform.position + transform.forward * speed * Time.deltaTime);
-			playerTrans.Rotate(Vector3.up, rotateAngle * Input.GetAxis("Horizontal") * Time.deltaTime);
+			playerRigid.MovePosition (transform.position + transform.forward * speedForward * Time.deltaTime);
+			playerRigid.MovePosition (transform.position + transform.right * speedStrafe * Time.deltaTime);
 			
-			if (speed >= 6){
+			if (speedForward >= 6){
 				isFullSpeed = true;
 			} else {
 				isFullSpeed = false;
