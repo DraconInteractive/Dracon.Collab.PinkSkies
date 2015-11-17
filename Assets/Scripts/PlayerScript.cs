@@ -119,6 +119,12 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetButtonDown("Console")){
 			showConsole = !showConsole;
 		}
+
+		if (showConsole){
+			consolePanel.SetActive(true);
+		} else {
+			consolePanel.SetActive(false);
+		}
 	}
 
 	public IEnumerator AttackTimer(){
