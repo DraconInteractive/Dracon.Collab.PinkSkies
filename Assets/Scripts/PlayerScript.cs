@@ -7,10 +7,11 @@ public class PlayerScript : MonoBehaviour {
 	public Transform playerTrans;
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger;
-	public GameObject healthText, healthSlider, optionsPanel;
+	public GameObject healthText, healthSlider, optionsPanel, scrapText;
 	public GameObject consolePanel, consoleInput;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole;
+	public int scrapCount;
 
 	public int health, armour, damage;
 	// Use this for initialization
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour {
 		optionsPanel = GameObject.Find ("OptionsPanel");
 		consolePanel = GameObject.Find ("ConsolePanel");
 		consoleInput = GameObject.Find ("ConsoleInput");
+		scrapText = GameObject.Find ("ScrapText");
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;
@@ -48,6 +50,13 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.tag == "Scrap"){
+			Destroy(col.gameObject);
+			scrapCount++;
+		}
+	}
+
 	public void PlayerMovement(){
 
 		if (!menuOpen){
@@ -61,11 +70,8 @@ public class PlayerScript : MonoBehaviour {
 
 			speedForward = Input.GetAxis("Vertical") * speedMod;
 			speedStrafe = Input.GetAxis("Horizontal") * speedMod;
-			//Apply the direction to the character, with modifiers of speed and incrementation
-			//playerRigid.MovePosition (transform.position + transform.forward * speedForward * Time.deltaTime);
 			playerRigid.AddForce (Vector3.Cross (Camera.main.transform.right, Vector3.up) * speedForward * Time.deltaTime);
 			transform.rotation = Quaternion.LookRotation(Vector3.Cross (Camera.main.transform.right, Vector3.up), Vector3.up);
-			//playerRigid.MovePosition (transform.position + transform.right * speedStrafe * Time.deltaTime);
 			playerRigid.AddForce (Camera.main.transform.right * speedStrafe * Time.deltaTime);
 			
 			if (speedForward >= 6){
@@ -93,7 +99,15 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void SetGUI(){
+		if (menuOpen){
+			healthSlider.SetActive(false);
+			scrapText.SetActive(false);
+		} else {
+			healthSlider.SetActive(true);
+			scrapText.SetActive(true);
+		}
 		healthSlider.GetComponent<Slider>().value = health;
+		scrapText.GetComponent<Text>().text = scrapCount.ToString();
 	}
 
 	public void OpenOptions(){
