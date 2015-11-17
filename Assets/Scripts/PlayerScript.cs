@@ -51,11 +51,21 @@ public class PlayerScript : MonoBehaviour {
 	public void PlayerMovement(){
 
 		if (!menuOpen){
+			if (isGrounded){
+				playerRigid.drag = 10;
+				speedMod = 4000;
+			} else {
+				playerRigid.drag = 0;
+				speedMod = 20;
+			}
+
 			speedForward = Input.GetAxis("Vertical") * speedMod;
 			speedStrafe = Input.GetAxis("Horizontal") * speedMod;
 			//Apply the direction to the character, with modifiers of speed and incrementation
-			playerRigid.MovePosition (transform.position + transform.forward * speedForward * Time.deltaTime);
-			playerRigid.MovePosition (transform.position + transform.right * speedStrafe * Time.deltaTime);
+			//playerRigid.MovePosition (transform.position + transform.forward * speedForward * Time.deltaTime);
+			playerRigid.AddForce (transform.forward * speedForward * Time.deltaTime);
+			//playerRigid.MovePosition (transform.position + transform.right * speedStrafe * Time.deltaTime);
+			playerRigid.AddForce (transform.right * speedStrafe * Time.deltaTime);
 			
 			if (speedForward >= 6){
 				isFullSpeed = true;
