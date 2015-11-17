@@ -8,8 +8,9 @@ public class PlayerScript : MonoBehaviour {
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger;
 	public GameObject healthText, healthSlider, optionsPanel;
+	public GameObject consolePanel, consoleInput;
 	public float  speed, speedMod, rotateAngle, jumpForce, attackWait;
-	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking;
+	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole;
 
 	public int health, armour, damage;
 	// Use this for initialization
@@ -19,12 +20,15 @@ public class PlayerScript : MonoBehaviour {
 		healthText = GameObject.Find("HealthText");
 		healthSlider = GameObject.Find ("HealthSlider");
 		optionsPanel = GameObject.Find ("OptionsPanel");
+		consolePanel = GameObject.Find ("ConsolePanel");
+		consoleInput = GameObject.Find ("ConsoleInput");
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;
 		healthSlider.GetComponent<Slider>().minValue = 0;
 
 		optionsPanel.SetActive(false);
+		consolePanel.SetActive(false);
 
 	}
 	
@@ -40,6 +44,7 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)){
 			PlayerAttack();
 		}
+		ConsoleCommand();
 
 	}
 
@@ -107,6 +112,12 @@ public class PlayerScript : MonoBehaviour {
 			}
 		} else {
 			isGrounded = false;
+		}
+	}
+
+	public void ConsoleCommand(){
+		if (Input.GetButtonDown("Console")){
+			showConsole = !showConsole;
 		}
 	}
 
