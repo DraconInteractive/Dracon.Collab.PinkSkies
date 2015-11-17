@@ -4,11 +4,11 @@ using System.Collections;
 public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
-	public float speed = 17, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 1, jumpHeight = 50;
 
-	private float triggerDisMax = 10, meleeDis = 0.5f;
+	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 1, jumpHeight = 15, triggerDisMax = 10, meleeDis = 0.5f, stillTime = 0;
 	private GameObject player;
 	private Rigidbody rb;
+	public bool grounded, chasing;
 
 	void Start () {
 		health = 100;
@@ -21,6 +21,22 @@ public class EnemyScript : MonoBehaviour {
 		HealthCheck();
 		EnemyMovement ();
 		IsGrounded ();
+		EnemyReset ();
+	}
+
+	void EnemyReset(){
+
+		if (chasing) {
+			if (rb.velocity.magnitude < 0.1f) {
+				stillTime += Time.deltaTime; 
+			}
+			
+			if(stillTime >= 1){
+				rb.AddForce (-transform.forward * 200 * Time.deltaTime, ForceMode.Impulse);
+				stillTime = 0;
+			}
+		}
+
 	}
 
 	void IsGrounded(){
@@ -30,37 +46,39 @@ public class EnemyScript : MonoBehaviour {
 		//-----------------------------testing-----------------------------------------
 		Vector3 enemyFeet2 = new Vector3 (enemyFeet.x, enemyFeet.y - 0.5f, enemyFeet.z);
 		Debug.DrawLine (enemyFeet, enemyFeet + transform.forward, Color.red);
-		Debug.DrawLine (enemyFeet, enemyFeet2, Color.green);
 		//-----------------------------testing-----------------------------------------
 
-		if (Physics.Raycast (enemyFeet, -transform.up, out hit, 0.5f)) {
-			if(hit.collider.tag == "Ground"){
-				Debug.Log("grounded");
-				if(Physics.Raycast(enemyFeet, transform.forward, out hit, 4)){
-					if(hit.collider.tag == "Ground"){
+		if (Physics.SphereCast (enemyFeet + Vector3.up, 1, -transform.up, out hit, 0.4f)) {
+			if (hit.collider.tag == "Ground") {
+				grounded = true;
+				Debug.Log ("grounded");
+				if (Physics.Raycast (enemyFeet, transform.forward, out hit, 1)) {
+					if (hit.collider.tag == "Ground") {
 						Debug.Log ("Jumping");
-						rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+						rb.AddForce (transform.up * jumpHeight * Time.deltaTime, ForceMode.Impulse);
 					}
 				}
 			}
+		} else {
+			grounded = false;
 		}
 	}
 
 	void EnemyMovement(){
 
 		attackSpdTimer -= Time.deltaTime;
-
-		rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxSpeed);
-
+		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 
-		Debug.Log (distance);
+		if (distance <= triggerDisMax && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
+			chasing = true;
 
-		if (distance <= triggerDisMax && distance >= meleeDis) {//chasing
 			Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
 			transform.LookAt (playerPos);
-			rb.AddForce (transform.forward * speed);
-		} 
+			rb.AddForce (transform.forward * speed * Time.deltaTime);
+		} else {
+			chasing = false;
+		}
 	}
 
 	public void AttackSequence(int damage){
