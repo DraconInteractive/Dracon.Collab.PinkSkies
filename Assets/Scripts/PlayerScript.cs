@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject healthText, healthSlider, optionsPanel, scrapText;
 	public GameObject consolePanel, consoleInput;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
-	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole;
+	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
 	public int scrapCount;
 
 	public int health, armour, damage;
