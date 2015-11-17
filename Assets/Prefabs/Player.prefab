@@ -266,7 +266,7 @@ MonoBehaviour:
   speedStrafe: 0
   speedMod: 4000
   rotateAngle: 180
-  jumpForce: 20
+  jumpForce: 15
   attackWait: .400000006
   isFullSpeed: 0
   isGrounded: 0

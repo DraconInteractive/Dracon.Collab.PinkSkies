@@ -63,9 +63,10 @@ public class PlayerScript : MonoBehaviour {
 			speedStrafe = Input.GetAxis("Horizontal") * speedMod;
 			//Apply the direction to the character, with modifiers of speed and incrementation
 			//playerRigid.MovePosition (transform.position + transform.forward * speedForward * Time.deltaTime);
-			playerRigid.AddForce (transform.forward * speedForward * Time.deltaTime);
+			playerRigid.AddForce (Vector3.Cross (Camera.main.transform.right, Vector3.up) * speedForward * Time.deltaTime);
+			transform.rotation = Quaternion.LookRotation(Vector3.Cross (Camera.main.transform.right, Vector3.up), Vector3.up);
 			//playerRigid.MovePosition (transform.position + transform.right * speedStrafe * Time.deltaTime);
-			playerRigid.AddForce (transform.right * speedStrafe * Time.deltaTime);
+			playerRigid.AddForce (Camera.main.transform.right * speedStrafe * Time.deltaTime);
 			
 			if (speedForward >= 6){
 				isFullSpeed = true;
@@ -117,7 +118,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public void DetectGround(){
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
+		if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f)){
 			if (hit.collider.gameObject.tag == "Ground"){
 				isGrounded = true;
 			}
