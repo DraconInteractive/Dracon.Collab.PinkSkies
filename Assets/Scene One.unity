@@ -458,6 +458,8 @@ MonoBehaviour:
   player: {fileID: 0}
   thisRigidBody: {fileID: 0}
   playerDistance: 2
+  regenCap: 0
+  regenAmount: 0
   companionSpeed: .600000024
 --- !u!1001 &640967610
 Prefab:

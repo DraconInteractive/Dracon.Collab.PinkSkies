@@ -28,7 +28,13 @@ public class CompanionScript : MonoBehaviour {
 	public void HealPlayer(){
 		if (player.GetComponent<PlayerScript>().inCombat == false){
 			if (player.GetComponent<PlayerScript>().health < regenCap){
-				player.GetComponent<PlayerScript>().health += (regenAmount * Time.deltaTime);
+				float healthBuild;
+				healthBuild =- 1 * Time.deltaTime;
+				if (healthBuild >= 1){
+					healthBuild = 0;
+					player.GetComponent<PlayerScript>().health ++;
+				}
+
 			}
 		}
 	}
