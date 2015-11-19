@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger;
 	public GameObject healthText, healthSlider, optionsPanel, scrapText;
-	public GameObject consolePanel, consoleInput;
+	public GameObject consolePanel, consoleInput, consoleText;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
 	public int scrapCount;
@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour {
 		consolePanel = GameObject.Find ("ConsolePanel");
 		consoleInput = GameObject.Find ("ConsoleInput");
 		scrapText = GameObject.Find ("ScrapText");
+		consoleText = GameObject.Find ("ConsoleText");
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;
@@ -151,6 +152,13 @@ public class PlayerScript : MonoBehaviour {
 		} else {
 			consolePanel.SetActive(false);
 		}
+	}
+
+	public void ConsoleAction(){
+		if (consoleText.GetComponent<Text>().text == "PlayerDamage"){
+			health -= 20;
+		}
+		consoleText.GetComponent<Text>().text = "";
 	}
 
 	public IEnumerator AttackTimer(){
