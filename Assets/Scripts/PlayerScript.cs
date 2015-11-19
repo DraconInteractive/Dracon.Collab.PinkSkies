@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger;
 	public GameObject healthText, healthSlider, optionsPanel, scrapText;
-	public GameObject consolePanel, consoleInput, consoleText;
+	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
 	public int scrapCount;
@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour {
 		consoleInput = GameObject.Find ("ConsoleInput");
 		scrapText = GameObject.Find ("ScrapText");
 		consoleText = GameObject.Find ("ConsoleText");
+		consolePlaceHolder = GameObject.Find ("ConsolePlaceHolder");
 
 		health = 100;
 		healthSlider.GetComponent<Slider>().maxValue = health;
@@ -37,7 +38,9 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		PlayerMovement();
+		if (!showConsole){
+			PlayerMovement();
+		}
 	}
 
 	void Update (){
@@ -157,8 +160,13 @@ public class PlayerScript : MonoBehaviour {
 	public void ConsoleAction(){
 		if (consoleText.GetComponent<Text>().text == "PlayerDamage"){
 			health -= 20;
+
 		}
 		consoleText.GetComponent<Text>().text = "";
+		consolePlaceHolder.GetComponent<Text>().text = "";
+		consoleInput.GetComponent<InputField>().text = "";
+		showConsole = false;
+
 	}
 
 	public IEnumerator AttackTimer(){

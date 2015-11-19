@@ -5,7 +5,7 @@ public class CompanionScript : MonoBehaviour {
 	public GameObject player;
 	public Rigidbody thisRigidBody;
 	public int playerDistance, regenCap, regenAmount;
-	public float companionSpeed;
+	public float companionSpeed, healthBuild;
 	// Use this for initialization
 	void Start () {
 		thisRigidBody = GetComponent<Rigidbody>();
@@ -28,11 +28,10 @@ public class CompanionScript : MonoBehaviour {
 	public void HealPlayer(){
 		if (player.GetComponent<PlayerScript>().inCombat == false){
 			if (player.GetComponent<PlayerScript>().health < regenCap){
-				float healthBuild;
-				healthBuild =- 1 * Time.deltaTime;
+				healthBuild += 1 * Time.deltaTime;
 				if (healthBuild >= 1){
 					healthBuild = 0;
-					player.GetComponent<PlayerScript>().health ++;
+					player.GetComponent<PlayerScript>().health += 1;
 				}
 
 			}
