@@ -28,7 +28,7 @@ GameObject:
   - 222: {fileID: 22277948}
   - 114: {fileID: 11447874}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: ConsolePlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ GameObject:
   - 222: {fileID: 22231868}
   - 114: {fileID: 11434930}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ConsoleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
+	public bool workbenchInteractable;
 	public int scrapCount;
 
 	public int health, armour, damage;
@@ -51,6 +52,7 @@ public class PlayerScript : MonoBehaviour {
 			PlayerAttack();
 		}
 		ConsoleCommand();
+		WorkBenchOptions();
 
 	}
 
@@ -58,6 +60,18 @@ public class PlayerScript : MonoBehaviour {
 		if (col.gameObject.tag == "Scrap"){
 			Destroy(col.gameObject);
 			scrapCount++;
+		}
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "Workbench"){
+			workbenchInteractable = true;
+		}
+	}
+
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "Workbench"){
+			workbenchInteractable = false;
 		}
 	}
 
@@ -167,6 +181,14 @@ public class PlayerScript : MonoBehaviour {
 		consoleInput.GetComponent<InputField>().text = "";
 		showConsole = false;
 
+	}
+
+	public void WorkBenchOptions(){
+		if (workbenchInteractable){
+			if (Input.GetButtonDown("Interact")){
+				//LOOK HERE DO WORK HERE
+			}
+		}
 	}
 
 	public IEnumerator AttackTimer(){
