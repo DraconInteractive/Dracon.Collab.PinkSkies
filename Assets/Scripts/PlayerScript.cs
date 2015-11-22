@@ -10,9 +10,9 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject healthText, healthSlider, optionsPanel;
 	public GameObject[] scrapTextArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
-	public GameObject workBenchPanel;
+	public GameObject workBenchPanel, menuPanel;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
-	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
+	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
 	public int scrapCount;
 
@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour {
 		consoleText = GameObject.Find ("ConsoleText");
 		consolePlaceHolder = GameObject.Find ("ConsolePlaceHolder");
 		workBenchPanel = GameObject.Find ("WorkbenchPanel");
+		menuPanel = GameObject.Find ("MenuPanel");
 
 		initialHealth = 100;
 		armour = 0;
@@ -40,6 +41,9 @@ public class PlayerScript : MonoBehaviour {
 		optionsPanel.SetActive(false);
 		consolePanel.SetActive(false);
 		workBenchPanel.SetActive(false);
+
+		menuOpen = false;
+		optionsOpen = false;
 
 	}
 	
@@ -53,7 +57,7 @@ public class PlayerScript : MonoBehaviour {
 	void Update (){
 		HealthUpdate();
 		SetGUI();
-		OpenOptions();
+		OpenMenu();
 		DetectGround();
 		if (Input.GetMouseButtonDown(0)){
 			PlayerAttack();
@@ -119,12 +123,13 @@ public class PlayerScript : MonoBehaviour {
 
 	public void PlayerAttack(){
 		if (!menuOpen){
-			if (!isAttacking){
-				isAttacking = true;
-				hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
-				StartCoroutine("AttackTimer");
+			if (!showingWorkbench){
+				if (!isAttacking){
+					isAttacking = true;
+					hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
+					StartCoroutine("AttackTimer");
+				}
 			}
-
 		}
 	}
 
@@ -144,18 +149,49 @@ public class PlayerScript : MonoBehaviour {
 		foreach (GameObject i in scrapTextArray){
 			i.GetComponent<Text>().text = "Scrap: " + scrapCount.ToString();
 		}
-	}
-
-	public void OpenOptions(){
-		if (Input.GetButtonDown ("Menu")){
-			menuOpen = !menuOpen;
-		}
 
 		if (menuOpen == true){
+			menuPanel.SetActive(true);
+		} else {
+			menuPanel.SetActive(false);
+		}
+
+		if (optionsOpen == true){
 			optionsPanel.SetActive(true);
 		} else {
 			optionsPanel.SetActive(false);
 		}
+
+		if (showingWorkbench){
+			workBenchPanel.SetActive(true);
+		} else {
+			workBenchPanel.SetActive(false);
+		}
+	}
+
+	public void OpenMenu(){
+		if (Input.GetButtonDown ("Menu")){
+			if (showConsole){
+				showConsole = false;
+				return;
+			} 
+			if (showingWorkbench){
+				showingWorkbench = false;
+				return;
+			} 
+			if (optionsOpen){
+				optionsOpen = false;
+				return;
+			}
+
+			menuOpen = !menuOpen;
+		}
+
+	}
+
+	public void OpenOptions(){
+		optionsOpen = true;
+		menuOpen = false;
 	}
 
 	public void OnInvYToggle(bool i){
@@ -190,9 +226,19 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void ConsoleAction(){
-		if (consoleText.GetComponent<Text>().text == "PlayerDamage"){
+		Text cText = consoleText.GetComponent<Text>();
+		if (cText.text == "PlayerDamage"){
 			initialHealth -= 20;
-
+		} else if (cText.text == "AddScrap"){
+			scrapCount += 10;
+		} else if (cText.text == "UpgradeArmour"){
+			armour += 10;
+		} else if (cText.text == "UpgradeWeapon"){
+			damage += 10;
+		} else if (cText.text == "GameSave"){
+			GameSave();
+		} else if (cText.text == "GameLoad"){
+			GameLoad();
 		}
 		consoleText.GetComponent<Text>().text = "";
 		consolePlaceHolder.GetComponent<Text>().text = "";
@@ -205,24 +251,58 @@ public class PlayerScript : MonoBehaviour {
 
 		if (Input.GetButtonDown("Interact")){
 			if (workbenchInteractable){
-				if (!showingWorkbench){
-					workBenchPanel.SetActive(true);
-					showingWorkbench = true;
-				} else {
-					workBenchPanel.SetActive(false);
-					showingWorkbench = false;
-				}
-					
+				showingWorkbench = !showingWorkbench;
 			}
 		}
 	}
 
 	public void UpgradeArmour(){
-		armour = armour + 10;
+		if (scrapCount >= 10){
+			armour = armour + 10;
+			scrapCount -= 10;
+		}
 	}
 
 	public void UpgradeWeapon(){
-		damage = damage + 2;
+		if (scrapCount >= 10){
+			damage = damage + 2;
+			scrapCount -= 10;
+		}
+	}
+
+	public void GameQuit(){
+		Application.Quit();
+	}
+
+	public void GameSave(){
+		PlayerPrefs.SetInt("ScrapCount", scrapCount);
+		PlayerPrefs.SetInt("Health", initialHealth);
+		PlayerPrefs.SetInt("Armour", armour);
+		PlayerPrefs.SetInt("Damage", damage);
+		PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+		PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+		PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
+		if (isInvertingCamY){
+			PlayerPrefs.SetInt("InverseCam", 0);
+		} else {
+			PlayerPrefs.SetInt("InverseCam", 1);
+		}
+
+
+	}
+
+	public void GameLoad(){
+		scrapCount = PlayerPrefs.GetInt("ScrapCount");
+		initialHealth = PlayerPrefs.GetInt("Health");
+		armour = PlayerPrefs.GetInt("Armour");
+		damage = PlayerPrefs.GetInt("Damage");
+		Vector3 pos = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+		transform.position = pos;
+		if (PlayerPrefs.GetInt("InverseCam") == 0){
+			isInvertingCamY = true;
+		} else if (PlayerPrefs.GetInt("InverseCam") == 1){
+			isInvertingCamY = false;
+		}
 	}
 
 	public IEnumerator AttackTimer(){
