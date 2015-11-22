@@ -27,11 +27,11 @@ public class CompanionScript : MonoBehaviour {
 
 	public void HealPlayer(){
 		if (player.GetComponent<PlayerScript>().inCombat == false){
-			if (player.GetComponent<PlayerScript>().health < regenCap){
+			if (player.GetComponent<PlayerScript>().finalHealth < regenCap){
 				healthBuild += 1 * Time.deltaTime;
 				if (healthBuild >= 1){
 					healthBuild = 0;
-					player.GetComponent<PlayerScript>().health += 1;
+					player.GetComponent<PlayerScript>().finalHealth += 1;
 				}
 
 			}

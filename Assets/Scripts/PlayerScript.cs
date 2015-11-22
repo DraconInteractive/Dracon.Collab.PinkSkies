@@ -7,14 +7,16 @@ public class PlayerScript : MonoBehaviour {
 	public Transform playerTrans;
 	public Toggle invCamYToggle;
 	public GameObject hitTrigger;
-	public GameObject healthText, healthSlider, optionsPanel, scrapText;
+	public GameObject healthText, healthSlider, optionsPanel;
+	public GameObject[] scrapTextArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
+	public GameObject workBenchPanel;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat;
-	public bool workbenchInteractable;
+	public bool workbenchInteractable, showingWorkbench;
 	public int scrapCount;
 
-	public int health, armour, damage;
+	public int finalHealth, initialHealth, armour, damage;
 	// Use this for initialization
 	void Start () {
 		playerRigid = GetComponent<Rigidbody>();
@@ -24,16 +26,20 @@ public class PlayerScript : MonoBehaviour {
 		optionsPanel = GameObject.Find ("OptionsPanel");
 		consolePanel = GameObject.Find ("ConsolePanel");
 		consoleInput = GameObject.Find ("ConsoleInput");
-		scrapText = GameObject.Find ("ScrapText");
+		scrapTextArray = GameObject.FindGameObjectsWithTag("ScrapText");
 		consoleText = GameObject.Find ("ConsoleText");
 		consolePlaceHolder = GameObject.Find ("ConsolePlaceHolder");
+		workBenchPanel = GameObject.Find ("WorkbenchPanel");
 
-		health = 100;
-		healthSlider.GetComponent<Slider>().maxValue = health;
+		initialHealth = 100;
+		armour = 0;
+		finalHealth = initialHealth + armour;
+		healthSlider.GetComponent<Slider>().maxValue = finalHealth;
 		healthSlider.GetComponent<Slider>().minValue = 0;
 
 		optionsPanel.SetActive(false);
 		consolePanel.SetActive(false);
+		workBenchPanel.SetActive(false);
 
 	}
 	
@@ -45,6 +51,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update (){
+		HealthUpdate();
 		SetGUI();
 		OpenOptions();
 		DetectGround();
@@ -52,7 +59,7 @@ public class PlayerScript : MonoBehaviour {
 			PlayerAttack();
 		}
 		ConsoleCommand();
-		WorkBenchOptions();
+		Interact();
 
 	}
 
@@ -73,6 +80,11 @@ public class PlayerScript : MonoBehaviour {
 		if (col.gameObject.tag == "Workbench"){
 			workbenchInteractable = false;
 		}
+	}
+
+	public void HealthUpdate(){
+		finalHealth = initialHealth + armour ;
+		healthSlider.GetComponent<Slider>().maxValue = finalHealth;
 	}
 
 	public void PlayerMovement(){
@@ -119,13 +131,19 @@ public class PlayerScript : MonoBehaviour {
 	public void SetGUI(){
 		if (menuOpen){
 			healthSlider.SetActive(false);
-			scrapText.SetActive(false);
+			foreach (GameObject i in scrapTextArray){
+				i.SetActive(false);
+			}
 		} else {
 			healthSlider.SetActive(true);
-			scrapText.SetActive(true);
+			foreach (GameObject i in scrapTextArray){
+				i.SetActive(true);
+			}
 		}
-		healthSlider.GetComponent<Slider>().value = health;
-		scrapText.GetComponent<Text>().text = scrapCount.ToString();
+		healthSlider.GetComponent<Slider>().value = finalHealth;
+		foreach (GameObject i in scrapTextArray){
+			i.GetComponent<Text>().text = "Scrap: " + scrapCount.ToString();
+		}
 	}
 
 	public void OpenOptions(){
@@ -173,7 +191,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public void ConsoleAction(){
 		if (consoleText.GetComponent<Text>().text == "PlayerDamage"){
-			health -= 20;
+			initialHealth -= 20;
 
 		}
 		consoleText.GetComponent<Text>().text = "";
@@ -183,12 +201,28 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	public void WorkBenchOptions(){
-		if (workbenchInteractable){
-			if (Input.GetButtonDown("Interact")){
-				//LOOK HERE DO WORK HERE
+	public void Interact(){
+
+		if (Input.GetButtonDown("Interact")){
+			if (workbenchInteractable){
+				if (!showingWorkbench){
+					workBenchPanel.SetActive(true);
+					showingWorkbench = true;
+				} else {
+					workBenchPanel.SetActive(false);
+					showingWorkbench = false;
+				}
+					
 			}
 		}
+	}
+
+	public void UpgradeArmour(){
+		armour = armour + 10;
+	}
+
+	public void UpgradeWeapon(){
+		damage = damage + 2;
 	}
 
 	public IEnumerator AttackTimer(){
