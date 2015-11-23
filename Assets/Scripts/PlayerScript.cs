@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject hitTrigger;
 	public GameObject healthText, healthSlider, optionsPanel;
 	public GameObject[] scrapTextArray;
+	public GameObject[] barricadeArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public GameObject workBenchPanel, menuPanel;
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait, elevatorSpeed;
@@ -32,6 +33,7 @@ public class PlayerScript : MonoBehaviour {
 		consolePlaceHolder = GameObject.Find ("ConsolePlaceHolder");
 		workBenchPanel = GameObject.Find ("WorkbenchPanel");
 		menuPanel = GameObject.Find ("MenuPanel");
+		barricadeArray = GameObject.FindGameObjectsWithTag("Barricade");
 
 		initialHealth = 100;
 		armour = 0;
@@ -249,6 +251,10 @@ public class PlayerScript : MonoBehaviour {
 			GameSave();
 		} else if (cText.text == "GameLoad"){
 			GameLoad();
+		} else if (cText.text == "RaiseBarricades"){
+			foreach (GameObject i in barricadeArray){
+				i.GetComponent<BarricadeScript>().activated = true;
+			}
 		}
 		consoleText.GetComponent<Text>().text = "";
 		consolePlaceHolder.GetComponent<Text>().text = "";
