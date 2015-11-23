@@ -18,7 +18,7 @@ public class PlatMoveScript : MonoBehaviour {
 
 	public void ActivatePlatform (){
 		if (activated){
-			if (transform.position.y < initialZ + 10){
+			if (transform.position.z <= initialZ + 10){
 				myRigid.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
 			}
 		}

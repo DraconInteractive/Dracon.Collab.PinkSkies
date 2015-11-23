@@ -220,6 +220,8 @@ public class PlayerScript : MonoBehaviour {
 				isGrounded = true;
 			} else if (hit.collider.gameObject.tag == "Elevator"){
 				isGrounded = true;
+			} else if (hit.collider.gameObject.tag == "PlatformBase"){
+				isGrounded = true;
 			}
 		} else {
 			isGrounded = false;
