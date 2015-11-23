@@ -102,16 +102,15 @@ public class EnemyScript : MonoBehaviour {
 		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 
+		Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.08f);
+
 		if (distance <= triggerDisMax && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
 			chasing = true;
 
-			Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-			transform.LookAt (playerPos);
 			rb.AddForce (transform.forward * speed * Time.deltaTime);
 		} else {
 			chasing = false;
-			Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-			transform.LookAt (playerPos);
 		}
 	}
 

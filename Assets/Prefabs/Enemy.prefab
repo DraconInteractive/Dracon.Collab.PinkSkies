@@ -17,6 +17,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &129860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440292}
+  m_Layer: 0
+  m_Name: EnemyFeet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &159310
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,8 +77,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .300000012, z: 1.07099998}
-  m_LocalScale: {x: 1.28203094, y: 1, z: .948603392}
+  m_LocalPosition: {x: 0, y: .5, z: 1.03600001}
+  m_LocalScale: {x: .755221069, y: .622382164, z: .85208708}
   m_Children: []
   m_Father: {fileID: 493478}
   m_RootOrder: 1
@@ -79,6 +94,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 493478}
   m_RootOrder: 0
+--- !u!4 &440292
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.931999981, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493478}
+  m_RootOrder: 2
 --- !u!4 &493478
 Transform:
   m_ObjectHideFlags: 1
@@ -86,11 +113,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.82586002, y: 10.04, z: 15.2095594}
+  m_LocalPosition: {x: -3.82586002, y: 10.0710001, z: 15.2095594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 431810}
   - {fileID: 410702}
+  - {fileID: 440292}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2328212
@@ -215,6 +243,19 @@ MonoBehaviour:
   health: 0
   playerDamageRecieved: 0
   attackable: 0
+  speed: 1000
+  maxSpeed: 1.5
+  attackSpdTimer: 0
+  attackSpd: 2
+  jumpHeight: 30
+  triggerDisMax: 10
+  meleeDis: 2
+  stillTime: 0
+  attackDmg: 10
+  enemyFeet: {fileID: 440292}
+  grounded: 0
+  chasing: 0
+  canHit: 0
 --- !u!136 &13666334
 CapsuleCollider:
   m_ObjectHideFlags: 1
