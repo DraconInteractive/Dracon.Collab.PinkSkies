@@ -5,15 +5,20 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 1, jumpHeight = 15, triggerDisMax = 10, meleeDis = 0.5f, stillTime = 0;
+	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, jumpHeight = 15, triggerDisMax = 10, meleeDis = 0.5f, stillTime = 0;
+	public int attackDmg = 10;
+	public Transform enemyFeet;
+
 	private GameObject player;
+	private PlayerScript playerScript;
 	private Rigidbody rb;
-	public bool grounded, chasing;
+	public bool grounded, chasing, canHit;
 
 	void Start () {
 		health = 100;
 		attackable = false;
 		player = GameObject.FindWithTag ("Player");
+		playerScript = player.GetComponent<PlayerScript> ();
 		rb = GetComponent<Rigidbody> ();
 	}
 
@@ -22,6 +27,41 @@ public class EnemyScript : MonoBehaviour {
 		EnemyMovement ();
 		IsGrounded ();
 		EnemyReset ();
+		EnemyAttack ();	
+
+		attackSpdTimer -= Time.deltaTime;
+
+	}
+
+
+	void OnTriggerEnter(Collider other){
+		if(other.tag == "Player") canHit = true;
+	}
+
+	void EnemyAttack(){
+
+		float armour = playerScript.armour;
+		float currHealth = playerScript.initialHealth;
+
+		if (canHit && attackSpdTimer <= 0) {//can attack
+
+			attackSpdTimer = attackSpd;
+
+			if(armour > 0) {//if player has armour
+
+				int leftOverDmg = attackDmg - playerScript.armour;//e.g 10-4 = 6 or 10-15 = -5
+
+				playerScript.armour -= attackDmg;
+
+				if(leftOverDmg > 0){
+					playerScript.initialHealth -= leftOverDmg;
+				}
+
+			} else {
+				playerScript.initialHealth -= attackDmg;
+			}
+
+		}
 	}
 
 	void EnemyReset(){
@@ -41,20 +81,12 @@ public class EnemyScript : MonoBehaviour {
 
 	void IsGrounded(){
 		RaycastHit hit;
-		Vector3 enemyFeet = new Vector3 (transform.position.x, transform.position.y - 0.6f, transform.position.z);
 
-		//-----------------------------testing-----------------------------------------
-		Vector3 enemyFeet2 = new Vector3 (enemyFeet.x, enemyFeet.y - 0.5f, enemyFeet.z);
-		Debug.DrawLine (enemyFeet, enemyFeet + transform.forward, Color.red);
-		//-----------------------------testing-----------------------------------------
-
-		if (Physics.SphereCast (enemyFeet + Vector3.up, 1, -transform.up, out hit, 0.4f)) {
+		if (Physics.SphereCast (enemyFeet.position + Vector3.up, 1, -transform.up, out hit, 0.4f)) {
 			if (hit.collider.tag == "Ground") {
 				grounded = true;
-				Debug.Log ("grounded");
-				if (Physics.Raycast (enemyFeet, transform.forward, out hit, 1)) {
+				if (Physics.Raycast (enemyFeet.position, transform.forward, out hit, 1)) {//raycast forwards checking for ground
 					if (hit.collider.tag == "Ground") {
-						Debug.Log ("Jumping");
 						rb.AddForce (transform.up * jumpHeight * Time.deltaTime, ForceMode.Impulse);
 					}
 				}
@@ -78,16 +110,20 @@ public class EnemyScript : MonoBehaviour {
 			rb.AddForce (transform.forward * speed * Time.deltaTime);
 		} else {
 			chasing = false;
+			Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+			transform.LookAt (playerPos);
 		}
 	}
 
-	public void AttackSequence(int damage){
-		health -= damage;
+	public void EnemyTakingDamage(int dmg){
+
+		health -= dmg;
+
 	}
 
 	public void HealthCheck(){
 		if (health <= 0){
-			Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }

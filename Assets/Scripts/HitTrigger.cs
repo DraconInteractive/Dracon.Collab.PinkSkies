@@ -19,7 +19,7 @@ public class HitTrigger : MonoBehaviour {
 
 	public void TriggerAttack(int damage){
 		foreach (GameObject i in enemiesInRange){
-			i.GetComponent<EnemyScript>().AttackSequence(damage);
+			i.GetComponent<EnemyScript>().EnemyTakingDamage(damage);
 		}
 	}
 
