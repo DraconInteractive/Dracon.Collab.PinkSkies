@@ -227,7 +227,10 @@ public class PlayerScript : MonoBehaviour {
 
 	public void ConsoleAction(){
 		Text cText = consoleText.GetComponent<Text>();
-		if (cText.text == "PlayerDamage"){
+		if (cText.text == "Help"){
+			string helpString = "Help //n PlayerDamage //n AddScrap //n UpgradeArmour //n UpgradeWeapon //n GameSave //n GameLoad";
+			Debug.Log (helpString.Replace("//n", "\n"));
+		} else if (cText.text == "PlayerDamage"){
 			initialHealth -= 20;
 		} else if (cText.text == "AddScrap"){
 			scrapCount += 10;
