@@ -9,6 +9,8 @@ TagManager:
   - Scrap
   - ScrapText
   - Workbench
+  - Elevator
+  - ElevatorTrigger
   layers:
   - Default
   - TransparentFX

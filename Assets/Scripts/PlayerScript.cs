@@ -11,9 +11,10 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject[] scrapTextArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public GameObject workBenchPanel, menuPanel;
-	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait;
+	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait, elevatorSpeed;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
+	public bool inElevator;
 	public int scrapCount;
 
 	public int finalHealth, initialHealth, armour, damage;
@@ -77,12 +78,16 @@ public class PlayerScript : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Workbench"){
 			workbenchInteractable = true;
+		} else if (col.gameObject.tag == "ElevatorTrigger"){
+			inElevator = true;
 		}
 	}
 
 	void OnTriggerExit(Collider col){
 		if (col.gameObject.tag == "Workbench"){
 			workbenchInteractable = false;
+		} else if (col.gameObject.tag == "ElevatorTrigger"){
+			inElevator = false;
 		}
 	}
 
@@ -207,6 +212,8 @@ public class PlayerScript : MonoBehaviour {
 		if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f)){
 			if (hit.collider.gameObject.tag == "Ground"){
 				isGrounded = true;
+			} else if (hit.collider.gameObject.tag == "Elevator"){
+				isGrounded = true;
 			}
 		} else {
 			isGrounded = false;
@@ -255,6 +262,15 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetButtonDown("Interact")){
 			if (workbenchInteractable){
 				showingWorkbench = !showingWorkbench;
+				return;
+			} 
+			if (inElevator){
+				RaycastHit hit;
+				if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
+					if (hit.collider.gameObject.tag == "Elevator"){
+						hit.collider.gameObject.GetComponent<ElevatorScript>().activated = true;
+					}
+				}
 			}
 		}
 	}

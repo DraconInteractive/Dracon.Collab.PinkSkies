@@ -273,6 +273,7 @@ MonoBehaviour:
   rotateAngle: 180
   jumpForce: 15
   attackWait: .400000006
+  elevatorSpeed: 1
   isFullSpeed: 0
   isGrounded: 0
   menuOpen: 0
@@ -283,6 +284,7 @@ MonoBehaviour:
   optionsOpen: 0
   workbenchInteractable: 0
   showingWorkbench: 0
+  inElevator: 0
   scrapCount: 0
   finalHealth: 0
   initialHealth: 0
