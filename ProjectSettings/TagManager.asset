@@ -12,6 +12,8 @@ TagManager:
   - Elevator
   - ElevatorTrigger
   - Barricade
+  - PlatformBase
+  - PlatformTrigger
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait, elevatorSpeed;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
-	public bool inElevator;
+	public bool inElevator, onPlatform;
 	public int scrapCount;
 
 	public int finalHealth, initialHealth, armour, damage;
@@ -82,6 +82,8 @@ public class PlayerScript : MonoBehaviour {
 			workbenchInteractable = true;
 		} else if (col.gameObject.tag == "ElevatorTrigger"){
 			inElevator = true;
+		} else if (col.gameObject.tag == "PlatformTrigger"){
+			onPlatform = true;
 		}
 	}
 
@@ -90,6 +92,8 @@ public class PlayerScript : MonoBehaviour {
 			workbenchInteractable = false;
 		} else if (col.gameObject.tag == "ElevatorTrigger"){
 			inElevator = false;
+		} else if (col.gameObject.tag == "PlatformTrigger"){
+			onPlatform = false;
 		}
 	}
 
@@ -278,6 +282,15 @@ public class PlayerScript : MonoBehaviour {
 					}
 				}
 			}
+			if (onPlatform){
+				RaycastHit hit;
+				if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
+					if (hit.collider.gameObject.tag == "PlatformBase"){
+						hit.collider.gameObject.GetComponent<PlatMoveScript>().activated = true;
+					}
+				}
+			}
+
 		}
 	}
 
