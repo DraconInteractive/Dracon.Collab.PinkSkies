@@ -58,6 +58,13 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update (){
+
+		if (Input.GetKeyDown(KeyCode.Space)){
+			if (isGrounded){
+				playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			}
+		}
+
 		HealthUpdate();
 		SetGUI();
 		OpenMenu();
@@ -84,6 +91,7 @@ public class PlayerScript : MonoBehaviour {
 			inElevator = true;
 		} else if (col.gameObject.tag == "PlatformTrigger"){
 			onPlatform = true;
+			//playerRigid.velocity = col.gameObject.GetComponent<Rigidbody>().velocity;
 		}
 	}
 
@@ -124,11 +132,7 @@ public class PlayerScript : MonoBehaviour {
 			} else {
 				isFullSpeed = false;
 			}
-			if (Input.GetKeyDown(KeyCode.Space)){
-				if (isGrounded){
-					playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-				}
-			}
+
 		}
 	}
 
