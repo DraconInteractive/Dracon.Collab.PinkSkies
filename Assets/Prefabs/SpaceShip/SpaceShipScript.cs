@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class SpaceShipScript : MonoBehaviour {
-
+	public AudioSource myAudioSource;
+	public AudioClip takeOffClip;
+	public Animation myAnimation;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +15,7 @@ public class SpaceShipScript : MonoBehaviour {
 	
 	}
 
-	public void PlayerAnimation(){
+	public void TakeOff(){
 
 	}
 }
