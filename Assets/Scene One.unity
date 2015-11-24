@@ -4051,6 +4051,8 @@ GameObject:
   - 33: {fileID: 1695352044}
   - 65: {fileID: 1695352043}
   - 23: {fileID: 1695352042}
+  - 114: {fileID: 1695352047}
+  - 111: {fileID: 1695352046}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -4108,12 +4110,38 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1695352041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.0542336, y: 8.47532082, z: -2.6099999}
+  m_LocalPosition: {x: -25.8999996, y: 8.47532082, z: -2.6099999}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 1006298785}
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!111 &1695352046
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695352041}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78225c9f72473bf4691dd6d51720ad71, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78225c9f72473bf4691dd6d51720ad71, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1695352047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695352041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1968cbf175615c64da81f2cf27a890e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1713038662
 GameObject:
   m_ObjectHideFlags: 0
