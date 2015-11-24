@@ -136,7 +136,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478740, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22478740, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -509,15 +509,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 481948, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 196.5
+      value: 185.5
       objectReference: {fileID: 0}
     - target: {fileID: 481948, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 54.7000008
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 481948, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 587
+      value: 559.299988
       objectReference: {fileID: 0}
     - target: {fileID: 481948, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: m_LocalRotation.x
@@ -537,7 +537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481948, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11493906, guid: b2bb9df51a2cef148931331d96ae30fa, type: 2}
       propertyPath: invCamYToggle
@@ -579,15 +579,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 196.5
+      value: 185.5
       objectReference: {fileID: 0}
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 55.7999992
+      value: 34.0999985
       objectReference: {fileID: 0}
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 581.900024
+      value: 554.200012
       objectReference: {fileID: 0}
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -607,7 +607,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11449416, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: camDistSlider
@@ -625,31 +625,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 160.399994
+      value: 160.600006
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.5
+      value: 13.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 587
+      value: 590.299988
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: .0795840919
+      value: .022696225
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: .418663085
+      value: .119396716
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: .168940187
+      value: .185362667
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: .888733268
+      value: .975125611
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f33efb2a88eb0144bb7c61624866fc5, type: 3}
       propertyPath: m_RootOrder
