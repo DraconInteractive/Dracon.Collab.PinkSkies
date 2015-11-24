@@ -8,8 +8,31 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496482}
+  - 114: {fileID: 11438900}
+  - 136: {fileID: 13697592}
+  - 54: {fileID: 5429602}
   m_Layer: 0
   m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &139866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495826}
+  - 33: {fileID: 3325744}
+  - 65: {fileID: 6558160}
+  - 23: {fileID: 2357956}
+  - 114: {fileID: 11498406}
+  - 114: {fileID: 11411970}
+  m_Layer: 2
+  m_Name: HitTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +67,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 496482}
   m_RootOrder: 0
+--- !u!4 &495826
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0939999968, y: 1.05200005, z: 1.52100003}
+  m_LocalScale: {x: 1.25, y: 1.5, z: 2}
+  m_Children: []
+  m_Father: {fileID: 496482}
+  m_RootOrder: 1
 --- !u!4 &496482
 Transform:
   m_ObjectHideFlags: 1
@@ -55,8 +90,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464406}
+  - {fileID: 495826}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!23 &2357956
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2365922
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -88,6 +148,134 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147924}
   m_Mesh: {fileID: 4300000, guid: 47fc532698800444e94d510dd40cb323, type: 3}
+--- !u!33 &3325744
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5429602
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115548}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 2
+--- !u!65 &6558160
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11411970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48178ab497cc94b48aa1f428cd254c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  playerDamage: 0
+  player: {fileID: 0}
+  enemiesInRange: []
+--- !u!114 &11438900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7712b341994bd458fcf3910a642b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigid: {fileID: 0}
+  playerTrans: {fileID: 0}
+  invCamYToggle: {fileID: 0}
+  hitTrigger: {fileID: 139866}
+  healthText: {fileID: 0}
+  healthSlider: {fileID: 0}
+  optionsPanel: {fileID: 0}
+  scrapTextArray: []
+  barricadeArray: []
+  consolePanel: {fileID: 0}
+  consoleInput: {fileID: 0}
+  consoleText: {fileID: 0}
+  consolePlaceHolder: {fileID: 0}
+  workBenchPanel: {fileID: 0}
+  menuPanel: {fileID: 0}
+  speedForward: 0
+  speedStrafe: 0
+  speedMod: 4000
+  rotateAngle: 180
+  jumpForce: 20
+  attackWait: .400000006
+  elevatorSpeed: 1
+  isFullSpeed: 0
+  isGrounded: 0
+  menuOpen: 0
+  isInvertingCamY: 0
+  isAttacking: 0
+  showConsole: 0
+  inCombat: 0
+  optionsOpen: 0
+  workbenchInteractable: 0
+  showingWorkbench: 0
+  inElevator: 0
+  onPlatform: 0
+  nearShip: 0
+  scrapCount: 0
+  finalHealth: 0
+  initialHealth: 0
+  armour: 0
+  damage: 50
+--- !u!114 &11498406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48178ab497cc94b48aa1f428cd254c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  playerDamage: 0
+  player: {fileID: 0}
+  enemiesInRange: []
+--- !u!136 &13697592
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .300000012
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: .899999976, z: -.100000001}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
