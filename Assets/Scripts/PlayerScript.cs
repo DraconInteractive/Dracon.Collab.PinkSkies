@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait, elevatorSpeed;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
-	public bool inElevator, onPlatform;
+	public bool inElevator, onPlatform, nearShip;
 	public int scrapCount;
 
 	public int finalHealth, initialHealth, armour, damage;
@@ -91,7 +91,8 @@ public class PlayerScript : MonoBehaviour {
 			inElevator = true;
 		} else if (col.gameObject.tag == "PlatformTrigger"){
 			onPlatform = true;
-			//playerRigid.velocity = col.gameObject.GetComponent<Rigidbody>().velocity;
+		} else if (col.gameObject.tag == "SPTrigger"){
+			nearShip = true;
 		}
 	}
 
@@ -102,6 +103,8 @@ public class PlayerScript : MonoBehaviour {
 			inElevator = false;
 		} else if (col.gameObject.tag == "PlatformTrigger"){
 			onPlatform = false;
+		} else if (col.gameObject.tag == "SPTrigger"){
+			nearShip = false;
 		}
 	}
 
@@ -287,14 +290,24 @@ public class PlayerScript : MonoBehaviour {
 						hit.collider.gameObject.GetComponent<ElevatorScript>().activated = true;
 					}
 				}
-			}
-			if (onPlatform){
+			} else if (onPlatform){
 				RaycastHit hit;
 				if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
 					if (hit.collider.gameObject.tag == "PlatformBase"){
 						hit.collider.gameObject.GetComponent<PlatMoveScript>().activated = true;
 					}
 				}
+			} else if (nearShip){
+				RaycastHit hit;
+				if (Physics.Raycast(transform.position, transform.forward, out hit, 5)){
+					if (hit.collider.gameObject.tag == "SpaceShip"){
+						hit.collider.gameObject.GetComponent<SpaceShipScript>().TakeOff();
+					} else {
+						Debug.Log (hit.collider.gameObject.name);
+					}
+				}
+			} else {
+				Debug.Log ("No Interact Zone Entered");
 			}
 
 		}

@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 84aefb7b329415a4ebb9bf192889da97
+timeCreated: 1448346422
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Back Panel
+    100002: Back Panel Ctrl
+    100004: Bottol Left Eye Ctrl
+    100006: Bottom Left Eye
+    100008: Bottom Left Panel
+    100010: Bottom Left Panel Ctrl
+    100012: Bottom Right Eye
+    100014: Bottom Right Eye Ctrl
+    100016: Bottom Right Panel
+    100018: Bottom Right Panel Ctrl
+    100020: //RootNode
+    100022: Core
+    100024: Core Crtl
+    100026: Main Ctrl
+    100028: Top Left Eye
+    100030: Top Left Eye Ctrl
+    100032: Top Left Panel
+    100034: Top Left Panel Ctrl
+    100036: Top Right Eye
+    100038: Top Right Eye Ctrl
+    100040: Top Right Panel
+    100042: Top Right Panel Ctrl
+    400000: Back Panel
+    400002: Back Panel Ctrl
+    400004: Bottol Left Eye Ctrl
+    400006: Bottom Left Eye
+    400008: Bottom Left Panel
+    400010: Bottom Left Panel Ctrl
+    400012: Bottom Right Eye
+    400014: Bottom Right Eye Ctrl
+    400016: Bottom Right Panel
+    400018: Bottom Right Panel Ctrl
+    400020: //RootNode
+    400022: Core
+    400024: Core Crtl
+    400026: Main Ctrl
+    400028: Top Left Eye
+    400030: Top Left Eye Ctrl
+    400032: Top Left Panel
+    400034: Top Left Panel Ctrl
+    400036: Top Right Eye
+    400038: Top Right Eye Ctrl
+    400040: Top Right Panel
+    400042: Top Right Panel Ctrl
+    2300000: Back Panel
+    2300002: Bottom Left Eye
+    2300004: Bottom Left Panel
+    2300006: Bottom Right Eye
+    2300008: Bottom Right Panel
+    2300010: Core
+    2300012: Top Left Eye
+    2300014: Top Left Panel
+    2300016: Top Right Eye
+    2300018: Top Right Panel
+    3300000: Back Panel
+    3300002: Bottom Left Eye
+    3300004: Bottom Left Panel
+    3300006: Bottom Right Eye
+    3300008: Bottom Right Panel
+    3300010: Core
+    3300012: Top Left Eye
+    3300014: Top Left Panel
+    3300016: Top Right Eye
+    3300018: Top Right Panel
+    4300000: Bottom Left Eye
+    4300002: Top Right Eye
+    4300004: Bottom Right Panel
+    4300006: Top Right Panel
+    4300008: Bottom Left Panel
+    4300010: Core
+    4300012: Top Left Panel
+    4300014: Top Left Eye
+    4300016: Back Panel
+    4300018: Bottom Right Eye
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

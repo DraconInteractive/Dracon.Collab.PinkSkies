@@ -14,6 +14,8 @@ TagManager:
   - Barricade
   - PlatformBase
   - PlatformTrigger
+  - SPTrigger
+  - SpaceShip
   layers:
   - Default
   - TransparentFX

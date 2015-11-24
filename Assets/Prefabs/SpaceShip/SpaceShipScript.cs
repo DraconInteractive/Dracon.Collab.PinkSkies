@@ -7,7 +7,8 @@ public class SpaceShipScript : MonoBehaviour {
 	public Animation myAnimation;
 	// Use this for initialization
 	void Start () {
-	
+		myAudioSource = GetComponent<AudioSource>();
+		myAnimation = GetComponent<Animation>();
 	}
 	
 	// Update is called once per frame
@@ -16,6 +17,8 @@ public class SpaceShipScript : MonoBehaviour {
 	}
 
 	public void TakeOff(){
-
+		myAnimation.Play();
+		myAudioSource.clip = takeOffClip;
+		myAudioSource.Play();
 	}
 }

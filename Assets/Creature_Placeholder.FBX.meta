@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: f91480c787076114ea9b3acd12d9eaa1
+timeCreated: 1448346593
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Back_Left_Leg00
+    100002: Back_Left_Leg01
+    100004: Back_Left_Leg02
+    100006: Back_Left_Leg03
+    100008: Back_Left_Leg04
+    100010: Back_Left_Leg_Nub
+    100012: Back_Right_Leg00
+    100014: Back_Right_Leg01
+    100016: Back_Right_Leg02
+    100018: Back_Right_Leg03
+    100020: Back_Right_Leg04
+    100022: Back_Right_LegNub
+    100024: Base_Spine
+    100026: Base_Spine1
+    100028: Base_Spine2
+    100030: Bone001
+    100032: Bone002
+    100034: Bone003
+    100036: Bone004
+    100038: Bone005
+    100040: Bone006
+    100042: //RootNode
+    100044: FLNub
+    100046: FRNub
+    100048: Front_Left_Ankle
+    100050: Front_Left_Clavicle
+    100052: Front_Left_forearm
+    100054: Front_Left_Pawpad
+    100056: Front_Left_shoulder
+    100058: Front_Right_Ankle
+    100060: Front_Right_Clavicle
+    100062: Front_Right_forearm
+    100064: Front_Right_Pawpad
+    100066: Front_Right_shoulder
+    100068: Hip
+    100070: Left_Ear00
+    100072: Left_Ear01
+    100074: Left_Ear02
+    100076: Left_Mandible00
+    100078: Left_Mandible02
+    100080: Left_Mandible03
+    100082: Left_Mandible_Fang
+    100084: Left_Mandible_Fang1
+    100086: Left_MandibleFangnub
+    100088: LowerJaw
+    100090: LowerJaw_Nub
+    100092: MBPuppie_5_0
+    100094: Neck
+    100096: Overall_Con
+    100098: Right_Ear00
+    100100: Right_Ear01
+    100102: Right_Ear02
+    100104: Right_Mandible00
+    100106: Right_Mandible02
+    100108: Right_Mandible03
+    100110: Right_Mandible_Fang
+    100112: Right_Mandible_Fang1
+    100114: Right_MandibleFangnub
+    100116: Skull
+    100118: Tail01
+    100120: Tail02
+    100122: Tail03
+    100124: Tail04
+    100126: Tail05
+    100128: Tail06
+    100130: Tail07
+    100132: Tail08
+    100134: Tail09
+    100136: Tail10
+    100138: UpperJaw
+    100140: UpperJaw_Nub
+    400000: Back_Left_Leg00
+    400002: Back_Left_Leg01
+    400004: Back_Left_Leg02
+    400006: Back_Left_Leg03
+    400008: Back_Left_Leg04
+    400010: Back_Left_Leg_Nub
+    400012: Back_Right_Leg00
+    400014: Back_Right_Leg01
+    400016: Back_Right_Leg02
+    400018: Back_Right_Leg03
+    400020: Back_Right_Leg04
+    400022: Back_Right_LegNub
+    400024: Base_Spine
+    400026: Base_Spine1
+    400028: Base_Spine2
+    400030: Bone001
+    400032: Bone002
+    400034: Bone003
+    400036: Bone004
+    400038: Bone005
+    400040: Bone006
+    400042: //RootNode
+    400044: FLNub
+    400046: FRNub
+    400048: Front_Left_Ankle
+    400050: Front_Left_Clavicle
+    400052: Front_Left_forearm
+    400054: Front_Left_Pawpad
+    400056: Front_Left_shoulder
+    400058: Front_Right_Ankle
+    400060: Front_Right_Clavicle
+    400062: Front_Right_forearm
+    400064: Front_Right_Pawpad
+    400066: Front_Right_shoulder
+    400068: Hip
+    400070: Left_Ear00
+    400072: Left_Ear01
+    400074: Left_Ear02
+    400076: Left_Mandible00
+    400078: Left_Mandible02
+    400080: Left_Mandible03
+    400082: Left_Mandible_Fang
+    400084: Left_Mandible_Fang1
+    400086: Left_MandibleFangnub
+    400088: LowerJaw
+    400090: LowerJaw_Nub
+    400092: MBPuppie_5_0
+    400094: Neck
+    400096: Overall_Con
+    400098: Right_Ear00
+    400100: Right_Ear01
+    400102: Right_Ear02
+    400104: Right_Mandible00
+    400106: Right_Mandible02
+    400108: Right_Mandible03
+    400110: Right_Mandible_Fang
+    400112: Right_Mandible_Fang1
+    400114: Right_MandibleFangnub
+    400116: Skull
+    400118: Tail01
+    400120: Tail02
+    400122: Tail03
+    400124: Tail04
+    400126: Tail05
+    400128: Tail06
+    400130: Tail07
+    400132: Tail08
+    400134: Tail09
+    400136: Tail10
+    400138: UpperJaw
+    400140: UpperJaw_Nub
+    4300000: MBPuppie_5_0
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: MBPuppie_5_0
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
