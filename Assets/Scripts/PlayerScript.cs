@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 	public Rigidbody playerRigid;
 	public Transform playerTrans;
 	public Toggle invCamYToggle;
-	public GameObject hitTrigger;
+	public GameObject hitTrigger, FOGreatsword;
 	public GameObject healthText, healthSlider, optionsPanel;
 	public GameObject[] scrapTextArray;
 	public GameObject[] barricadeArray;
@@ -74,6 +74,8 @@ public class PlayerScript : MonoBehaviour {
 		}
 		ConsoleCommand();
 		Interact();
+		CombatChange();
+		CombatActions();
 
 	}
 
@@ -222,7 +224,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public void DetectGround(){
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f)){
+		if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.25f)){
 			if (hit.collider.gameObject.tag == "Ground"){
 				isGrounded = true;
 			} else if (hit.collider.gameObject.tag == "Elevator"){
@@ -233,6 +235,7 @@ public class PlayerScript : MonoBehaviour {
 		} else {
 			isGrounded = false;
 		}
+		Debug.DrawRay(transform.position, Vector3.down * 0.25f, Color.green);
 	}
 
 	public void ConsoleCommand(){
@@ -360,6 +363,14 @@ public class PlayerScript : MonoBehaviour {
 		} else if (PlayerPrefs.GetInt("InverseCam") == 1){
 			isInvertingCamY = false;
 		}
+	}
+
+	public void CombatChange(){
+		inCombat = !inCombat;
+	}
+
+	public void CombatActions(){
+		
 	}
 
 	public IEnumerator AttackTimer(){
