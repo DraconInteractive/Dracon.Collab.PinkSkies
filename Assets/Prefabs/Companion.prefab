@@ -39,6 +39,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 461926}
   - 95: {fileID: 9592820}
+  - 54: {fileID: 5483880}
+  - 135: {fileID: 13506212}
+  - 114: {fileID: 11463108}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Untagged
@@ -483,7 +486,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174990}
-  m_LocalRotation: {x: .653281569, y: -.65328145, z: -.270597965, w: -.270598024}
+  m_LocalRotation: {x: .653281629, y: -.65328151, z: -.270597994, w: -.270598054}
   m_LocalPosition: {x: .0401153564, y: .0583465584, z: -6.66157532}
   m_LocalScale: {x: .843412876, y: .843412936, z: .843412876}
   m_Children: []
@@ -946,6 +949,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155624}
   m_Mesh: {fileID: 4300010, guid: 84aefb7b329415a4ebb9bf192889da97, type: 3}
+--- !u!54 &5483880
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132476}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &9592820
 Animator:
   serializedVersion: 3
@@ -963,6 +981,36 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11463108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0657e8f27dc584b8aad309b030341c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  thisRigidBody: {fileID: 0}
+  playerDistance: 2
+  regenCap: 100
+  regenAmount: 0
+  companionSpeed: .699999988
+  healthBuild: 0
+--- !u!135 &13506212
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .600000024
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
