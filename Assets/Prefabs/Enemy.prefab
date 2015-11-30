@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.82586002, y: 10.0710001, z: 15.2095594}
+  m_LocalPosition: {x: -2.83999991, y: 10.0710001, z: 10.3299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 431810}
@@ -247,12 +247,15 @@ MonoBehaviour:
   maxSpeed: 1.5
   attackSpdTimer: 0
   attackSpd: 2
+  maxTriggerDis: 20
   jumpHeight: 30
-  triggerDisMax: 10
   meleeDis: 2
   stillTime: 0
   attackDmg: 10
   enemyFeet: {fileID: 440292}
+  hitTrig: {fileID: 0}
+  jumpDownPoint: {fileID: 0}
+  enemyType: 0
   grounded: 0
   chasing: 0
   canHit: 0
