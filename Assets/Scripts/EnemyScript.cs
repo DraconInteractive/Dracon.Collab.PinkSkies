@@ -12,8 +12,10 @@ public class EnemyScript : MonoBehaviour {
 	public GameObject hitTrig;
 	public Transform jumpDownPoint;
 	public bool enemyType;//if true jumpdown enemy / if false point enemy
+	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
+	private int 
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
@@ -51,7 +53,9 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void MoveToPoint (){
-		//move between points
+	
+
+
 	}
 
 	void JumpToPoint (){
