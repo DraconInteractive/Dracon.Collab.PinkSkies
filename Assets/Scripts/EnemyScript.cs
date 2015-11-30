@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
@@ -8,6 +9,7 @@ public class EnemyScript : MonoBehaviour {
 	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, jumpHeight = 15, triggerDisMax = 10, meleeDis = 0.5f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
+	public GameObject hitTrig;
 
 	private GameObject player;
 	private PlayerScript playerScript;
@@ -122,6 +124,9 @@ public class EnemyScript : MonoBehaviour {
 
 	public void HealthCheck(){
 		if (health <= 0){
+			HitTrigger hitTriggerScript = hitTrig.GetComponent<HitTrigger>();
+
+			hitTriggerScript.enemiesInRange.Remove(gameObject);
 			Destroy(gameObject);
 		}
 	}
