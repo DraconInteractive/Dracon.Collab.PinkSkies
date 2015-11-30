@@ -5,7 +5,7 @@ SpeedTreeImporter:
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   specColor: {r: .5, g: .5, b: .5, a: 0}
   hueVariation: {r: 1, g: .5, b: 0, a: .100000001}
-  shininess: .125
+  shininess: .00999999978
   alphaTestRef: .330000013
   bestWindQuality: 4
   hasBillboard: 1
@@ -17,7 +17,7 @@ SpeedTreeImporter:
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
-    windQuality: 4
+    windQuality: 0
   - height: .745312452
     castShadows: 1
     receiveShadows: 1
