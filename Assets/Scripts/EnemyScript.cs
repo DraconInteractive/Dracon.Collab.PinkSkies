@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 2, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
+	public float speed = 500, maxSpeed = 3, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
 	public GameObject hitTrig;
@@ -77,25 +77,29 @@ public class EnemyScript : MonoBehaviour {
 		attackSpdTimer -= Time.deltaTime;
 		float armour = playerScript.armour;
 
-		if (canHit && attackSpdTimer <= 0) {//can attack
-
-			attackSpdTimer = attackSpd;
-
-			if(armour > 0) {//if player has armour
-
-				int leftOverDmg = attackDmg - playerScript.armour;//e.g 10-4 = 6 or 10-15 = -5
-
-				playerScript.armour -= attackDmg;
-
-				if(leftOverDmg > 0){
-					playerScript.initialHealth -= leftOverDmg;
+		if (!playerScript.immune){//if can hit
+			playerScript.SetImmune;
+			if (canHit && attackSpdTimer <= 0) {//can attack
+				
+				attackSpdTimer = attackSpd;
+				
+				if(armour > 0) {//if player has armour
+					
+					int leftOverDmg = attackDmg - playerScript.armour;//e.g 10-4 = 6 or 10-15 = -5
+					
+					playerScript.armour -= attackDmg;
+					
+					if(leftOverDmg > 0){
+						playerScript.initialHealth -= leftOverDmg;
+					}
+					
+				} else {
+					playerScript.initialHealth -= attackDmg;
 				}
-
-			} else {
-				playerScript.initialHealth -= attackDmg;
+				
 			}
-
 		}
+
 	}
 
 	void EnemyReset(){
