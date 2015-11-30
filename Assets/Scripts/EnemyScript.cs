@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour {
 	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
-	private int 
+	private int derp;
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
