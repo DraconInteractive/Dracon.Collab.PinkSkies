@@ -12,10 +12,10 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject[] barricadeArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public GameObject workBenchPanel, menuPanel;
-	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed;
+	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed, immuneTime;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
-	public bool inElevator, onPlatform, nearShip;
+	public bool inElevator, onPlatform, nearShip, immune;
 	public int scrapCount;
 
 	public int finalHealth, initialHealth, armour, damage;
@@ -137,8 +137,11 @@ public class PlayerScript : MonoBehaviour {
 			} else {
 				isFullSpeed = false;
 			}
-
 		}
+	}
+
+	public void SetImmune(){
+		StartCoroutine("ImmuneTimer");
 	}
 
 	public void PlayerAttack(){
@@ -371,6 +374,12 @@ public class PlayerScript : MonoBehaviour {
 
 	public void CombatActions(){
 		
+	}
+
+	public IEnumerator ImmuneTimer(){
+		immune = true;
+		yield return new WaitForSeconds(immuneTime);
+		immune = false;
 	}
 
 	public IEnumerator AttackTimer(){
