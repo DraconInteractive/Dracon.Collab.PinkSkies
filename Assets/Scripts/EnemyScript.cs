@@ -78,7 +78,7 @@ public class EnemyScript : MonoBehaviour {
 		float armour = playerScript.armour;
 
 		if (!playerScript.immune){//if can hit
-			playerScript.SetImmune;
+			playerScript.SetImmune ();
 			if (canHit && attackSpdTimer <= 0) {//can attack
 				
 				attackSpdTimer = attackSpd;
