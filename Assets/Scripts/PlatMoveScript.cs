@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlatMoveScript : MonoBehaviour {
 	public bool activated;
-	public float initialX, speed;
+	public float initialX, speed, moveDist;
 	public Rigidbody myRigid;
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class PlatMoveScript : MonoBehaviour {
 
 	public void ActivatePlatform (){
 		if (activated){
-			if (transform.position.x <= initialX + 10){
+			if (transform.position.x <= initialX + moveDist){
 				myRigid.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
 			}
 		}

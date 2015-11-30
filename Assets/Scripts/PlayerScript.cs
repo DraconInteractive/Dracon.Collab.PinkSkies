@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject[] barricadeArray;
 	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
 	public GameObject workBenchPanel, menuPanel;
-	public float  speedForward, speedStrafe, speedMod, rotateAngle, jumpForce, attackWait, elevatorSpeed;
+	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench;
 	public bool inElevator, onPlatform, nearShip;
@@ -120,10 +120,10 @@ public class PlayerScript : MonoBehaviour {
 		if (!menuOpen){
 			if (isGrounded){
 				playerRigid.drag = 10;
-				speedMod = 4000;
+				speedMod = speedGrounded;
 			} else {
 				playerRigid.drag = 0;
-				speedMod = 20;
+				speedMod = speedAired;
 			}
 
 			speedForward = Input.GetAxis("Vertical") * speedMod;
