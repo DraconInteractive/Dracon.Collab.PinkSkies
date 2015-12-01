@@ -2,13 +2,12 @@
 using System.Collections;
 
 public class PlatMoveScript : MonoBehaviour {
-	public bool activated;
-	public float initialZ, speed, moveDist;
+	public bool activated, moveForward, moveBackward;
+	public float speed, moveDist, moveTime;
 	public Rigidbody myRigid;
 	// Use this for initialization
 	void Start () {
 		myRigid = GetComponent<Rigidbody>();
-		initialZ = transform.position.z;
 	}
 	
 	// Update is called once per frame
@@ -18,8 +17,19 @@ public class PlatMoveScript : MonoBehaviour {
 
 	public void ActivatePlatform (){
 		if (activated){
-			if (transform.position.z <= initialZ + moveDist){
-				myRigid.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+			if (moveForward){
+
+				if (moveTime > 0){
+					moveTime -= Time.deltaTime;
+					transform.Translate(Vector3.forward * speed * Time.deltaTime);
+				}
+
+			} else if (moveBackward){
+
+				if (moveTime > 0){
+					moveTime -= Time.deltaTime;
+					transform.Translate(-Vector3.forward * speed * Time.deltaTime);
+				}
 			}
 		}
 	}

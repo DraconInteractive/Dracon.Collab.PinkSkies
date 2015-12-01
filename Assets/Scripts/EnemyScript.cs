@@ -6,19 +6,20 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
+	public float speed = 500, maxSpeed = 3, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
 	public GameObject hitTrig;
 	public Transform jumpDownPoint;
-	public bool enemyType, grounded, chasing, canHit;//enemyType: if true jumpdown enemy / if false point enemy
+	public bool enemyType;//if true jumpdown enemy / if false point enemy
 	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
-	private int currPoint = 0;
+	private int derp;
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
+	public bool grounded, chasing, canHit;
 
 	void Start () {
 		health = 100;
@@ -30,19 +31,19 @@ public class EnemyScript : MonoBehaviour {
 
 	void Update () {
 
-		if(enemyType) {//jumping down enemy
+		if(enemyType) {
 			HealthCheck();
 			if(!atPoint){
-				JumpToPoint ();
+				JumpToPoint ();//jumping down enemy		
 			} else {
 				EnemyMovement ();
 			}
 			IsGrounded ();
 			EnemyReset ();
 			EnemyAttack ();	
-		} else {//moving point to point enemy
+		} else {
 			HealthCheck ();
-			if (!chasing) MoveToPoint ();
+			MoveToPoint ();
 			EnemyMovement ();
 			IsGrounded ();
 			EnemyReset ();
@@ -52,60 +53,9 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void MoveToPoint (){
+	
 
-		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
 
-		switch (currPoint) {
-
-		case 0:
-			Vector3 pointToGoTo = new Vector3 (movingPoints [0].position.x, transform.position.y, movingPoints [0].position.z);
-
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo - transform.position), Vector3.up), 1f);
-			if (mySpeed < maxSpeed){
-				rb.AddForce (transform.forward * speed * Time.deltaTime);
-			}
-			if (Vector3.Distance(transform.position, pointToGoTo) < 0.1f){
-				currPoint++;
-			}
-			break;
-
-		case 1:
-			Vector3 pointToGoTo1 = new Vector3 (movingPoints [1].position.x, transform.position.y, movingPoints [1].position.z);
-			
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo1 - transform.position), Vector3.up), 1f);
-			if (mySpeed < maxSpeed){
-				rb.AddForce (transform.forward * speed * Time.deltaTime);
-			}
-			if (Vector3.Distance(transform.position, pointToGoTo1) < 0.1f){
-				currPoint++;
-			}
-			break;
-
-		case 2:
-			Vector3 pointToGoTo2 = new Vector3 (movingPoints [2].position.x, transform.position.y, movingPoints [2].position.z);
-			
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo2 - transform.position), Vector3.up), 1f);
-			if (mySpeed < maxSpeed){
-				rb.AddForce (transform.forward * speed * Time.deltaTime);
-			}
-			if (Vector3.Distance(transform.position, pointToGoTo2) < 0.1f){
-				currPoint++;
-			}
-			break;
-
-		case 3:
-			Vector3 pointToGoTo3 = new Vector3 (movingPoints [3].position.x, transform.position.y, movingPoints [3].position.z);
-			
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo3 - transform.position), Vector3.up), 91f);
-			if (mySpeed < maxSpeed){
-				rb.AddForce (transform.forward * speed * Time.deltaTime);
-			};
-			if (Vector3.Distance(transform.position, pointToGoTo3) < 0.1f){
-				currPoint = 0;
-			}
-			break;
-
-		}
 	}
 
 	void JumpToPoint (){
@@ -199,10 +149,8 @@ public class EnemyScript : MonoBehaviour {
 
 		if (distance <= maxTriggerDis && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
 			chasing = true;
-			playerScript.inCombat = true;
 			rb.AddForce (transform.forward * speed * Time.deltaTime);
-		} else if (distance >= maxTriggerDis){
-			playerScript.inCombat = false;
+		} else {
 			chasing = false;
 		}
 	}
