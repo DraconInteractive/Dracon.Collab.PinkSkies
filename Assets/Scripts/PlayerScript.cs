@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 		ConsoleCommand();
 		Interact();
-		CombatChange();
+		//CombatChange();
 		CombatActions();
 
 	}
@@ -234,6 +234,8 @@ public class PlayerScript : MonoBehaviour {
 				isGrounded = true;
 			} else if (hit.collider.gameObject.tag == "PlatformBase"){
 				isGrounded = true;
+			} else {
+				Debug.Log (hit.collider.gameObject.name);
 			}
 		} else {
 			isGrounded = false;

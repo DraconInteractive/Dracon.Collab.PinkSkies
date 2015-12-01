@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ElevatorScript : MonoBehaviour {
 	public bool activated;
-	public float initialY, speed;
+	public float initialY, speed, moveDist;
 	public Rigidbody myRigid;
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class ElevatorScript : MonoBehaviour {
 
 	public void ActivateElevator (){
 		if (activated){
-			if (transform.position.y < initialY + 10){
+			if (transform.position.y < initialY + moveDist){
 				myRigid.MovePosition(transform.position + Vector3.up * speed * Time.deltaTime);
 			}
 		}

@@ -58,7 +58,7 @@ public class CameraScript : MonoBehaviour {
 
 		thisTransform.LookAt(playerObj.transform.position);
 
-		transform.position = playerObj.transform.position - transform.forward*camDistance;
+		transform.position = playerObj.transform.position - transform.forward * camDistance;
 	//	desiredPos = playerObj.transform.position - thisTransform.position;
 		//Debug.Log(desiredPos.ToString());
 

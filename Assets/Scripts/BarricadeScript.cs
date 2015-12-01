@@ -9,6 +9,7 @@ public class BarricadeScript : MonoBehaviour {
 	void Start () {
 		myRigid = GetComponent<Rigidbody>();
 		initialY = transform.position.y;
+		GetComponent<BoxCollider>().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +21,10 @@ public class BarricadeScript : MonoBehaviour {
 		if (activated){
 			if (transform.position.y < initialY + 2){
 				myRigid.MovePosition(transform.position + Vector3.up * Time.deltaTime);
+			} else {
+				GetComponent<BoxCollider>().enabled = true;
 			}
+
 		}
 	}
 }
