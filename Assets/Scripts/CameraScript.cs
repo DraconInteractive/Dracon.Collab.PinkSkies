@@ -50,7 +50,7 @@ public class CameraScript : MonoBehaviour {
 			camDistance = camDistSlider.GetComponent<Slider>().value;
 		}
 	}
-
+	//This is for sync purpose
 	public void CamMove (){
 
 		camYDiff = playerObj.transform.position.y - transform.position.y;
