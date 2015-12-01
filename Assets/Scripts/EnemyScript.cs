@@ -6,20 +6,19 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 3, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
+	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
 	public GameObject hitTrig;
 	public Transform jumpDownPoint;
-	public bool enemyType;//if true jumpdown enemy / if false point enemy
+	public bool enemyType, grounded, chasing, canHit;//enemyType: if true jumpdown enemy / if false point enemy
 	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
-	private int derp;
+	private int currPoint = 0;
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
-	public bool grounded, chasing, canHit;
 
 	void Start () {
 		health = 100;
@@ -31,19 +30,19 @@ public class EnemyScript : MonoBehaviour {
 
 	void Update () {
 
-		if(enemyType) {
+		if(enemyType) {//jumping down enemy
 			HealthCheck();
 			if(!atPoint){
-				JumpToPoint ();//jumping down enemy		
+				JumpToPoint ();
 			} else {
 				EnemyMovement ();
 			}
 			IsGrounded ();
 			EnemyReset ();
 			EnemyAttack ();	
-		} else {
+		} else {//moving point to point enemy
 			HealthCheck ();
-			MoveToPoint ();
+			if (!chasing) MoveToPoint ();
 			EnemyMovement ();
 			IsGrounded ();
 			EnemyReset ();
@@ -53,9 +52,60 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void MoveToPoint (){
-	
 
+		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
 
+		switch (currPoint) {
+
+		case 0:
+			Vector3 pointToGoTo = new Vector3 (movingPoints [0].position.x, transform.position.y, movingPoints [0].position.z);
+
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo - transform.position), Vector3.up), 1f);
+			if (mySpeed < maxSpeed){
+				rb.AddForce (transform.forward * speed * Time.deltaTime);
+			}
+			if (Vector3.Distance(transform.position, pointToGoTo) < 0.1f){
+				currPoint++;
+			}
+			break;
+
+		case 1:
+			Vector3 pointToGoTo1 = new Vector3 (movingPoints [1].position.x, transform.position.y, movingPoints [1].position.z);
+			
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo1 - transform.position), Vector3.up), 1f);
+			if (mySpeed < maxSpeed){
+				rb.AddForce (transform.forward * speed * Time.deltaTime);
+			}
+			if (Vector3.Distance(transform.position, pointToGoTo1) < 0.1f){
+				currPoint++;
+			}
+			break;
+
+		case 2:
+			Vector3 pointToGoTo2 = new Vector3 (movingPoints [2].position.x, transform.position.y, movingPoints [2].position.z);
+			
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo2 - transform.position), Vector3.up), 1f);
+			if (mySpeed < maxSpeed){
+				rb.AddForce (transform.forward * speed * Time.deltaTime);
+			}
+			if (Vector3.Distance(transform.position, pointToGoTo2) < 0.1f){
+				currPoint++;
+			}
+			break;
+
+		case 3:
+			Vector3 pointToGoTo3 = new Vector3 (movingPoints [3].position.x, transform.position.y, movingPoints [3].position.z);
+			
+			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((pointToGoTo3 - transform.position), Vector3.up), 1f);
+			if (mySpeed < maxSpeed){
+				rb.AddForce (transform.forward * speed * Time.deltaTime);
+			};
+			if (Vector3.Distance(transform.position, pointToGoTo3) < 0.1f){
+				currPoint = 0;
+			}
+			break;
+
+		}
 	}
 
 	void JumpToPoint (){
@@ -74,6 +124,10 @@ public class EnemyScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if(other.tag == "Player") canHit = true;
+	}
+
+	void OnTriggerExit(Collider other){
+		if(other.tag == "Player") canHit = false;
 	}
 
 	void EnemyAttack(){
@@ -108,14 +162,18 @@ public class EnemyScript : MonoBehaviour {
 
 	void EnemyReset(){
 
+		float distance = Vector3.Distance (transform.position, player.transform.position);
+
 		if (chasing) {
-			if (rb.velocity.magnitude < 0.1f) {
-				stillTime += Time.deltaTime; 
-			}
-			
-			if(stillTime >= 1){
-				rb.AddForce (-transform.forward * 200 * Time.deltaTime, ForceMode.Impulse);
-				stillTime = 0;
+			if (distance >= meleeDis) {
+				if (rb.velocity.magnitude < 0.1f) {
+					stillTime += Time.deltaTime; 
+				}
+				
+				if(stillTime >= 1){
+					rb.AddForce (-transform.forward * 200 * Time.deltaTime, ForceMode.Impulse);
+					stillTime = 0;
+				}
 			}
 		}
 
@@ -145,13 +203,19 @@ public class EnemyScript : MonoBehaviour {
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 
 		Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.08f);
+		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.5f);
 
 		if (distance <= maxTriggerDis && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
+			speed = 1500;
+			maxSpeed = 8;
 			chasing = true;
+			playerScript.inCombat = true;
 			rb.AddForce (transform.forward * speed * Time.deltaTime);
-		} else {
+		} else if (distance >= maxTriggerDis) {
+			playerScript.inCombat = false;
 			chasing = false;
+			speed = 500;
+			maxSpeed = 3;
 		}
 	}
 
