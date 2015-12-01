@@ -10,11 +10,11 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject healthText, healthSlider, optionsPanel;
 	public GameObject[] scrapTextArray;
 	public GameObject[] barricadeArray;
-	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder;
+	public GameObject consolePanel, consoleInput, consoleText, consolePlaceHolder, interactPanel;
 	public GameObject workBenchPanel, menuPanel;
 	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed, immuneTime;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
-	public bool workbenchInteractable, showingWorkbench;
+	public bool workbenchInteractable, showingWorkbench, showInteractPanel;
 	public bool inElevator, onPlatform, nearShip, immune;
 	public int scrapCount;
 
@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour {
 		optionsPanel = GameObject.Find ("OptionsPanel");
 		consolePanel = GameObject.Find ("ConsolePanel");
 		consoleInput = GameObject.Find ("ConsoleInput");
+		interactPanel = GameObject.Find ("InteractPanel");
 		scrapTextArray = GameObject.FindGameObjectsWithTag("ScrapText");
 		consoleText = GameObject.Find ("ConsoleText");
 		consolePlaceHolder = GameObject.Find ("ConsolePlaceHolder");
@@ -308,10 +309,8 @@ public class PlayerScript : MonoBehaviour {
 			} else if (nearShip){
 				RaycastHit hit;
 				if (Physics.Raycast(transform.position, transform.forward, out hit, 5)){
-					if (hit.collider.gameObject.tag == "SpaceShip"){
+					if (hit.collider.gameObject.tag == "PodTrigger"){
 						hit.collider.gameObject.GetComponent<SpaceShipScript>().TakeOff();
-					} else {
-						Debug.Log (hit.collider.gameObject.name);
 					}
 				}
 			} else {

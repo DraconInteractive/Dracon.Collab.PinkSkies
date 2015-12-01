@@ -16,6 +16,7 @@ TagManager:
   - PlatformTrigger
   - SPTrigger
   - SpaceShip
+  - PodTrigger
   layers:
   - Default
   - TransparentFX
