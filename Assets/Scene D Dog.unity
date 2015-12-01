@@ -98,7 +98,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 466480, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.1800003
+      value: -3.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 466480, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -106,7 +106,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 466480, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 89.9800034
+      value: 45.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 466480, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -138,7 +138,7 @@ Prefab:
       objectReference: {fileID: 1861548879}
     - target: {fileID: 11436874, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: maxTriggerDis
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 13621248, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: m_IsTrigger
@@ -146,7 +146,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11436874, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
       propertyPath: meleeDis
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
