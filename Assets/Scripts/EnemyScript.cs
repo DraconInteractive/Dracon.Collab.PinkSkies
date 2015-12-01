@@ -6,12 +6,12 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 0.5f, stillTime = 0;
+	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 2.75f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
 	public GameObject hitTrig;
 	public Transform jumpDownPoint;
-	public bool enemyType, grounded, chasing, canHit;//enemyType: if true jumpdown enemy / if false point enemy
+	public bool enemyType, grounded, chasing, canHit, boss;//enemyType: if true jumpdown enemy / if false point enemy
 	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
@@ -26,27 +26,44 @@ public class EnemyScript : MonoBehaviour {
 		player = GameObject.FindWithTag ("Player");
 		playerScript = player.GetComponent<PlayerScript> ();
 		rb = GetComponent<Rigidbody> ();
+
+		if (boss) {
+			maxSpeed = 1;
+			speed = 500;
+			health = 600;
+			attackSpd = 3;
+			meleeDis = 10;
+			attackDmg = 15;
+		}
 	}
 
 	void Update () {
 
-		if(enemyType) {//jumping down enemy
-			HealthCheck();
-			if(!atPoint){
-				JumpToPoint ();
-			} else {
-				EnemyMovement ();
-			}
-			IsGrounded ();
-			EnemyReset ();
-			EnemyAttack ();	
-		} else {//moving point to point enemy
+		if (boss) {//boss
 			HealthCheck ();
-			if (!chasing) MoveToPoint ();
-			EnemyMovement ();
+			EnemyAttack ();
 			IsGrounded ();
+			EnemyMovement ();
 			EnemyReset ();
-			EnemyAttack ();	
+		} else {//not boss
+			if(enemyType) {//jumping down enemy
+				HealthCheck();
+				if(!atPoint){
+					JumpToPoint ();
+				} else {
+					EnemyMovement ();
+				}
+				IsGrounded ();
+				EnemyReset ();
+				EnemyAttack ();	
+			} else {//moving point to point enemy
+				HealthCheck ();
+				if (!chasing) MoveToPoint ();
+				EnemyMovement ();
+				IsGrounded ();
+				EnemyReset ();
+				EnemyAttack ();	
+			}
 		}
 
 	}
