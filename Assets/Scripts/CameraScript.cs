@@ -5,9 +5,9 @@ using System.Collections;
 public class CameraScript : MonoBehaviour {
 	public Vector3 desiredPos, currentPos;
 	public int rotateSpeed, camYInversionControl;
-	public float camSyncRate, camDistance;
+	public float camSyncRate, camDistanceInitial, camDistanceEventual;
 	public GameObject playerObj, camDistSlider;
-	public bool isFree, isGrounded;
+	public bool isFree, isGrounded, isUnobjstructed;
 	public Transform thisTransform;
 	public float camYDiff;
 	// Use this for initialization
@@ -16,7 +16,7 @@ public class CameraScript : MonoBehaviour {
 		thisTransform = this.gameObject.GetComponent<Transform>();
 		currentPos = playerObj.transform.position - Vector3.back * 10 + Vector3.up * 5;
 
-		camDistance = camDistSlider.GetComponent<Slider>().value;
+		camDistanceInitial = camDistSlider.GetComponent<Slider>().value;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +25,7 @@ public class CameraScript : MonoBehaviour {
 		DetectInputs();
 		DetectGUI();
 		CamMove();
+		DetectObstruction();
 
 
 	}
@@ -47,28 +48,41 @@ public class CameraScript : MonoBehaviour {
 
 	public void DetectGUI(){
 		if (camDistSlider.activeSelf == true){
-			camDistance = camDistSlider.GetComponent<Slider>().value;
+			camDistanceInitial = camDistSlider.GetComponent<Slider>().value;
 		}
 	}
+
+	public void DetectObstruction(){
+
+		Vector3 cameraDirection = transform.position - (playerObj.transform.position);
+		RaycastHit hit;
+		if (Physics.Raycast(playerObj.transform.position, cameraDirection, out hit, camDistanceInitial)){
+			isUnobjstructed = false;
+			Debug.Log (hit.collider.gameObject.name);
+			transform.position = Vector3.Lerp (transform.position, hit.point, 0.1f);
+		} else {
+			isUnobjstructed = true;
+			transform.position = Vector3.Lerp (transform.position, playerObj.transform.position - transform.forward * (camDistanceInitial - camDistanceEventual), 0.1f);
+		}
+
+		Debug.DrawRay(playerObj.transform.position + playerObj.transform.up, cameraDirection, Color.red);
+	}
+
+
 	//This is for sync purpose
 	public void CamMove (){
 
 		camYDiff = playerObj.transform.position.y - transform.position.y;
 		// -1 (low) to -7 (high)
+		
 
-		if (camYDiff > -7.0f && camYDiff < -1.0f){
-			thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
-			thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
-		} else if (camYDiff >= -7.0f){
-			transform.Translate(Vector3.up * 1 * Time.deltaTime);
-		} else if (camYDiff <= -1.0f){
-			transform.Translate(Vector3.down * 1 * Time.deltaTime);
-		}
-
+		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
+		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
 		thisTransform.LookAt(playerObj.transform.position);
+	
 
-		transform.position = playerObj.transform.position - transform.forward * camDistance;
+
 	//	desiredPos = playerObj.transform.position - thisTransform.position;
 		//Debug.Log(desiredPos.ToString());
 
