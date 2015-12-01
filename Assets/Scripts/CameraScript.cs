@@ -9,7 +9,6 @@ public class CameraScript : MonoBehaviour {
 	public GameObject playerObj, camDistSlider;
 	public bool isFree, isGrounded;
 	public Transform thisTransform;
-	public float camYDiff;
 	// Use this for initialization
 	void Start () {
 		playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -25,7 +24,6 @@ public class CameraScript : MonoBehaviour {
 		DetectInputs();
 		DetectGUI();
 		CamMove();
-
 
 	}
 
@@ -53,22 +51,14 @@ public class CameraScript : MonoBehaviour {
 
 	public void CamMove (){
 
-		camYDiff = playerObj.transform.position.y - transform.position.y;
-		// -1 (low) to -7 (high)
+		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
+		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
-		if (camYDiff > -7.0f && camYDiff < -1.0f){
-			thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
-			thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
-		} else if (camYDiff >= -7.0f){
-			transform.Translate(Vector3.up * 1 * Time.deltaTime);
-		} else if (camYDiff <= -1.0f){
-			transform.Translate(Vector3.down * 1 * Time.deltaTime);
-		}
 
 
 		thisTransform.LookAt(playerObj.transform.position);
 
-		transform.position = playerObj.transform.position - transform.forward * camDistance;
+		transform.position = playerObj.transform.position - transform.forward*camDistance;
 	//	desiredPos = playerObj.transform.position - thisTransform.position;
 		//Debug.Log(desiredPos.ToString());
 

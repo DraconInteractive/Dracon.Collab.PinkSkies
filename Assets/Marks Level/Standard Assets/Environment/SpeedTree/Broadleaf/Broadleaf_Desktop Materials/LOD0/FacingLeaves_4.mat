@@ -44,11 +44,11 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .00999999978
+        second: .125
       data:
         first:
           name: _WindQuality
-        second: 0
+        second: 4
       data:
         first:
           name: _Cull
