@@ -59,6 +59,10 @@ public class CameraScript : MonoBehaviour {
 		if (camYDiff > -7.0f && camYDiff < -1.0f){
 			thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
 			thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
+		} else if (camYDiff >= -7.0f){
+			transform.Translate(Vector3.up * 1 * Time.deltaTime);
+		} else if (camYDiff <= -1.0f){
+			transform.Translate(Vector3.down * 1 * Time.deltaTime);
 		}
 
 
