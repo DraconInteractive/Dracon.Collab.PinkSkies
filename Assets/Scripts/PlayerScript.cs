@@ -227,7 +227,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public void DetectGround(){
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.25f)){
+		if (Physics.Raycast(transform.position + transform.up * 0.5f, Vector3.down, out hit, 0.75f)){
 			if (hit.collider.gameObject.tag == "Ground"){
 				isGrounded = true;
 			} else if (hit.collider.gameObject.tag == "Elevator"){
