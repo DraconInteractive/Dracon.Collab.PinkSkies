@@ -257,6 +257,7 @@ MonoBehaviour:
   playerTrans: {fileID: 0}
   invCamYToggle: {fileID: 0}
   hitTrigger: {fileID: 124474}
+  FOGreatsword: {fileID: 0}
   healthText: {fileID: 0}
   healthSlider: {fileID: 0}
   optionsPanel: {fileID: 0}
@@ -266,15 +267,19 @@ MonoBehaviour:
   consoleInput: {fileID: 0}
   consoleText: {fileID: 0}
   consolePlaceHolder: {fileID: 0}
+  interactPanel: {fileID: 0}
   workBenchPanel: {fileID: 0}
   menuPanel: {fileID: 0}
   speedForward: 0
   speedStrafe: 0
   speedMod: 4000
+  speedGrounded: 0
+  speedAired: 0
   rotateAngle: 180
   jumpForce: 15
   attackWait: .400000006
   elevatorSpeed: 1
+  immuneTime: 0
   isFullSpeed: 0
   isGrounded: 0
   menuOpen: 0
@@ -285,9 +290,11 @@ MonoBehaviour:
   optionsOpen: 0
   workbenchInteractable: 0
   showingWorkbench: 0
+  showInteractPanel: 0
   inElevator: 0
   onPlatform: 0
   nearShip: 0
+  immune: 0
   scrapCount: 0
   finalHealth: 0
   initialHealth: 0

@@ -159,6 +159,8 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void SetGUI(){
+
+		healthSlider.GetComponent<Slider>().value = finalHealth;
 		if (menuOpen){
 			healthSlider.SetActive(false);
 			foreach (GameObject i in scrapTextArray){
