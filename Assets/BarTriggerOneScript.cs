@@ -16,6 +16,7 @@ public class BarTriggerOneScript : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player"){
 			barricadeLinked.GetComponent<BarricadeScript>().activated = true;
+			Destroy(this.gameObject);
 		}
 	}
 }

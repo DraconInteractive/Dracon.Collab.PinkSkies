@@ -45,6 +45,7 @@ public class PlayerScript : MonoBehaviour {
 		optionsPanel.SetActive(false);
 		consolePanel.SetActive(false);
 		workBenchPanel.SetActive(false);
+		interactPanel.SetActive(false);
 
 		menuOpen = false;
 		optionsOpen = false;
@@ -94,7 +95,7 @@ public class PlayerScript : MonoBehaviour {
 			inElevator = true;
 		} else if (col.gameObject.tag == "PlatformTrigger"){
 			onPlatform = true;
-		} else if (col.gameObject.tag == "SPTrigger"){
+		} else if (col.gameObject.tag == "PodTrigger"){
 			nearShip = true;
 		}
 	}
@@ -106,7 +107,7 @@ public class PlayerScript : MonoBehaviour {
 			inElevator = false;
 		} else if (col.gameObject.tag == "PlatformTrigger"){
 			onPlatform = false;
-		} else if (col.gameObject.tag == "SPTrigger"){
+		} else if (col.gameObject.tag == "PodTrigger"){
 			nearShip = false;
 		}
 	}
@@ -286,8 +287,14 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void Interact(){
+		if (workbenchInteractable || inElevator || onPlatform || nearShip){
+			interactPanel.SetActive(true);
+		} else {
+			interactPanel.SetActive(false);
+		}
 
 		if (Input.GetButtonDown("Interact")){
+
 			if (workbenchInteractable){
 				showingWorkbench = !showingWorkbench;
 				return;
@@ -307,16 +314,10 @@ public class PlayerScript : MonoBehaviour {
 					}
 				}
 			} else if (nearShip){
-				RaycastHit hit;
-				if (Physics.Raycast(transform.position, transform.forward, out hit, 5)){
-					if (hit.collider.gameObject.tag == "PodTrigger"){
-						hit.collider.gameObject.GetComponent<SpaceShipScript>().TakeOff();
-					}
-				}
+				GameObject.FindGameObjectWithTag("SpaceShip").GetComponent<SpaceShipScript>().TakeOff();
 			} else {
 				Debug.Log ("No Interact Zone Entered");
 			}
-
 		}
 	}
 

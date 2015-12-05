@@ -17,6 +17,8 @@ public class SpaceShipScript : MonoBehaviour {
 	}
 
 	public void TakeOff(){
+		Debug.Log ("Ship Taking Off");
+		Camera.main.GetComponent<CameraScript>().SetPlayerType(this.gameObject);
 		myAnimation.Play();
 		myAudioSource.clip = takeOffClip;
 		myAudioSource.Play();

@@ -7,11 +7,14 @@ public class CameraScript : MonoBehaviour {
 	public int rotateSpeed, camYInversionControl;
 	public float camSyncRate, camDistanceInitial, camDistanceEventual;
 	public GameObject playerObj, camDistSlider;
+	public GameObject target;
 	public bool isFree, isGrounded, isUnobjstructed;
 	public Transform thisTransform;
 	public float camYDiff;
+	public string playerType;
 	// Use this for initialization
 	void Start () {
+		playerType = "PlayerObj";
 		playerObj = GameObject.FindGameObjectWithTag("Player");
 		thisTransform = this.gameObject.GetComponent<Transform>();
 		currentPos = playerObj.transform.position - Vector3.back * 10 + Vector3.up * 5;
@@ -21,11 +24,15 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		DetectPlayerOptions();
-		DetectInputs();
-		DetectGUI();
-		CamMove();
-		DetectObstruction();
+		if (playerType == "PlayerObj"){
+			DetectPlayerOptions();
+			DetectInputs();
+			DetectGUI();
+			CamMove();
+			DetectObstruction();
+		} else if (playerType == "SpaceShip"){
+			SpaceShipCam();
+		}
 
 
 	}
@@ -80,31 +87,21 @@ public class CameraScript : MonoBehaviour {
 		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
 		thisTransform.LookAt(playerObj.transform.position);
-	
 
+	}
 
-	//	desiredPos = playerObj.transform.position - thisTransform.position;
-		//Debug.Log(desiredPos.ToString());
+	public void SetPlayerType(GameObject i){
+		if (i.GetComponent<PlayerScript>()){
+			playerType = "PlayerObj";
+		} else if (i.GetComponent<SpaceShipScript>()){
+			playerType = "SpaceShip";
+			target = i;
+		} 
+	}
 
-		//if (transform.position != transform.position + desiredPos){
-//			currentPos = Vector3.Lerp (currentPos, desiredPos, camSyncRate);
-			
-		//}
-
-
-
-
-//		desiredPos = playerObj.transform.position - playerObj.transform.forward * camZOffset + playerObj.transform.up * camYOffset;
-//		if (playerObj.GetComponent<PlayerScript>().isFullSpeed == true){
-//			camSyncRate = 0.04f;
-//		} else {
-//			camSyncRate = 0.01f;
-//		}
-//		currentPos = Vector3.Lerp(currentPos, desiredPos, camSyncRate);
-//		transform.position = currentPos;
-//		transform.rotation = Quaternion.LookRotation(playerObj.transform.position - currentPos, Vector3.up);
-
-
+	public void SpaceShipCam(){
+		transform.position = target.transform.position + (Vector3.up * 4) + (Vector3.right * 25);
+		thisTransform.LookAt(target.transform.position);
 	}
 
 
