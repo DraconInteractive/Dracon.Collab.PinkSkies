@@ -63,10 +63,10 @@ public class CameraScript : MonoBehaviour {
 
 		Vector3 cameraDirection = transform.position - (playerObj.transform.position);
 		RaycastHit hit;
-		if (Physics.Raycast(playerObj.transform.position, cameraDirection, out hit, camDistanceInitial)){
+		if (Physics.SphereCast(playerObj.transform.position+(Vector3.up*1.5f),1, cameraDirection, out hit, camDistanceInitial+1)){
 			isUnobjstructed = false;
 			Debug.Log (hit.collider.gameObject.name);
-			transform.position = Vector3.Lerp (transform.position, hit.point, 0.1f);
+			transform.position = Vector3.Lerp (transform.position, hit.point-cameraDirection, 0.1f);
 		} else {
 			isUnobjstructed = true;
 			transform.position = Vector3.Lerp (transform.position, playerObj.transform.position - transform.forward * (camDistanceInitial - camDistanceEventual), 0.1f);
@@ -84,8 +84,10 @@ public class CameraScript : MonoBehaviour {
 		
 
 		thisTransform.RotateAround(playerObj.transform.position, Vector3.up, Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime);
-		thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
 
+		if(isUnobjstructed){
+			thisTransform.RotateAround(playerObj.transform.position, transform.right, Input.GetAxis("Mouse Y") * camYInversionControl * rotateSpeed * Time.deltaTime);
+		}
 		thisTransform.LookAt(playerObj.transform.position);
 
 	}

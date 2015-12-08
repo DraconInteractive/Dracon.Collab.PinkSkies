@@ -122,7 +122,7 @@ public class PlayerScript : MonoBehaviour {
 
 		if (!menuOpen){
 			if (isGrounded){
-				playerRigid.drag = 10;
+				playerRigid.drag = 15;
 				speedMod = speedGrounded;
 			} else {
 				playerRigid.drag = 0;

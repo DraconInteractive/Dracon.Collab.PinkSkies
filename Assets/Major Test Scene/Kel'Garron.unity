@@ -1211,6 +1211,14 @@ Prefab:
       propertyPath: camDistSlider
       value: 
       objectReference: {fileID: 1448835604}
+    - target: {fileID: 2052698, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
+      propertyPath: near clip plane
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 149002, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6564152, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
@@ -2806,6 +2814,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263200649}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1329601495 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 149002, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
+  m_PrefabInternal: {fileID: 726808345}
+--- !u!135 &1329601502
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329601495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1329601503
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329601495}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1391157462 stripped
 Transform:
   m_PrefabParentObject: {fileID: 405382, guid: 359b135a81a75ee4bb0cdd73b8047817, type: 2}
