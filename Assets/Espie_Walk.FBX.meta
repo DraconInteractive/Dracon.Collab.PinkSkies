@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 2ca5eba91971d5c409aec5ca69580ed6
+timeCreated: 1449541562
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: all
+    100002: Bone001
+    100004: Bone001(mirrored)
+    100006: Bone002
+    100008: Bone002 1
+    100010: Bone003
+    100012: Bone003 1
+    100014: Elbow pointer 002
+    100016: Elbow pointer 01
+    100018: espie001
+    100020: //RootNode
+    100022: Head
+    100024: Hipnub
+    100026: IK Chain001
+    100028: IK Chain002
+    100030: IK Chain003
+    100032: IK Chain004
+    100034: IK_Helper_Right
+    100036: IK_Helper_Right001
+    100038: Knee pointer002
+    100040: Knee pointer1
+    100042: L_arm_clavicle
+    100044: L_arm_hand_006
+    100046: L_arm_hand_007
+    100048: L_arm_hand_008
+    100050: L_arm_hand_009
+    100052: L_arm_wrist
+    100054: L_foot_base001
+    100056: L_foot_heel001
+    100058: L_foot_Toe001
+    100060: Left_Ankle_helper001
+    100062: Left_Clav
+    100064: Left_Finger1
+    100066: Left_Finger101
+    100068: Left_Finger102
+    100070: Left_Finger103
+    100072: Left_Forearm
+    100074: Left_Knee
+    100076: Left_Palm
+    100078: Left_Thigh
+    100080: Left_thumb1
+    100082: Left_Thumb2
+    100084: Left_Thumb3
+    100086: Left_ThumbNub
+    100088: Left_Upperarm
+    100090: Neck
+    100092: Neck 1
+    100094: Particle View 001
+    100096: Point001
+    100098: Point002
+    100100: R_arm_clavicle001
+    100102: R_arm_hand_011
+    100104: R_arm_hand_012
+    100106: R_arm_hand_013
+    100108: R_arm_hand_014
+    100110: R_arm_wrist001
+    100112: R_foot_base
+    100114: R_foot_heel
+    100116: R_foot_Toe
+    100118: Right_Ankle_helper
+    100120: Right_Clav
+    100122: Right_Finger1
+    100124: Right_Finger101
+    100126: Right_Finger102
+    100128: Right_Finger103
+    100130: Right_Forearm
+    100132: Right_Knee
+    100134: RIght_Palm
+    100136: Right_Thigh
+    100138: Right_thumb1
+    100140: Right_Thumb2
+    100142: Right_Thumb3
+    100144: Right_ThumbNub
+    100146: Right_Upperarm
+    100148: Root_Hip
+    100150: root_main
+    100152: Skull
+    100154: Skullnub
+    100156: Spine1
+    100158: Spine1 1
+    100160: Spine2
+    100162: Spine2 1
+    100164: Spine3
+    100166: Spine3 1
+    400000: all
+    400002: Bone001
+    400004: Bone001(mirrored)
+    400006: Bone002
+    400008: Bone002 1
+    400010: Bone003
+    400012: Bone003 1
+    400014: Elbow pointer 002
+    400016: Elbow pointer 01
+    400018: espie001
+    400020: //RootNode
+    400022: Head
+    400024: Hipnub
+    400026: IK Chain001
+    400028: IK Chain002
+    400030: IK Chain003
+    400032: IK Chain004
+    400034: IK_Helper_Right
+    400036: IK_Helper_Right001
+    400038: Knee pointer002
+    400040: Knee pointer1
+    400042: L_arm_clavicle
+    400044: L_arm_hand_006
+    400046: L_arm_hand_007
+    400048: L_arm_hand_008
+    400050: L_arm_hand_009
+    400052: L_arm_wrist
+    400054: L_foot_base001
+    400056: L_foot_heel001
+    400058: L_foot_Toe001
+    400060: Left_Ankle_helper001
+    400062: Left_Clav
+    400064: Left_Finger1
+    400066: Left_Finger101
+    400068: Left_Finger102
+    400070: Left_Finger103
+    400072: Left_Forearm
+    400074: Left_Knee
+    400076: Left_Palm
+    400078: Left_Thigh
+    400080: Left_thumb1
+    400082: Left_Thumb2
+    400084: Left_Thumb3
+    400086: Left_ThumbNub
+    400088: Left_Upperarm
+    400090: Neck
+    400092: Neck 1
+    400094: Particle View 001
+    400096: Point001
+    400098: Point002
+    400100: R_arm_clavicle001
+    400102: R_arm_hand_011
+    400104: R_arm_hand_012
+    400106: R_arm_hand_013
+    400108: R_arm_hand_014
+    400110: R_arm_wrist001
+    400112: R_foot_base
+    400114: R_foot_heel
+    400116: R_foot_Toe
+    400118: Right_Ankle_helper
+    400120: Right_Clav
+    400122: Right_Finger1
+    400124: Right_Finger101
+    400126: Right_Finger102
+    400128: Right_Finger103
+    400130: Right_Forearm
+    400132: Right_Knee
+    400134: RIght_Palm
+    400136: Right_Thigh
+    400138: Right_thumb1
+    400140: Right_Thumb2
+    400142: Right_Thumb3
+    400144: Right_ThumbNub
+    400146: Right_Upperarm
+    400148: Root_Hip
+    400150: root_main
+    400152: Skull
+    400154: Skullnub
+    400156: Spine1
+    400158: Spine1 1
+    400160: Spine2
+    400162: Spine2 1
+    400164: Spine3
+    400166: Spine3 1
+    4300000: espie001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: espie001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
