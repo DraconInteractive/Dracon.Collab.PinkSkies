@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerType = "PlayerObj";
-		playerObj = GameObject.FindGameObjectWithTag("Player");
+		playerObj = GameObject.Find ("Player");
 		thisTransform = this.gameObject.GetComponent<Transform>();
 		currentPos = playerObj.transform.position - Vector3.back * 10 + Vector3.up * 5;
 

@@ -9,7 +9,7 @@ public class HitTrigger : MonoBehaviour {
 	public List<GameObject> enemiesInRange;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindWithTag ("Player");
+		player = GameObject.Find ("Player");
 	}
 	
 	// Update is called once per frame
