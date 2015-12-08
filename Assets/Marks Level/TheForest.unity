@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
   m_AmbientIntensity: 3.01999998
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -504,43 +504,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22453404, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22453404, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22409710, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22409710, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157056, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_IsActive
@@ -838,8 +838,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956599712, b: .838235259, a: 1}
-  m_Intensity: .930000007
+  m_Color: {r: 1, g: .475862056, b: 0, a: 1}
+  m_Intensity: 7.88999987
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1498,12 +1498,12 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: .103519857, g: .352941155, b: .00519031612, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.65999997
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
@@ -3022,6 +3022,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13762760, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a08c64ae4c8c17458bcea89baf11571, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6231d2c9f49c56e4090b70ade48e4fd8, type: 2}
   m_IsPrefabParent: 0
@@ -4431,6 +4435,14 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1906030145}
+    - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
+      propertyPath: speedGrounded
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
+      propertyPath: speedAired
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
   m_IsPrefabParent: 0
