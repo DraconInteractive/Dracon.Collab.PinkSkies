@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour {
 	public bool workbenchInteractable, showingWorkbench, showInteractPanel;
 	public bool inElevator, onPlatform, nearShip, immune;
 	public int scrapCount;
-
+	public Animator playerAnimator;
 	public int finalHealth, initialHealth, armour, damage;
 	// Use this for initialization
 	void Start () {
@@ -35,6 +35,7 @@ public class PlayerScript : MonoBehaviour {
 		workBenchPanel = GameObject.Find ("WorkbenchPanel");
 		menuPanel = GameObject.Find ("MenuPanel");
 		barricadeArray = GameObject.FindGameObjectsWithTag("Barricade");
+		playerAnimator = GetComponent<Animator>();
 
 		initialHealth = 100;
 		armour = 0;
@@ -66,7 +67,7 @@ public class PlayerScript : MonoBehaviour {
 				playerRigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 			}
 		}
-
+		
 		HealthUpdate();
 		SetGUI();
 		OpenMenu();
@@ -78,7 +79,7 @@ public class PlayerScript : MonoBehaviour {
 		Interact();
 		//CombatChange();
 		CombatActions();
-
+		AnimationUpdate();
 	}
 
 	void OnCollisionEnter(Collision col){
@@ -114,7 +115,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public void HealthUpdate(){
 		finalHealth = initialHealth + armour ;
-		healthSlider.GetComponent<Slider>().maxValue = finalHealth;
+		healthSlider.GetComponent<Slider>().value = finalHealth;
 	}
 
 	public void PlayerMovement(){
@@ -139,6 +140,7 @@ public class PlayerScript : MonoBehaviour {
 			} else {
 				isFullSpeed = false;
 			}
+
 		}
 	}
 
@@ -378,6 +380,14 @@ public class PlayerScript : MonoBehaviour {
 
 	public void CombatActions(){
 		
+	}
+
+	public void AnimationUpdate(){
+		if (speedForward > 0.05f || speedStrafe > 0.05f){
+			playerAnimator.SetBool("isRunning", true);
+		} else {
+			playerAnimator.SetBool("isRunning", false);
+		}
 	}
 
 	public IEnumerator ImmuneTimer(){
