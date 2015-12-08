@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: 1c5f217fa355e1d49a392fc55985e3a6
+timeCreated: 1449541571
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: all
+    100002: Elbow pointer 002
+    100004: Elbow pointer 01
+    100006: espie001
+    100008: //RootNode
+    100010: Fuck_Off_Greatsword
+    100012: Head
+    100014: Hipnub
+    100016: IK Chain001
+    100018: IK Chain002
+    100020: IK Chain003
+    100022: IK Chain004
+    100024: IK_Helper_Right
+    100026: IK_Helper_Right001
+    100028: Knee pointer002
+    100030: Knee pointer1
+    100032: L_arm_clavicle
+    100034: L_arm_hand_006
+    100036: L_arm_hand_007
+    100038: L_arm_hand_008
+    100040: L_arm_hand_009
+    100042: L_arm_wrist
+    100044: L_foot_base001
+    100046: L_foot_heel001
+    100048: L_foot_Toe001
+    100050: Left_Ankle_helper001
+    100052: Left_Clav
+    100054: Left_Finger1
+    100056: Left_Finger101
+    100058: Left_Finger102
+    100060: Left_Finger103
+    100062: Left_Foot
+    100064: Left_Forearm
+    100066: Left_Heel
+    100068: Left_Knee
+    100070: Left_Palm
+    100072: Left_Thigh
+    100074: Left_thumb1
+    100076: Left_Thumb2
+    100078: Left_Thumb3
+    100080: Left_ThumbNub
+    100082: Left_Toe
+    100084: Left_Upperarm
+    100086: Neck
+    100088: Neck 1
+    100090: Particle View 001
+    100092: Point001
+    100094: Point002
+    100096: R_arm_clavicle001
+    100098: R_arm_hand_011
+    100100: R_arm_hand_012
+    100102: R_arm_hand_013
+    100104: R_arm_hand_014
+    100106: R_arm_wrist001
+    100108: R_foot_base
+    100110: R_foot_heel
+    100112: R_foot_Toe
+    100114: Right_Ankle_helper
+    100116: Right_Clav
+    100118: Right_Finger1
+    100120: Right_Finger101
+    100122: Right_Finger102
+    100124: Right_Finger103
+    100126: Right_Foot
+    100128: Right_Forearm
+    100130: Right_Heel
+    100132: Right_Knee
+    100134: RIght_Palm
+    100136: Right_Thigh
+    100138: Right_thumb1
+    100140: Right_Thumb2
+    100142: Right_Thumb3
+    100144: Right_ThumbNub
+    100146: Right_Toe
+    100148: Right_Upperarm
+    100150: Root_Hip
+    100152: root_main
+    100154: Skull
+    100156: Skullnub
+    100158: Spine1
+    100160: Spine1 1
+    100162: Spine2
+    100164: Spine2 1
+    100166: Spine3
+    100168: Spine3 1
+    400000: all
+    400002: Elbow pointer 002
+    400004: Elbow pointer 01
+    400006: espie001
+    400008: //RootNode
+    400010: Fuck_Off_Greatsword
+    400012: Head
+    400014: Hipnub
+    400016: IK Chain001
+    400018: IK Chain002
+    400020: IK Chain003
+    400022: IK Chain004
+    400024: IK_Helper_Right
+    400026: IK_Helper_Right001
+    400028: Knee pointer002
+    400030: Knee pointer1
+    400032: L_arm_clavicle
+    400034: L_arm_hand_006
+    400036: L_arm_hand_007
+    400038: L_arm_hand_008
+    400040: L_arm_hand_009
+    400042: L_arm_wrist
+    400044: L_foot_base001
+    400046: L_foot_heel001
+    400048: L_foot_Toe001
+    400050: Left_Ankle_helper001
+    400052: Left_Clav
+    400054: Left_Finger1
+    400056: Left_Finger101
+    400058: Left_Finger102
+    400060: Left_Finger103
+    400062: Left_Foot
+    400064: Left_Forearm
+    400066: Left_Heel
+    400068: Left_Knee
+    400070: Left_Palm
+    400072: Left_Thigh
+    400074: Left_thumb1
+    400076: Left_Thumb2
+    400078: Left_Thumb3
+    400080: Left_ThumbNub
+    400082: Left_Toe
+    400084: Left_Upperarm
+    400086: Neck
+    400088: Neck 1
+    400090: Particle View 001
+    400092: Point001
+    400094: Point002
+    400096: R_arm_clavicle001
+    400098: R_arm_hand_011
+    400100: R_arm_hand_012
+    400102: R_arm_hand_013
+    400104: R_arm_hand_014
+    400106: R_arm_wrist001
+    400108: R_foot_base
+    400110: R_foot_heel
+    400112: R_foot_Toe
+    400114: Right_Ankle_helper
+    400116: Right_Clav
+    400118: Right_Finger1
+    400120: Right_Finger101
+    400122: Right_Finger102
+    400124: Right_Finger103
+    400126: Right_Foot
+    400128: Right_Forearm
+    400130: Right_Heel
+    400132: Right_Knee
+    400134: RIght_Palm
+    400136: Right_Thigh
+    400138: Right_thumb1
+    400140: Right_Thumb2
+    400142: Right_Thumb3
+    400144: Right_ThumbNub
+    400146: Right_Toe
+    400148: Right_Upperarm
+    400150: Root_Hip
+    400152: root_main
+    400154: Skull
+    400156: Skullnub
+    400158: Spine1
+    400160: Spine1 1
+    400162: Spine2
+    400164: Spine2 1
+    400166: Spine3
+    400168: Spine3 1
+    2300000: Fuck_Off_Greatsword
+    3300000: Fuck_Off_Greatsword
+    4300000: Fuck_Off_Greatsword
+    4300002: espie001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: espie001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

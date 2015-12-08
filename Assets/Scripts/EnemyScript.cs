@@ -28,11 +28,9 @@ public class EnemyScript : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 
 		if (boss) {
-			maxSpeed = 1;
-			speed = 500;
 			health = 600;
 			attackSpd = 3;
-			meleeDis = 10;
+			meleeDis = 18;
 			attackDmg = 15;
 		}
 	}
@@ -220,19 +218,29 @@ public class EnemyScript : MonoBehaviour {
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 
 		Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.5f);
+		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.02f);
 
 		if (distance <= maxTriggerDis && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
-			speed = 1500;
-			maxSpeed = 8;
+			if(boss){
+				speed = 750000;
+				maxSpeed = 6;
+			} else {
+				speed = 1500;
+				maxSpeed = 8;
+			}
 			chasing = true;
 			playerScript.inCombat = true;
 			rb.AddForce (transform.forward * speed * Time.deltaTime);
 		} else if (distance >= maxTriggerDis) {
 			playerScript.inCombat = false;
 			chasing = false;
-			speed = 500;
-			maxSpeed = 3;
+			if(boss){
+				speed = 3000;
+				maxSpeed = 5;
+			} else {
+				speed = 500;
+				maxSpeed = 3;
+			}
 		}
 	}
 

@@ -1,0 +1,1 @@
+Just a reminder that the normal map will need to be marked as a normal map in unity to fix the overly shiny smooth texture

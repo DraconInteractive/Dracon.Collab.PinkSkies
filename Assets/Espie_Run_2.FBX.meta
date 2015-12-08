@@ -1,0 +1,640 @@
+fileFormatVersion: 2
+guid: 36f1f9be47c3425488867bd0a937c08a
+timeCreated: 1449542689
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: all
+    100002: Elbow pointer 002
+    100004: Elbow pointer 01
+    100006: espie001
+    100008: //RootNode
+    100010: Head
+    100012: Hipnub
+    100014: IK Chain001
+    100016: IK Chain002
+    100018: IK Chain003
+    100020: IK Chain004
+    100022: IK_Helper_Right
+    100024: IK_Helper_Right001
+    100026: Knee pointer002
+    100028: Knee pointer1
+    100030: L_arm_clavicle
+    100032: L_arm_hand_006
+    100034: L_arm_hand_007
+    100036: L_arm_hand_008
+    100038: L_arm_hand_009
+    100040: L_arm_wrist
+    100042: L_foot_base001
+    100044: L_foot_heel001
+    100046: L_foot_Toe001
+    100048: Left_Ankle_helper001
+    100050: Left_Clav
+    100052: Left_Finger1
+    100054: Left_Finger101
+    100056: Left_Finger102
+    100058: Left_Finger103
+    100060: Left_Foot
+    100062: Left_Forearm
+    100064: Left_Heel
+    100066: Left_Knee
+    100068: Left_Palm
+    100070: Left_Thigh
+    100072: Left_thumb1
+    100074: Left_Thumb2
+    100076: Left_Thumb3
+    100078: Left_ThumbNub
+    100080: Left_Toe
+    100082: Left_Upperarm
+    100084: Neck
+    100086: Neck 1
+    100088: Particle View 001
+    100090: Point001
+    100092: Point002
+    100094: R_arm_clavicle001
+    100096: R_arm_hand_011
+    100098: R_arm_hand_012
+    100100: R_arm_hand_013
+    100102: R_arm_hand_014
+    100104: R_arm_wrist001
+    100106: R_foot_base
+    100108: R_foot_heel
+    100110: R_foot_Toe
+    100112: Right_Ankle_helper
+    100114: Right_Clav
+    100116: Right_Finger1
+    100118: Right_Finger101
+    100120: Right_Finger102
+    100122: Right_Finger103
+    100124: Right_Foot
+    100126: Right_Forearm
+    100128: Right_Heel
+    100130: Right_Knee
+    100132: RIght_Palm
+    100134: Right_Thigh
+    100136: Right_thumb1
+    100138: Right_Thumb2
+    100140: Right_Thumb3
+    100142: Right_ThumbNub
+    100144: Right_Toe
+    100146: Right_Upperarm
+    100148: Root_Hip
+    100150: root_main
+    100152: Skull
+    100154: Skullnub
+    100156: Spine1
+    100158: Spine1 1
+    100160: Spine2
+    100162: Spine2 1
+    100164: Spine3
+    100166: Spine3 1
+    400000: all
+    400002: Elbow pointer 002
+    400004: Elbow pointer 01
+    400006: espie001
+    400008: //RootNode
+    400010: Head
+    400012: Hipnub
+    400014: IK Chain001
+    400016: IK Chain002
+    400018: IK Chain003
+    400020: IK Chain004
+    400022: IK_Helper_Right
+    400024: IK_Helper_Right001
+    400026: Knee pointer002
+    400028: Knee pointer1
+    400030: L_arm_clavicle
+    400032: L_arm_hand_006
+    400034: L_arm_hand_007
+    400036: L_arm_hand_008
+    400038: L_arm_hand_009
+    400040: L_arm_wrist
+    400042: L_foot_base001
+    400044: L_foot_heel001
+    400046: L_foot_Toe001
+    400048: Left_Ankle_helper001
+    400050: Left_Clav
+    400052: Left_Finger1
+    400054: Left_Finger101
+    400056: Left_Finger102
+    400058: Left_Finger103
+    400060: Left_Foot
+    400062: Left_Forearm
+    400064: Left_Heel
+    400066: Left_Knee
+    400068: Left_Palm
+    400070: Left_Thigh
+    400072: Left_thumb1
+    400074: Left_Thumb2
+    400076: Left_Thumb3
+    400078: Left_ThumbNub
+    400080: Left_Toe
+    400082: Left_Upperarm
+    400084: Neck
+    400086: Neck 1
+    400088: Particle View 001
+    400090: Point001
+    400092: Point002
+    400094: R_arm_clavicle001
+    400096: R_arm_hand_011
+    400098: R_arm_hand_012
+    400100: R_arm_hand_013
+    400102: R_arm_hand_014
+    400104: R_arm_wrist001
+    400106: R_foot_base
+    400108: R_foot_heel
+    400110: R_foot_Toe
+    400112: Right_Ankle_helper
+    400114: Right_Clav
+    400116: Right_Finger1
+    400118: Right_Finger101
+    400120: Right_Finger102
+    400122: Right_Finger103
+    400124: Right_Foot
+    400126: Right_Forearm
+    400128: Right_Heel
+    400130: Right_Knee
+    400132: RIght_Palm
+    400134: Right_Thigh
+    400136: Right_thumb1
+    400138: Right_Thumb2
+    400140: Right_Thumb3
+    400142: Right_ThumbNub
+    400144: Right_Toe
+    400146: Right_Upperarm
+    400148: Root_Hip
+    400150: root_main
+    400152: Skull
+    400154: Skullnub
+    400156: Spine1
+    400158: Spine1 1
+    400160: Spine2
+    400162: Spine2 1
+    400164: Spine3
+    400166: Spine3 1
+    4300000: espie001
+    7400000: Running
+    7400002: Idle
+    9500000: //RootNode
+    13700000: espie001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: all
+        weight: 1
+      - path: all/espie001
+        weight: 1
+      - path: all/L_foot_base001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/L_foot_Toe001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001/IK Chain002
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001/Knee pointer002
+        weight: 1
+      - path: all/R_foot_base
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/R_foot_Toe
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper/IK Chain001
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper/Knee pointer1
+        weight: 1
+      - path: all/root_main
+        weight: 1
+      - path: all/root_main/Spine1 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/Elbow
+          pointer 01
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/IK
+          Chain003
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006/L_arm_hand_008
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006/L_arm_hand_008/L_arm_hand_009
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_007
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/Neck 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/Neck 1/Head
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/Elbow
+          pointer 002
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/IK
+          Chain004
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011/R_arm_hand_014
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011/R_arm_hand_014/R_arm_hand_013
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_012
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      - path: Root_Hip
+        weight: 1
+      - path: Root_Hip/Hipnub
+        weight: 1
+      - path: Root_Hip/Left_Thigh
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel/Left_Foot
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel/Left_Foot/Left_Toe
+        weight: 1
+      - path: Root_Hip/Right_Thigh
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel/Right_Foot
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel/Right_Foot/Right_Toe
+        weight: 1
+      - path: Root_Hip/Spine1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck/Skull
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck/Skull/Skullnub
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101/Right_Finger102
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101/Right_Finger102/Right_Finger103
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2/Right_Thumb3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2/Right_Thumb3/Right_ThumbNub
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101/Left_Finger102
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101/Left_Finger102/Left_Finger103
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2/Left_Thumb3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2/Left_Thumb3/Left_ThumbNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 20.2000008
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: all
+        weight: 1
+      - path: all/espie001
+        weight: 1
+      - path: all/L_foot_base001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/L_foot_Toe001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001/IK Chain002
+        weight: 1
+      - path: all/L_foot_base001/L_foot_heel001/Left_Ankle_helper001/Knee pointer002
+        weight: 1
+      - path: all/R_foot_base
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/R_foot_Toe
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper/IK Chain001
+        weight: 1
+      - path: all/R_foot_base/R_foot_heel/Right_Ankle_helper/Knee pointer1
+        weight: 1
+      - path: all/root_main
+        weight: 1
+      - path: all/root_main/Spine1 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/Elbow
+          pointer 01
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/IK
+          Chain003
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006/L_arm_hand_008
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_006/L_arm_hand_008/L_arm_hand_009
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/L_arm_clavicle/IK_Helper_Right/L_arm_wrist/L_arm_hand_007
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/Neck 1
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/Neck 1/Head
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/Elbow
+          pointer 002
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/IK
+          Chain004
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011/R_arm_hand_014
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_011/R_arm_hand_014/R_arm_hand_013
+        weight: 1
+      - path: all/root_main/Spine1 1/Spine2 1/Spine3 1/R_arm_clavicle001/IK_Helper_Right001/R_arm_wrist001/R_arm_hand_012
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      - path: Root_Hip
+        weight: 1
+      - path: Root_Hip/Hipnub
+        weight: 1
+      - path: Root_Hip/Left_Thigh
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel/Left_Foot
+        weight: 1
+      - path: Root_Hip/Left_Thigh/Left_Knee/Left_Heel/Left_Foot/Left_Toe
+        weight: 1
+      - path: Root_Hip/Right_Thigh
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel/Right_Foot
+        weight: 1
+      - path: Root_Hip/Right_Thigh/Right_Knee/Right_Heel/Right_Foot/Right_Toe
+        weight: 1
+      - path: Root_Hip/Spine1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck/Skull
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Neck/Skull/Skullnub
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101/Right_Finger102
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/RIght_Palm/Right_Finger1/Right_Finger101/Right_Finger102/Right_Finger103
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2/Right_Thumb3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point001/Right_Clav/Right_Upperarm/Right_Forearm/Right_thumb1/Right_Thumb2/Right_Thumb3/Right_ThumbNub
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101/Left_Finger102
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_Palm/Left_Finger1/Left_Finger101/Left_Finger102/Left_Finger103
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2/Left_Thumb3
+        weight: 1
+      - path: Root_Hip/Spine1/Spine2/Spine3/Point002/Left_Clav/Left_Upperarm/Left_Forearm/Left_thumb1/Left_Thumb2/Left_Thumb3/Left_ThumbNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
