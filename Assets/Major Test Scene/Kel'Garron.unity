@@ -2525,7 +2525,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b809f80fa5c1bf42ae98ae430850da2, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1169438248
+--- !u!1001 &1164604890
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2562,35 +2562,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479348, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -.0469999984
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .0860000029
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.0309999995
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -.00701247342
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .0136499656
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .970438063
-      objectReference: {fileID: 0}
-    - target: {fileID: 425462, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.240862161
+    - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
+      propertyPath: jumpForce
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
@@ -4018,43 +3994,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22409710, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22409710, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22469168, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22453404, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22453404, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22481140, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc448cde0c688ff428e0012d1713072e, type: 2}

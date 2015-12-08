@@ -19,6 +19,8 @@ public class CompanionScript : MonoBehaviour {
 	}
 
 	public void MoveToPlayer(){
+		transform.position = Vector3.Lerp (transform.position, new Vector3(transform.position.x, player.transform.position.y + 1, transform.position.z), 0.01f);
+
 		Vector3 playerDirection = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z) - transform.position;
 		if (Vector3.Distance(player.transform.position, this.transform.position) > playerDistance){
 			thisRigidBody.MovePosition(transform.position + playerDirection * companionSpeed * Time.deltaTime);

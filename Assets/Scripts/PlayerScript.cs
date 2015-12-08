@@ -294,6 +294,7 @@ public class PlayerScript : MonoBehaviour {
 	public void Interact(){
 		if (workbenchInteractable || inElevator || onPlatform || nearShip){
 			interactPanel.SetActive(true);
+
 		} else {
 			interactPanel.SetActive(false);
 		}
