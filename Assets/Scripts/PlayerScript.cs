@@ -153,6 +153,7 @@ public class PlayerScript : MonoBehaviour {
 			if (!showingWorkbench){
 				if (!isAttacking){
 					isAttacking = true;
+					playerAnimator.SetBool("isAttacking", true);
 					hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
 					StartCoroutine("AttackTimer");
 				}
@@ -388,6 +389,7 @@ public class PlayerScript : MonoBehaviour {
 		} else {
 			playerAnimator.SetBool("isRunning", false);
 		}
+
 	}
 
 	public IEnumerator ImmuneTimer(){
@@ -398,6 +400,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public IEnumerator AttackTimer(){
 		yield return new WaitForSeconds(attackWait);
+		playerAnimator.SetBool("isAttacking", false);
 		isAttacking = false;
 	}
 }
