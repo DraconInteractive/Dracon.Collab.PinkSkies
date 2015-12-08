@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459766}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyFeet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409360}
   - 65: {fileID: 6548820}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackRightLegHitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468160}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerJaw_Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407994}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Left_Pawpad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469428}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498398}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409154}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 476192}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Right_shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412380}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerJaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405654}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Mandible02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454008}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Mandible_Fang1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402844}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433610}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Mandible03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438074}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412508}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_MandibleFangnub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479752}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Left_shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_Leg02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416554}
   - 65: {fileID: 6565176}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RightLegHitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406810}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Mandible03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400356}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperJaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 430900}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Right_Pawpad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FLNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496428}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_LegNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497194}
   - 65: {fileID: 6539198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackLeftLegHitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 480468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Left_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 477604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Right_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420722}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Mandible02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457202}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486734}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407282}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435944}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_Leg03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 437132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Mandible_Fang1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462926}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431362}
   - 137: {fileID: 13762760}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MBPuppie_5_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Mandible00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492178}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446836}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Ear02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 493906}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Right_Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Ear02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450596}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg_Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481844}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487104}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 493636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478848}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Ear01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Left_Ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474756}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460518}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_MandibleFangnub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476100}
   - 65: {fileID: 6501716}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LeftLegHitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443780}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy_Holder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 413494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Left_Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469796}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420548}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490156}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 424464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_Leg01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 413132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Ear00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408926}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Mandible00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Ear01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454492}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_Leg00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425852}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left_Mandible_Fang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454948}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Ear00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453988}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FRNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1033,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429858}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453376}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperJaw_Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,8 @@ GameObject:
   - 114: {fileID: 11436874}
   - 136: {fileID: 13621248}
   - 65: {fileID: 6553158}
-  m_Layer: 0
+  - 95: {fileID: 9504576}
+  m_Layer: 2
   m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1082,7 +1083,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455882}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right_Mandible_Fang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1098,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front_Right_Ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1113,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482136}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bone006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1128,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439972}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Right_Leg04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1143,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425124}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back_Left_Leg02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1158,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417964}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Overall_Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1820,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191400}
   m_LocalRotation: {x: 0, y: .996955514, z: 0, w: .0779721439}
-  m_LocalPosition: {x: -6.15317917, y: .5, z: 64.345108}
+  m_LocalPosition: {x: -3.20000005, y: .5, z: 45.5999985}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 443780}
@@ -2171,13 +2172,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191400}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 200
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &6501716
 BoxCollider:
@@ -2225,8 +2226,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .949999988, y: .49000001, z: .600000024}
-  m_Center: {x: 0, y: .25999999, z: 1.88999999}
+  m_Size: {x: 1.19404328, y: .49000001, z: 1.30469751}
+  m_Center: {x: -.0148794353, y: .25999999, z: 1.74354434}
 --- !u!65 &6565176
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2239,6 +2240,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9504576
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f91480c787076114ea9b3acd12d9eaa1, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5b483801f398a2a4280b0997c0f58654, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11436874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2253,23 +2271,23 @@ MonoBehaviour:
   health: 0
   playerDamageRecieved: 0
   attackable: 0
-  speed: 1500
+  speed: 5000
   maxSpeed: 8
   attackSpdTimer: 0
   attackSpd: 2
-  maxTriggerDis: 20
+  maxTriggerDis: 100
   jumpHeight: 15
-  meleeDis: 2.75
+  meleeDis: 15
   stillTime: 0
   attackDmg: 10
   enemyFeet: {fileID: 459766}
-  hitTrig: {fileID: 0}
+  playerHitTrig: {fileID: 0}
   jumpDownPoint: {fileID: 0}
   enemyType: 0
   grounded: 0
   chasing: 0
   canHit: 0
-  boss: 0
+  boss: 1
   movingPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -2285,7 +2303,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
-  m_Height: 4.0999999
+  m_Height: 3.08740258
   m_Direction: 2
   m_Center: {x: 0, y: 1.03999996, z: 0}
 --- !u!137 &13762760
