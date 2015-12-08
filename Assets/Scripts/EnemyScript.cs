@@ -6,10 +6,10 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 2, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 2.75f, stillTime = 0;
+	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 3, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 2.75f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
-	public GameObject hitTrig;
+	public GameObject playerHitTrig;
 	public Transform jumpDownPoint;
 	public bool enemyType, grounded, chasing, canHit, boss;//enemyType: if true jumpdown enemy / if false point enemy
 	public Transform[] movingPoints = new Transform[4];
@@ -19,8 +19,10 @@ public class EnemyScript : MonoBehaviour {
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
+	private Animator anim;
 
 	void Start () {
+		anim = GetComponent<Animator> ();
 		health = 100;
 		attackable = false;
 		player = GameObject.FindWithTag ("Player");
@@ -36,6 +38,14 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void Update () {
+
+		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
+
+		if (mySpeed >= 0.1f) {			
+			anim.SetBool ("Moving", true);
+		} else {
+			anim.SetBool ("Moving", false);
+		}
 
 		if (boss) {//boss
 			HealthCheck ();
@@ -153,21 +163,23 @@ public class EnemyScript : MonoBehaviour {
 		if (!playerScript.immune){//if can hit
 			playerScript.SetImmune ();
 			if (canHit && attackSpdTimer <= 0) {//can attack
-				
-				attackSpdTimer = attackSpd;
+
+				StartCoroutine(AttackBool());//animation starter
+
+				attackSpdTimer = attackSpd;//reseting the attack timer
 				
 				if(armour > 0) {//if player has armour
 					
 					int leftOverDmg = attackDmg - playerScript.armour;//e.g 10-4 = 6 or 10-15 = -5
 					
-					playerScript.armour -= attackDmg;
+					playerScript.armour -= attackDmg;//taking armour away
 					
 					if(leftOverDmg > 0){
-						playerScript.initialHealth -= leftOverDmg;
+						playerScript.initialHealth -= leftOverDmg;//if the armour wasnt enough to defend the attack take health away
 					}
 					
 				} else {
-					playerScript.initialHealth -= attackDmg;
+					playerScript.initialHealth -= attackDmg;//take health away
 				}
 				
 			}
@@ -175,26 +187,32 @@ public class EnemyScript : MonoBehaviour {
 
 	}
 
-	void EnemyReset(){
+	IEnumerator AttackBool(){
+		anim.SetBool ("Attack", true);//start animaiton
+		yield return new WaitForSeconds (1.5f);//wait 1.5 seconds
+		anim.SetBool ("Attack", false);//stop animation
+	}
 
-		float distance = Vector3.Distance (transform.position, player.transform.position);
+	void EnemyReset(){//getting the enemy unstuck
 
-		if (chasing) {
-			if (distance >= meleeDis) {
-				if (rb.velocity.magnitude < 0.1f) {
-					stillTime += Time.deltaTime; 
+		float distance = Vector3.Distance (transform.position, player.transform.position);//distance between player and enemy
+
+		if (chasing) {//if chasing
+			if (distance >= meleeDis) {//if enemy is not in range to attack 
+				if (rb.velocity.magnitude < 0.1f) {//if enemy is not moving
+					stillTime += Time.deltaTime; //start timer
 				}
 				
-				if(stillTime >= 1){
-					rb.AddForce (-transform.forward * 200 * Time.deltaTime, ForceMode.Impulse);
-					stillTime = 0;
+				if(stillTime >= 1){//once timer equals 1 second
+					rb.AddForce (-transform.forward * 200 * Time.deltaTime, ForceMode.Impulse);//jump backwards
+					stillTime = 0;//reset timer
 				}
 			}
 		}
 
 	}
 
-	void IsGrounded(){
+	void IsGrounded(){//is grounded
 		RaycastHit hit;
 
 		if (Physics.SphereCast (enemyFeet.position + Vector3.up, 1, -transform.up, out hit, 0.4f)) {
@@ -213,20 +231,26 @@ public class EnemyScript : MonoBehaviour {
 
 	void EnemyMovement(){
 
-		attackSpdTimer -= Time.deltaTime;
+		float turnSpeed;
 		float mySpeed = new Vector3 (rb.velocity.x, 0, rb.velocity.z).magnitude;
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 
+		if (boss) {
+			turnSpeed = 0.02f;
+		} else {
+			turnSpeed = 0.3f;
+		}
+
 		Vector3 playerPos = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), 0.02f);
+		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((playerPos - transform.position), Vector3.up), turnSpeed);
 
 		if (distance <= maxTriggerDis && distance >= meleeDis && mySpeed < maxSpeed) {//chasing
 			if(boss){
-				speed = 750000;
-				maxSpeed = 6;
+				speed = 900000;
+				maxSpeed = 8;
 			} else {
 				speed = 1500;
-				maxSpeed = 8;
+				maxSpeed = 5;
 			}
 			chasing = true;
 			playerScript.inCombat = true;
@@ -252,7 +276,7 @@ public class EnemyScript : MonoBehaviour {
 
 	public void HealthCheck(){
 		if (health <= 0){
-			HitTrigger hitTriggerScript = hitTrig.GetComponent<HitTrigger>();
+			HitTrigger hitTriggerScript = playerHitTrig.GetComponent<HitTrigger>();
 
 			hitTriggerScript.enemiesInRange.Remove(gameObject);
 			Destroy(gameObject);

@@ -57,6 +57,7 @@ GameObject:
   - 114: {fileID: 11454626}
   - 136: {fileID: 13638530}
   - 65: {fileID: 6506708}
+  - 95: {fileID: 9530518}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1168,7 +1169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105146}
   m_LocalRotation: {x: 0, y: .996955514, z: 0, w: .0779721439}
-  m_LocalPosition: {x: -1.54836082, y: .579999983, z: 10.5569811}
+  m_LocalPosition: {x: -10.7055016, y: .5, z: -33.3680801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496454}
@@ -2198,6 +2199,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9530518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f91480c787076114ea9b3acd12d9eaa1, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5b483801f398a2a4280b0997c0f58654, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11454626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2222,7 +2240,7 @@ MonoBehaviour:
   stillTime: 0
   attackDmg: 10
   enemyFeet: {fileID: 454370}
-  hitTrig: {fileID: 0}
+  playerHitTrig: {fileID: 0}
   jumpDownPoint: {fileID: 0}
   enemyType: 0
   grounded: 0
