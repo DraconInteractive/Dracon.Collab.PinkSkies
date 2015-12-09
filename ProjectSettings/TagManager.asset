@@ -17,6 +17,7 @@ TagManager:
   - SPTrigger
   - SpaceShip
   - PodTrigger
+  - Barrel
   layers:
   - Default
   - TransparentFX

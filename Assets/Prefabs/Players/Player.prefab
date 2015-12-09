@@ -1167,10 +1167,9 @@ GameObject:
   - 33: {fileID: 3333942}
   - 65: {fileID: 6592392}
   - 23: {fileID: 2393268}
-  - 114: {fileID: 11426612}
   - 114: {fileID: 11434548}
   m_Layer: 2
-  m_Name: HitTrigger (1)
+  m_Name: HitTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2136,7 +2135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192642}
   m_LocalRotation: {x: -.000242128343, y: .999923944, z: -.00876410306, w: -.00867847074}
-  m_LocalPosition: {x: 5.19999981, y: 1.10000002, z: 2.70000005}
+  m_LocalPosition: {x: 5.19999981, y: 1.10000002, z: -7.30000019}
   m_LocalScale: {x: .600000024, y: .600000024, z: .600000024}
   m_Children:
   - {fileID: 498714}
@@ -2492,21 +2491,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11426612
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48178ab497cc94b48aa1f428cd254c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttacking: 0
-  playerDamage: 0
-  player: {fileID: 0}
-  enemiesInRange: []
 --- !u!114 &11434548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2522,6 +2506,7 @@ MonoBehaviour:
   playerDamage: 0
   player: {fileID: 0}
   enemiesInRange: []
+  otherInRange: []
 --- !u!114 &11489586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2556,7 +2541,7 @@ MonoBehaviour:
   speedGrounded: 8000
   speedAired: 40
   rotateAngle: 180
-  jumpForce: 10
+  jumpForce: 12
   attackWait: .400000006
   elevatorSpeed: 1
   immuneTime: .75

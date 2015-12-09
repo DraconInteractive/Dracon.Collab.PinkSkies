@@ -7,6 +7,7 @@ public class HitTrigger : MonoBehaviour {
 	public int playerDamage;
 	public GameObject player;
 	public List<GameObject> enemiesInRange;
+	public List<GameObject> destructableInRange;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
@@ -21,17 +22,26 @@ public class HitTrigger : MonoBehaviour {
 		foreach (GameObject i in enemiesInRange){
 			i.GetComponent<EnemyScript>().EnemyTakingDamage(damage);
 		}
+		foreach (GameObject i in destructableInRange){
+			if (i.GetComponent<BarrelScript>()){
+				i.GetComponent<BarrelScript>().timesHit ++;
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider col){
-			if (col.gameObject.tag == "Enemy"){
-				enemiesInRange.Add (col.gameObject);
-			}
+		if (col.gameObject.tag == "Enemy"){
+			enemiesInRange.Add (col.gameObject);
+		} else if (col.gameObject.tag == "Barrel"){
+			destructableInRange.Add(col.gameObject);
+		}
 	}
 
 	void OnTriggerExit(Collider col){
 		if (col.gameObject.tag == "Enemy"){
 			enemiesInRange.Remove(col.gameObject);
+		} else if (col.gameObject.tag == "Barrel"){
+			destructableInRange.Remove(col.gameObject);
 		}
 	}
 }
