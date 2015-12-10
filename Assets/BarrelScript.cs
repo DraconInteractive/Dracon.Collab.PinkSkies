@@ -14,7 +14,7 @@ public class BarrelScript : MonoBehaviour {
 	}
 
 	public void HitCounter(){
-		if (timesHit == 2){
+		if (timesHit == 1){
 			Destroy(this.gameObject);
 			GameObject.Find ("Player").GetComponent<PlayerScript>().scrapCount++;
 		}

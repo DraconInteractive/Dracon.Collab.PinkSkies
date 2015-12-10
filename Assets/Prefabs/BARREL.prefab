@@ -26,9 +26,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 414438}
   - 95: {fileID: 9542648}
+  - 65: {fileID: 6539038}
+  - 114: {fileID: 11484888}
   m_Layer: 0
   m_Name: BARREL
-  m_TagString: Untagged
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.17786217, y: -.5, z: -3.21301866}
+  m_LocalPosition: {x: .766952991, y: -.75, z: -.510195494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462370}
@@ -89,6 +91,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133990}
   m_Mesh: {fileID: 4300000, guid: 74208626b0020ff4897855b31d238852, type: 3}
+--- !u!65 &6539038
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9542648
 Animator:
   serializedVersion: 3
@@ -106,6 +120,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11484888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c7c478218f85b4f819be1e04a80df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timesHit: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
