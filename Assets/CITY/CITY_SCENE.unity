@@ -562,7 +562,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414438, guid: 4845ace7c8d126248b05dbac16118c3f, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: -141.41861
+=======
+      value: 64.7939987
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 414438, guid: 4845ace7c8d126248b05dbac16118c3f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -590,7 +594,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414438, guid: 4845ace7c8d126248b05dbac16118c3f, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 48
+=======
+      value: 8
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 176982, guid: 4845ace7c8d126248b05dbac16118c3f, type: 2}
       propertyPath: m_Name
@@ -3100,6 +3108,7 @@ Transform:
   - {fileID: 299733052}
   - {fileID: 411435776}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 7
 --- !u!4 &1010713722 stripped
 Transform:
@@ -3113,6 +3122,9 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 414438, guid: 4845ace7c8d126248b05dbac16118c3f, type: 2}
   m_PrefabInternal: {fileID: 524534571}
+=======
+  m_RootOrder: 82
+>>>>>>> origin/master
 --- !u!1001 &1050141904
 Prefab:
   m_ObjectHideFlags: 0
@@ -3960,8 +3972,13 @@ Transform:
   m_LocalPosition: {x: -177.889603, y: 84.8706284, z: -132.712967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 369592986}
   m_RootOrder: 10
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 83
+>>>>>>> origin/master
 --- !u!1001 &1306433543
 Prefab:
   m_ObjectHideFlags: 0
