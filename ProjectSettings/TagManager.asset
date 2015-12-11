@@ -15,7 +15,7 @@ TagManager:
   - PlatformBase
   - PlatformTrigger
   - SPTrigger
-  - SpaceShip
+  - PodShip
   - PodTrigger
   - Barrel
   layers:

@@ -32,6 +32,8 @@ public class CameraScript : MonoBehaviour {
 			DetectObstruction();
 		} else if (playerType == "SpaceShip"){
 			SpaceShipCam();
+		} else if (playerType == "Elevator"){
+			ElevatorCam();
 		}
 
 
@@ -98,11 +100,19 @@ public class CameraScript : MonoBehaviour {
 		} else if (i.GetComponent<SpaceShipScript>()){
 			playerType = "SpaceShip";
 			target = i;
-		} 
+		} else if (i.GetComponent<ElevatorScript>()){
+			playerType = "Elevator";
+			target = i;
+		}
 	}
 
 	public void SpaceShipCam(){
-		transform.position = target.transform.position + (Vector3.up * 4) + (Vector3.right * 25);
+		transform.position = target.transform.position + (Vector3.up * 4) + (target.transform.right * 25);
+		thisTransform.LookAt(target.transform.position);
+	}
+
+	public void ElevatorCam(){
+		transform.position = target.transform.position + (Vector3.up * 10);
 		thisTransform.LookAt(target.transform.position);
 	}
 

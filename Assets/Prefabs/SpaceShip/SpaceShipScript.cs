@@ -23,4 +23,8 @@ public class SpaceShipScript : MonoBehaviour {
 		myAudioSource.clip = takeOffClip;
 		myAudioSource.Play();
 	}
+
+	public void NextLevel(){
+		Application.LoadLevel("TheForest");
+	}
 }

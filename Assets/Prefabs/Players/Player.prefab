@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GS_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444950}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GSContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ GameObject:
   - 4: {fileID: 489766}
   - 33: {fileID: 3387298}
   - 23: {fileID: 2348104}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fuck_Off_Greatsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,9 +2208,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192642}
-  m_LocalRotation: {x: -.000242128343, y: .999923944, z: -.00876410306, w: -.00867847074}
-  m_LocalPosition: {x: 5.19999981, y: 1.10000002, z: -7.30000019}
-  m_LocalScale: {x: .600000024, y: .600000024, z: .600000024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.3799992, y: 1.73000002, z: 74.0299988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498714}
   - {fileID: 480710}

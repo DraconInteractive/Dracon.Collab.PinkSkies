@@ -303,13 +303,13 @@ public class PlayerScript : MonoBehaviour {
 
 			if (workbenchInteractable){
 				showingWorkbench = !showingWorkbench;
-				return;
 			} 
 			if (inElevator){
 				RaycastHit hit;
 				if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
 					if (hit.collider.gameObject.tag == "Elevator"){
 						hit.collider.gameObject.GetComponent<ElevatorScript>().activated = true;
+						Debug.Log ("ElevatorPressed");
 					}
 				}
 			} else if (onPlatform){
@@ -317,10 +317,13 @@ public class PlayerScript : MonoBehaviour {
 				if (Physics.Raycast(transform.position, Vector3.down, out hit, 2)){
 					if (hit.collider.gameObject.tag == "PlatformBase"){
 						hit.collider.gameObject.GetComponent<PlatMoveScript>().activated = true;
+						Debug.Log ("Platform Pressed");
 					}
 				}
 			} else if (nearShip){
-				GameObject.FindGameObjectWithTag("SpaceShip").GetComponent<SpaceShipScript>().TakeOff();
+				Debug.Log ("Pressed Take off 1");
+				GameObject.FindGameObjectWithTag("PodShip").GetComponent<SpaceShipScript>().TakeOff();
+				Debug.Log ("Pressed Take Off");
 			} else {
 				Debug.Log ("No Interact Zone Entered");
 			}
