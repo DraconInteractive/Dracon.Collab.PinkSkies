@@ -2,23 +2,18 @@
 using System.Collections;
 
 public class GSScript : MonoBehaviour {
-	public GameObject playerObj;
-	public Vector3 holsteredPos, attackPos;
+
 	// Use this for initialization
 	void Start () {
-		holsteredPos = transform.localPosition;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		DetectAttackState();
+		RotateTheGS();
 	}
 
-	public void DetectAttackState(){
-		if (playerObj.GetComponent<PlayerScript>().inCombat == true){
-
-		} else {
-
-		}
+	public void RotateTheGS(){
+		GetComponent<Transform>().Rotate(Vector3.up, 45 * Time.deltaTime);
 	}
 }
