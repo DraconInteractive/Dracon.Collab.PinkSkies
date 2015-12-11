@@ -275,10 +275,27 @@ public class EnemyScript : MonoBehaviour {
 
 	public void HealthCheck(){
 		if (health <= 0){
-			HitTrigger hitTriggerScript = playerHitTrig.GetComponent<HitTrigger>();
+			if (boss){
+				StartCoroutine("BossDieTimer");
+			} else {
+				StartCoroutine("DieTimer");
+			}
 
-			hitTriggerScript.enemiesInRange.Remove(gameObject);
-			Destroy(gameObject);
 		}
+	}
+
+	public IEnumerator DieTimer (){
+		GetComponent<ParticleSystem>().Play();
+		yield return new WaitForSeconds (1);
+		HitTrigger hitTriggerScript = playerHitTrig.GetComponent<HitTrigger>();
+		hitTriggerScript.enemiesInRange.Remove(gameObject);
+		playerScript.initialHealth += 10;
+		Destroy(this.gameObject);
+	}
+
+	public IEnumerator BossDieTimer(){
+		GetComponent<ParticleSystem>().Play();
+		yield return new WaitForSeconds(2);
+		Application.LoadLevel("Win Scene");
 	}
 }

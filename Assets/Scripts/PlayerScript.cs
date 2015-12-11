@@ -336,16 +336,16 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void UpgradeArmour(){
-		if (scrapCount >= 10){
-			armour = armour + 10;
-			scrapCount -= 10;
+		if (scrapCount >= 5){
+			armour = armour + 5;
+			scrapCount -= 5;
 		}
 	}
 
 	public void UpgradeWeapon(){
-		if (scrapCount >= 10){
+		if (scrapCount >= 5){
 			damage = damage + 2;
-			scrapCount -= 10;
+			scrapCount -= 5;
 		}
 	}
 

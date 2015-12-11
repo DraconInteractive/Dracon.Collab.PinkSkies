@@ -126,7 +126,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479348, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
+      propertyPath: damage
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
@@ -573,10 +577,6 @@ Prefab:
       propertyPath: movingPoints.Array.data[0]
       value: 
       objectReference: {fileID: 588485009}
-    - target: {fileID: 405382, guid: 359b135a81a75ee4bb0cdd73b8047817, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11454626, guid: 359b135a81a75ee4bb0cdd73b8047817, type: 2}
       propertyPath: movingPoints.Array.data[1]
       value: 

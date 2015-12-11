@@ -2854,7 +2854,7 @@ MonoBehaviour:
   finalHealth: 0
   initialHealth: 0
   armour: 0
-  damage: 20
+  damage: 50
 --- !u!114 &11498250
 MonoBehaviour:
   m_ObjectHideFlags: 1
