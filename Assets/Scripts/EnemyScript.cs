@@ -157,18 +157,17 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void EnemyAttack(){
-
 		attackSpdTimer -= Time.deltaTime;
 		float armour = playerScript.armour;
 
-		if (!playerScript.immune){//if can hit
-			playerScript.SetImmune ();
-			if (canHit && attackSpdTimer <= 0) {//can attack
-
+		if (canHit && attackSpdTimer <= 0) {//can attack
+			if (!playerScript.immune){
+				playerScript.SetImmune ();
+				Debug.Log (gameObject.name + " Can Attack");
 				StartCoroutine(AttackBool());//animation starter
-
+				Debug.Log (gameObject.name + " Started Attack Anim");
 				attackSpdTimer = attackSpd;//reseting the attack timer
-				
+				Debug.Log (gameObject.name + " Reset attack timer");
 				if(armour > 0) {//if player has armour
 					
 					int leftOverDmg = attackDmg - playerScript.armour;//e.g 10-4 = 6 or 10-15 = -5
@@ -182,7 +181,6 @@ public class EnemyScript : MonoBehaviour {
 				} else {
 					playerScript.initialHealth -= attackDmg;//take health away
 				}
-				
 			}
 		}
 
