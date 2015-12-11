@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//Script designed to manage ship take off
 public class SpaceShipScript : MonoBehaviour {
 	public AudioSource myAudioSource;
 	public AudioClip takeOffClip;
@@ -15,7 +15,7 @@ public class SpaceShipScript : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	//When the player activates the ship, Set the camera to look at the ship and play its animation and take off sound
 	public void TakeOff(){
 		Debug.Log ("Ship Taking Off");
 		Camera.main.GetComponent<CameraScript>().SetPlayerType(this.gameObject);

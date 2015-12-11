@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class BarricadeScript : MonoBehaviour {
+	//Testing script designed to help box player to keep linearity, not implemented in game., 
 	public bool activated;
 	public float initialY;
 	public Rigidbody myRigid;
