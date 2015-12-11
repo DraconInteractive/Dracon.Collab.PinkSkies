@@ -33,7 +33,7 @@ public class CompanionScript : MonoBehaviour {
 				healthBuild += 1 * Time.deltaTime;
 				if (healthBuild >= 1){
 					healthBuild = 0;
-					player.GetComponent<PlayerScript>().finalHealth += 1;
+					player.GetComponent<PlayerScript>().finalHealth += 1 * regenAmount;
 				}
 
 			}

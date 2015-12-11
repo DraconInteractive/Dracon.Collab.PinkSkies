@@ -21,14 +21,18 @@ public class HitTrigger : MonoBehaviour {
 	public void TriggerAttack(int damage){
 		if (enemiesInRange.Count > 0){
 			foreach (GameObject i in enemiesInRange){
-				if (i.GetComponent<EnemyScript>()){
+				if (i == null){
+
+				} else if (i.GetComponent<EnemyScript>()){
 					i.GetComponent<EnemyScript>().EnemyTakingDamage(damage);
 				}
 			}
 		}
 		if (destructableInRange.Count > 0){
 			foreach (GameObject i in destructableInRange){
-				if (i.GetComponent<BarrelScript>()){
+				if (i == null){
+
+				} else if (i.GetComponent<BarrelScript>()){
 					i.GetComponent<BarrelScript>().timesHit ++;
 				}
 			}

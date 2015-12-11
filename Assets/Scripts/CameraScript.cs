@@ -71,7 +71,7 @@ public class CameraScript : MonoBehaviour {
 			transform.position = Vector3.Lerp (transform.position, hit.point-cameraDirection, 0.1f);
 		} else {
 			isUnobjstructed = true;
-			transform.position = Vector3.Lerp (transform.position, playerObj.transform.position - transform.forward * (camDistanceInitial - camDistanceEventual), 0.1f);
+			transform.position = Vector3.Lerp (transform.position, (playerObj.transform.position + Vector3.up - playerObj.transform.forward) - transform.forward * (camDistanceInitial - camDistanceEventual), 0.1f);
 		}
 
 		Debug.DrawRay(playerObj.transform.position + playerObj.transform.up, cameraDirection, Color.red);
