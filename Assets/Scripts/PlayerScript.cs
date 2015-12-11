@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed, immuneTime;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench, showInteractPanel;
-	public bool inElevator, onPlatform, nearShip, immune;
+	public bool inElevator, onPlatform, nearShip, immune, isRunning;
 	public int scrapCount;
 	public Animator playerAnimator;
 	public int finalHealth, initialHealth, armour, damage;
@@ -158,6 +158,7 @@ public class PlayerScript : MonoBehaviour {
 				if (!isAttacking){
 					isAttacking = true;
 					playerAnimator.SetBool("isAttacking", true);
+					GetComponent<AudioSource>().Play();
 					hitTrigger.GetComponent<HitTrigger>().TriggerAttack(damage);
 					StartCoroutine("AttackTimer");
 				}
@@ -394,8 +395,10 @@ public class PlayerScript : MonoBehaviour {
 	public void AnimationUpdate(){
 		if (speedForward > 0.05f || speedStrafe > 0.05f){
 			playerAnimator.SetBool("isRunning", true);
+			isRunning = true;
 		} else {
 			playerAnimator.SetBool("isRunning", false);
+			isRunning = false;
 		}
 
 	}
