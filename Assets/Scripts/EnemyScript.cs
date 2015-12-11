@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour {
 	public int health, playerDamageRecieved;
 	public bool attackable;
 
-	public float speed = 500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 3, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 2.75f, stillTime = 0;
+	public float speed = 1500, maxSpeed = 1.5f, attackSpdTimer = 0, attackSpd = 3, maxTriggerDis = 20, jumpHeight = 15, meleeDis = 2.75f, stillTime = 0;
 	public int attackDmg = 10;
 	public Transform enemyFeet;
 	public GameObject playerHitTrig;
@@ -15,13 +15,14 @@ public class EnemyScript : MonoBehaviour {
 	public Transform[] movingPoints = new Transform[4];
 
 	private GameObject player;
-	private int currPoint = 0;
+	public int currPoint = 0;
 	private bool atPoint = false;
 	private PlayerScript playerScript;
 	private Rigidbody rb;
 	private Animator anim;
 
 	void Start () {
+		playerHitTrig = GameObject.Find ("HitTrigger");
 		anim = GetComponent<Animator> ();
 		health = 100;
 		attackable = false;
@@ -215,7 +216,7 @@ public class EnemyScript : MonoBehaviour {
 	void IsGrounded(){//is grounded
 		RaycastHit hit;
 
-		if (Physics.SphereCast (enemyFeet.position + Vector3.up, 1, -transform.up, out hit, 0.4f)) {
+		if (Physics.SphereCast (enemyFeet.position + Vector3.up, 1, -transform.up, out hit, 1.2f)) {
 			if (hit.collider.tag == "Ground") {
 				grounded = true;
 				if (Physics.Raycast (enemyFeet.position, transform.forward, out hit, 1)) {//raycast forwards checking for ground
@@ -262,8 +263,8 @@ public class EnemyScript : MonoBehaviour {
 				speed = 3000;
 				maxSpeed = 5;
 			} else {
-				speed = 500;
-				maxSpeed = 3;
+				speed = 1000;
+				maxSpeed = 4;
 			}
 		}
 	}

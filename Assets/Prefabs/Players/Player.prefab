@@ -2209,7 +2209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.3799992, y: 1.73000002, z: 74.0299988}
+  m_LocalPosition: {x: 104.400002, y: 23.7299995, z: 32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498714}
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   speedGrounded: 8000
   speedAired: 40
   rotateAngle: 180
-  jumpForce: 12
+  jumpForce: 11
   attackWait: .400000006
   elevatorSpeed: 1
   immuneTime: .75

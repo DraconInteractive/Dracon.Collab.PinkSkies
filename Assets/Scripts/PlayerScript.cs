@@ -116,6 +116,10 @@ public class PlayerScript : MonoBehaviour {
 	public void HealthUpdate(){
 		finalHealth = initialHealth + armour ;
 		healthSlider.GetComponent<Slider>().value = finalHealth;
+
+		if (finalHealth <= 0){
+			Death();
+		}
 	}
 
 	public void PlayerMovement(){
@@ -406,5 +410,9 @@ public class PlayerScript : MonoBehaviour {
 		yield return new WaitForSeconds(attackWait);
 		playerAnimator.SetBool("isAttacking", false);
 		isAttacking = false;
+	}
+
+	public void Death (){
+		Application.LoadLevel(Application.loadedLevelName);
 	}
 }
