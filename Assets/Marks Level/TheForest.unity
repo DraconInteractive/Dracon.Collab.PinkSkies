@@ -271,10 +271,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 265010348}
   m_RootOrder: 24
---- !u!1 &65122487 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 145382, guid: fc448cde0c688ff428e0012d1713072e, type: 2}
-  m_PrefabInternal: {fileID: 304419306}
 --- !u!1001 &72070698
 Prefab:
   m_ObjectHideFlags: 0
@@ -5522,18 +5518,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 493376, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11449416, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11449416, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
-      propertyPath: camDistSlider
-      value: 
-      objectReference: {fileID: 65122487}
-    m_RemovedComponents:
-    - {fileID: 6564152, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebbdeed711cc8d84aa1138720877fee0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1638705334
@@ -7424,11 +7411,11 @@ Prefab:
       objectReference: {fileID: 1906030145}
     - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
       propertyPath: speedGrounded
-      value: 10000
+      value: 12000
       objectReference: {fileID: 0}
     - target: {fileID: 11489586, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
       propertyPath: speedAired
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f19f39fb91c63a4db24a3716b42d815, type: 2}
