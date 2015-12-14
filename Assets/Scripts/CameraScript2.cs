@@ -42,7 +42,7 @@ public class CameraScript2 : MonoBehaviour {
 	void CamRotate(){	
 		//adjust rotation based off mouse input
 		if (Input.GetAxis("Mouse Y") != 0){
-				transform.RotateAround(playerObj.transform.position+ playerObj.transform.up*3,playerObj.transform.right,180*Input.GetAxis("Mouse Y") * -1 *Time.deltaTime);
+			transform.RotateAround(playerObj.transform.position+ playerObj.transform.up*3,playerObj.transform.right,180*Input.GetAxis("Mouse Y") * -1 *Time.deltaTime);
 		}
 
 		if (Input.GetAxis("Mouse X") != 0){
