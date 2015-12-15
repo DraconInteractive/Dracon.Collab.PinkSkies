@@ -2827,9 +2827,9 @@ MonoBehaviour:
   speedStrafe: 0
   speedMod: 0
   speedGrounded: 8000
-  speedAired: 40
+  speedAired: 250
   rotateAngle: 180
-  jumpForce: 11
+  jumpForce: 15
   attackWait: 1
   elevatorSpeed: 1
   immuneTime: .75
@@ -2854,7 +2854,7 @@ MonoBehaviour:
   finalHealth: 0
   initialHealth: 0
   armour: 0
-  damage: 50
+  damage: 30
 --- !u!114 &11498250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2867,8 +2867,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 192642}
-  isWalking: 0
-  startedWalking: 0
+  isRunning: 0
+  startedRunning: 0
+  stepOne: {fileID: 0}
+  stepTwo: {fileID: 0}
+  stepStage: 0
 --- !u!136 &13676790
 CapsuleCollider:
   m_ObjectHideFlags: 1
