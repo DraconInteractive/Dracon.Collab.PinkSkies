@@ -674,7 +674,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 198358876}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3574,7 +3574,7 @@ GameObject:
   - 23: {fileID: 1116694493}
   - 82: {fileID: 1116694492}
   - 114: {fileID: 1116694491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3989,7 +3989,7 @@ GameObject:
   - 4: {fileID: 1208857761}
   - 33: {fileID: 1208857764}
   - 65: {fileID: 1208857763}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4725,7 +4725,7 @@ GameObject:
   - 4: {fileID: 1535093611}
   - 33: {fileID: 1535093614}
   - 136: {fileID: 1535093613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4972,7 +4972,7 @@ GameObject:
   - 23: {fileID: 1545262462}
   - 82: {fileID: 1545262461}
   - 114: {fileID: 1545262460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5244,7 +5244,7 @@ GameObject:
   - 4: {fileID: 1596779349}
   - 33: {fileID: 1596779348}
   - 65: {fileID: 1596779347}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5512,7 +5512,7 @@ GameObject:
   - 4: {fileID: 1668327609}
   - 33: {fileID: 1668327608}
   - 65: {fileID: 1668327607}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5628,7 +5628,7 @@ GameObject:
   - 23: {fileID: 1704118424}
   - 82: {fileID: 1704118423}
   - 114: {fileID: 1704118422}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5987,7 +5987,7 @@ GameObject:
   - 23: {fileID: 1753208674}
   - 82: {fileID: 1753208673}
   - 114: {fileID: 1753208672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6217,7 +6217,7 @@ GameObject:
   - 23: {fileID: 1784598448}
   - 82: {fileID: 1784598447}
   - 114: {fileID: 1784598446}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6371,7 +6371,7 @@ GameObject:
   - 4: {fileID: 1789164654}
   - 33: {fileID: 1789164653}
   - 65: {fileID: 1789164652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6808,7 +6808,7 @@ GameObject:
   - 4: {fileID: 1913970810}
   - 33: {fileID: 1913970809}
   - 65: {fileID: 1913970808}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7361,7 +7361,7 @@ GameObject:
   - 4: {fileID: 2032572654}
   - 33: {fileID: 2032572653}
   - 65: {fileID: 2032572652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7439,7 +7439,7 @@ GameObject:
   - 23: {fileID: 2035991512}
   - 82: {fileID: 2035991511}
   - 114: {fileID: 2035991510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7835,7 +7835,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2093465862}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AUdioHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7992,6 +7992,10 @@ Prefab:
     - target: {fileID: 479724, guid: 59984e0687114844a848ee24020e4a2d, type: 2}
       propertyPath: m_LocalScale.x
       value: 38.0184441
+      objectReference: {fileID: 0}
+    - target: {fileID: 159818, guid: 59984e0687114844a848ee24020e4a2d, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59984e0687114844a848ee24020e4a2d, type: 2}
