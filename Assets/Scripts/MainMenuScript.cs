@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MainMenuScript : MonoBehaviour {
 	public GameObject instPanel, creditsPanel;
+	public bool showInst;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,23 +18,12 @@ public class MainMenuScript : MonoBehaviour {
 		Application.LoadLevel("CITY_SCENE");
 	}
 
+	public void CreditsButton(){
+		Application.LoadLevel("Credits");
+	}
+
 	public void QuitButton (){
 		Application.Quit();
 	}
-
-	public void CreditsButton (){
-		creditsPanel.SetActive(true);
-	}
-
-	public void CloseCreditsButton () {
-		creditsPanel.SetActive(false);
-	}
-
-	public void InstructionsButton (){
-		instPanel.SetActive(true);
-	}
-
-	public void CloseInstButton () {
-		instPanel.SetActive(false);
-	}
+	
 }
