@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraScript2 : MonoBehaviour {
-	public GameObject playerObj;
+	public GameObject playerObj, obstTarget;
 	public PlayerScript playerScript;
 
 	public Transform myTransform;
@@ -22,6 +22,7 @@ public class CameraScript2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CamRotate();
+		CameraObstruction();
 		/*myPosition = myTransform.position;
 
 		myTransform.LookAt(playerObj.transform.position + (Vector3.up * 2));
@@ -56,5 +57,21 @@ public class CameraScript2 : MonoBehaviour {
 			transform.position = Vector3.Lerp(transform.position,new Vector3(desired.x,transform.position.y,desired.z),0.05f);
 		}
 
+	}
+
+	void CameraObstruction(){
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, (playerObj.transform.position - transform.position), out hit, Vector3.Distance(transform.position, playerObj.transform.position) - 1)){
+			Debug.Log (hit.collider.gameObject.name);
+			obstTarget = hit.collider.gameObject;
+			obstTarget.GetComponent<MeshRenderer>().enabled = false;
+		} else {
+			if (obstTarget){
+				if (obstTarget.GetComponent<MeshRenderer>()){
+					obstTarget.GetComponent<MeshRenderer>().enabled = true;
+				}
+			}
+		}
+		Debug.DrawRay(transform.position, (playerObj.transform.position - transform.position), Color.green);
 	}
 }

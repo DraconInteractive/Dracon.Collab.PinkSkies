@@ -3,27 +3,46 @@ using System.Collections;
 
 public class WalkingScript : MonoBehaviour {
 	public GameObject playerObj;
-	public bool isWalking, startedWalking;
+	public bool isRunning, startedRunning;
+	public AudioClip stepOne, stepTwo;
+	public int stepStage;
 	// Use this for initialization
 	void Start () {
-	
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (playerObj.GetComponent<PlayerScript>().isRunning == true){
-			isWalking = true;
+			isRunning = true;
 		} else {
-			isWalking = false;
+			isRunning = false;
 		}
-		if (isWalking){
-			if (!startedWalking){
-				GetComponent<AudioSource>().Play();
-				startedWalking = true;
+
+		if (isRunning){
+			if (!startedRunning){
+				if (stepStage%2 == 0){
+					GetComponent<AudioSource>().clip = stepOne;
+					GetComponent<AudioSource>().Play();
+					startedRunning = true;
+				} else {
+					GetComponent<AudioSource>().clip = stepTwo;
+					GetComponent<AudioSource>().Play ();
+					startedRunning = true;
+				}
 			}
 		} else {
 			GetComponent<AudioSource>().Stop();
-			startedWalking = false;
 		}
+//		if (isWalking){
+//			if (!startedWalking){
+//				GetComponent<AudioSource>().Play();
+//				startedWalking = true;
+//			}
+//		} else {
+//			GetComponent<AudioSource>().Stop();
+//			startedWalking = false;
+//		}
 	}
 }
