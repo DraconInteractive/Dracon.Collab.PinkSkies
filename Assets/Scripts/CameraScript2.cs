@@ -64,10 +64,15 @@ public class CameraScript2 : MonoBehaviour {
 		if (Physics.Raycast(transform.position, (playerObj.transform.position - transform.position), out hit, Vector3.Distance(transform.position, playerObj.transform.position) - 1)){
 			Debug.Log (hit.collider.gameObject.name);
 			obstTarget = hit.collider.gameObject;
-			obstTarget.GetComponent<MeshRenderer>().enabled = false;
+			if (obstTarget.GetComponent<MeshRenderer>()){
+				if (obstTarget.gameObject.tag != "Enemy" || obstTarget.gameObject.tag != "Wall"){
+					obstTarget.GetComponent<MeshRenderer>().enabled = false;
+				}
+
+			}
 		} else {
 			if (obstTarget){
-				if (obstTarget.GetComponent<MeshRenderer>()){
+				if (obstTarget.GetComponent<MeshRenderer>() != null){
 					obstTarget.GetComponent<MeshRenderer>().enabled = true;
 				}
 			}
