@@ -18,6 +18,7 @@ TagManager:
   - PodShip
   - PodTrigger
   - Barrel
+  - InvisGround
   layers:
   - Default
   - TransparentFX
