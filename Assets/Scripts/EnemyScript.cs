@@ -31,7 +31,7 @@ public class EnemyScript : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 
 		if (boss) {
-			health = 600;
+			health = 200;
 			attackSpd = 3;
 			meleeDis = 18;
 			attackDmg = 15;
@@ -293,6 +293,6 @@ public class EnemyScript : MonoBehaviour {
 	public IEnumerator BossDieTimer(){
 		GetComponent<ParticleSystem>().Play();
 		yield return new WaitForSeconds(2);
-		Application.LoadLevel("Win Scene");
+		Application.LoadLevel("GameComplete");
 	}
 }

@@ -6,12 +6,22 @@ public class MainMenuScript : MonoBehaviour {
 	public bool showInst;
 	// Use this for initialization
 	void Start () {
-	
+		instPanel = GameObject.Find("InstPanel");
+		if (instPanel){
+			instPanel.SetActive(false);
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (instPanel){
+			if (showInst == true){
+				instPanel.SetActive(true);
+			} else {
+				instPanel.SetActive(false);
+			}
+		}
 	}
 
 	public void NewGameButton (){
@@ -26,8 +36,16 @@ public class MainMenuScript : MonoBehaviour {
 		Application.Quit();
 	}
 
-	public void InstButtons(){
-		
+	public void InstButton(){
+		showInst = true;
+	}
+
+	public void CloseInst(){
+		showInst = false;
+	}
+
+	public void ReturnButton (){
+		Application.LoadLevel("Main");
 	}
 	
 }

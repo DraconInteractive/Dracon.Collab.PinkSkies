@@ -6,10 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Juliens/Scenes/Disclaimer.unity
+  - enabled: 1
+    path: Assets/Juliens/Scenes/TeamPresents.unity
+  - enabled: 1
     path: Assets/Juliens/Scenes/Main.unity
   - enabled: 1
     path: Assets/CITY/CITY_SCENE.unity
   - enabled: 1
     path: Assets/Marks Level/TheForest.unity
   - enabled: 1
-    path: Assets/WinScene.unity
+    path: Assets/Juliens/Scenes/Credits.unity
+  - enabled: 1
+    path: Assets/Juliens/Scenes/GameOver.unity
+  - enabled: 1
+    path: Assets/Juliens/Scenes/GameComplete.unity
