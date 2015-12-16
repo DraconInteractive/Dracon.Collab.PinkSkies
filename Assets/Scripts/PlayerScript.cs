@@ -135,8 +135,17 @@ public class PlayerScript : MonoBehaviour {
 
 			speedForward = Input.GetAxis("Vertical") * speedMod;
 			speedStrafe = Input.GetAxis("Horizontal") * speedMod;
+
+			Vector3 moveDir = (Vector3.Cross (Camera.main.transform.right, Vector3.up)*speedForward)+(Camera.main.transform.right * speedStrafe);
+
+
 			playerRigid.AddForce (Vector3.Cross (Camera.main.transform.right, Vector3.up) * speedForward * Time.deltaTime);
-			transform.rotation = Quaternion.LookRotation(Vector3.Cross (Camera.main.transform.right, Vector3.up), Vector3.up);
+			if (moveDir.magnitude != 0){
+				transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
+			} else {
+				transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(Camera.main.transform.right, Vector3.up), Vector3.up), 0.3f);
+			}
+
 			playerRigid.AddForce (Camera.main.transform.right * speedStrafe * Time.deltaTime);
 			
 			if (speedForward >= 6){
@@ -221,15 +230,18 @@ public class PlayerScript : MonoBehaviour {
 
 			menuOpen = !menuOpen;
 
-			if (menuOpen){
-				Cursor.visible = true;
-			} else {
-				Cursor.visible = false;
-			}
 		}
 
+		if (menuOpen || showConsole){
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		} else {
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
+		
 	}
-
+	
 	public void OpenOptions(){
 		optionsOpen = true;
 		menuOpen = false;
@@ -250,7 +262,9 @@ public class PlayerScript : MonoBehaviour {
 				isGrounded = true;
 			} else if (hit.collider.gameObject.tag == "Elevator"){
 				isGrounded = true;
-			} else if (hit.collider.gameObject.tag == "PlatformBase"){
+			} else if (hit.collider.gameObject.tag == "InvisGround"){
+				isGrounded = true;
+			}else if (hit.collider.gameObject.tag == "PlatformBase"){
 				isGrounded = true;
 			} else {
 				Debug.Log (hit.collider.gameObject.name);
@@ -276,7 +290,7 @@ public class PlayerScript : MonoBehaviour {
 	public void ConsoleAction(){
 		Text cText = consoleText.GetComponent<Text>();
 		if (cText.text == "Help"){
-			string helpString = "Help //n PlayerDamage //n AddScrap //n UpgradeArmour //n UpgradeWeapon //n GameSave //n GameLoad";
+			string helpString = "Help //n PlayerDamage //n AddScrap //n UpgradeArmour //n UpgradeWeapon //n GameSave //n GameLoad //n DebugGroundOn //n DebugGroundOff";
 			Debug.Log (helpString.Replace("//n", "\n"));
 		} else if (cText.text == "PlayerDamage"){
 			initialHealth -= 20;
@@ -294,6 +308,18 @@ public class PlayerScript : MonoBehaviour {
 			foreach (GameObject i in barricadeArray){
 				i.GetComponent<BarricadeScript>().activated = true;
 			}
+		} else if (cText.text == "DebugGroundOn"){
+			GameObject[] groundObjs = GameObject.FindGameObjectsWithTag("InvisGround");
+			foreach (GameObject i in groundObjs){
+				i.GetComponent<MeshRenderer>().enabled = true;
+			}
+		} else if (cText.text == "DebugGroundOff"){
+			GameObject[] groundObjs = GameObject.FindGameObjectsWithTag("InvisGround");
+			foreach (GameObject i in groundObjs){
+				i.GetComponent<MeshRenderer>().enabled = false;
+			}
+		} else {
+			Debug.Log ("Invalid Command");
 		}
 		consoleText.GetComponent<Text>().text = "";
 		consolePlaceHolder.GetComponent<Text>().text = "";

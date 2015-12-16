@@ -23,14 +23,14 @@ public class ElevatorScript : MonoBehaviour {
 			Destroy (GameObject.Find ("ElevatorTrigger"));
 			if (transform.position.y < initialY + moveDist){
 				myRigid.MovePosition(transform.position + Vector3.up * speed * Time.deltaTime);
-				Camera.main.GetComponent<CameraScript>().SetPlayerType(this.gameObject);
+				Camera.main.GetComponent<CameraScript2>().SetPlayerType(this.gameObject);
 			} else {
 				activated = false;
 			}
 		} else {
 			if (hasBeenActivated){
 				if (!hasSetPlayer){
-					Camera.main.GetComponent<CameraScript>().SetPlayerType(GameObject.Find ("Player"));
+					Camera.main.GetComponent<CameraScript2>().SetPlayerType(GameObject.Find ("Player"));
 					hasSetPlayer = true;
 					GameObject.Find ("Player").GetComponent<PlayerScript>().inElevator = false;
 				}

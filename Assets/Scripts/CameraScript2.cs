@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraScript2 : MonoBehaviour {
-	public GameObject playerObj, obstTarget;
+	public GameObject playerObj, obstTarget, target;
 	public PlayerScript playerScript;
 
 	public Transform myTransform;
@@ -11,8 +11,11 @@ public class CameraScript2 : MonoBehaviour {
 	public Vector3 myPosition;
 
 	public float forwardDist, camHeight, camRotation;
+
+	public string playerType;
 	// Use this for initialization
 	void Start () {
+		playerType = "PlayerObj";
 		playerObj = GameObject.Find ("Player");
 		playerScript = playerObj.GetComponent<PlayerScript>();
 		//transform.position = playerObj.transform.position -(playerObj.transform.forward*7)+ (playerObj.transform.up*4);
@@ -21,8 +24,15 @@ public class CameraScript2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		CamRotate();
-		CameraObstruction();
+		if (playerType == "PlayerObj"){
+			CamRotate();
+			CameraObstruction();
+		} else if (playerType == "SpaceShip"){
+			SpaceShipCam();
+		} else if (playerType == "Elevator"){
+			ElevatorCam();
+		}
+
 		/*myPosition = myTransform.position;
 
 		myTransform.LookAt(playerObj.transform.position + (Vector3.up * 2));
@@ -53,7 +63,7 @@ public class CameraScript2 : MonoBehaviour {
 		transform.LookAt(playerObj.transform.position+ playerObj.transform.up*3);
 
 		if((transform.position - playerObj.transform.position).magnitude > 6){ // if outside range move forward, but don't change y pos
-			Vector3 desired = playerObj.transform.position - (playerObj.transform.forward*7);
+			Vector3 desired = playerObj.transform.position - (Vector3.Cross(Camera.main.transform.right,Vector3.up)*7);
 			transform.position = Vector3.Lerp(transform.position,new Vector3(desired.x,transform.position.y,desired.z),0.05f);
 		}
 
@@ -72,5 +82,27 @@ public class CameraScript2 : MonoBehaviour {
 			}
 		}
 		Debug.DrawRay(transform.position, (playerObj.transform.position - transform.position), Color.green);
+	}
+
+	public void SetPlayerType(GameObject i){
+		if (i.GetComponent<PlayerScript>()){
+			playerType = "PlayerObj";
+		} else if (i.GetComponent<SpaceShipScript>()){
+			playerType = "SpaceShip";
+			target = i;
+		} else if (i.GetComponent<ElevatorScript>()){
+			playerType = "Elevator";
+			target = i;
+		}
+	}
+
+	void SpaceShipCam(){
+		transform.position = target.transform.position + (Vector3.up * 4) + (target.transform.right * 25);
+		myTransform.LookAt(target.transform.position);
+	}
+	
+	void ElevatorCam(){
+		transform.position = target.transform.position + (Vector3.up * 10);
+		myTransform.LookAt(target.transform.position);
 	}
 }

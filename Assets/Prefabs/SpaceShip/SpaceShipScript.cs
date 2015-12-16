@@ -18,7 +18,7 @@ public class SpaceShipScript : MonoBehaviour {
 	//When the player activates the ship, Set the camera to look at the ship and play its animation and take off sound
 	public void TakeOff(){
 		Debug.Log ("Ship Taking Off");
-		Camera.main.GetComponent<CameraScript>().SetPlayerType(this.gameObject);
+		Camera.main.GetComponent<CameraScript2>().SetPlayerType(this.gameObject);
 		myAnimation.Play();
 		myAudioSource.clip = takeOffClip;
 		myAudioSource.Play();

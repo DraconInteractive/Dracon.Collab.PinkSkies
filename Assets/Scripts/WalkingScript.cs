@@ -8,7 +8,7 @@ public class WalkingScript : MonoBehaviour {
 	public int stepStage;
 	// Use this for initialization
 	void Start () {
-		Cursor.visible = false;
+
 	}
 	
 	// Update is called once per frame
