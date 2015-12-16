@@ -25,5 +25,9 @@ public class MainMenuScript : MonoBehaviour {
 	public void QuitButton (){
 		Application.Quit();
 	}
+
+	public void InstButtons(){
+		
+	}
 	
 }
