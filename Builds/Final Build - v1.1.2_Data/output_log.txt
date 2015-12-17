@@ -15,30 +15,54 @@ Loading D:\My Documents\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.2_
 Platform assembly: D:\My Documents\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\My Documents\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\My Documents\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.2_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.055 seconds
+- Completed reload, in  0.037 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: D:\My Documents\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.2_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 5444 -> priority: 1 
-  Thread -> id: 3738 -> priority: 1 
+  Thread -> id: 74a0 -> priority: 1 
+  Thread -> id: 5bf8 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.764545 ms
+UnloadTime: 3.433200 ms
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 199.
-Total: 0.309376 ms (FindLiveObjects: 0.025292 ms CreateObjectMapping: 0.019427 ms MarkObjects: 0.254759 ms  DeleteObjects: 0.007331 ms)
+Total: 0.201974 ms (FindLiveObjects: 0.013929 ms CreateObjectMapping: 0.013929 ms MarkObjects: 0.167517 ms  DeleteObjects: 0.004765 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.485325 ms
+UnloadTime: 0.418244 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 271.
-Total: 0.335768 ms (FindLiveObjects: 0.020160 ms CreateObjectMapping: 0.013196 ms MarkObjects: 0.291415 ms  DeleteObjects: 0.010263 ms)
+Total: 0.276386 ms (FindLiveObjects: 0.027858 ms CreateObjectMapping: 0.008797 ms MarkObjects: 0.230566 ms  DeleteObjects: 0.008064 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.794335 ms
+UnloadTime: 0.650643 ms
 
 Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4854.
-Total: 0.972483 ms (FindLiveObjects: 0.213704 ms CreateObjectMapping: 0.059749 ms MarkObjects: 0.675936 ms  DeleteObjects: 0.022726 ms)
+Total: 0.630849 ms (FindLiveObjects: 0.118032 ms CreateObjectMapping: 0.041054 ms MarkObjects: 0.456367 ms  DeleteObjects: 0.015028 ms)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+No Interact Zone Entered
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

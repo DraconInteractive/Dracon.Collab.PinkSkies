@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	public float  speedForward, speedStrafe, speedMod, speedGrounded, speedAired, rotateAngle, jumpForce, attackWait, elevatorSpeed, immuneTime;
 	public bool isFullSpeed, isGrounded, menuOpen, isInvertingCamY, isAttacking, showConsole, inCombat, optionsOpen;
 	public bool workbenchInteractable, showingWorkbench, showInteractPanel;
-	public bool inElevator, onPlatform, nearShip, immune, isRunning;
+	public bool inElevator, onPlatform, nearShip, immune, isRunning, groundDebugging;
 	public int scrapCount;
 	public Animator playerAnimator;
 	public int finalHealth, initialHealth, armour, damage;
@@ -289,38 +289,55 @@ public class PlayerScript : MonoBehaviour {
 
 	public void ConsoleAction(){
 		Text cText = consoleText.GetComponent<Text>();
-		if (cText.text == "Help"){
+		switch (cText.text){
+		case "Help":
 			string helpString = "Help //n PlayerDamage //n AddScrap //n UpgradeArmour //n UpgradeWeapon //n GameSave //n GameLoad //n DebugGroundOn //n DebugGroundOff";
 			Debug.Log (helpString.Replace("//n", "\n"));
-		} else if (cText.text == "PlayerDamage"){
+			break;
+		case "DamagePlayer":
 			initialHealth -= 20;
-		} else if (cText.text == "AddScrap"){
+			break;
+		case "AddScrap":
 			scrapCount += 10;
-		} else if (cText.text == "UpgradeArmour"){
+			break;
+		case "UpgradeArmour":
 			armour += 10;
-		} else if (cText.text == "UpgradeWeapon"){
+			break;
+		case "UpgradeWeapon":
 			damage += 10;
-		} else if (cText.text == "GameSave"){
+			break;
+		case "GameSave":
 			GameSave();
-		} else if (cText.text == "GameLoad"){
+			break;
+		case "GameLoad":
 			GameLoad();
-		} else if (cText.text == "RaiseBarricades"){
+			break;
+		case "RaiseBar":
 			foreach (GameObject i in barricadeArray){
 				i.GetComponent<BarricadeScript>().activated = true;
 			}
-		} else if (cText.text == "DebugGroundOn"){
+			break;
+		case "DebugGround":
+			groundDebugging = !groundDebugging;
 			GameObject[] groundObjs = GameObject.FindGameObjectsWithTag("InvisGround");
 			foreach (GameObject i in groundObjs){
-				i.GetComponent<MeshRenderer>().enabled = true;
+				i.GetComponent<MeshRenderer>().enabled = (groundDebugging);
 			}
-		} else if (cText.text == "DebugGroundOff"){
-			GameObject[] groundObjs = GameObject.FindGameObjectsWithTag("InvisGround");
-			foreach (GameObject i in groundObjs){
-				i.GetComponent<MeshRenderer>().enabled = false;
-			}
-		} else {
+			break;
+		default:
 			Debug.Log ("Invalid Command");
+			break;
 		}
+
+//		} else if (cText.text.Contains("Test")){
+//			if (cText.text.Contains("derp")){
+//				Debug.Log ("Test One");
+//			} else if (cText.text.Contains("herp")){
+//				Debug.Log ("Test Two");
+//			}
+//		} else {
+//			Debug.Log ("Invalid Command");
+//		}
 		consoleText.GetComponent<Text>().text = "";
 		consolePlaceHolder.GetComponent<Text>().text = "";
 		consoleInput.GetComponent<InputField>().text = "";
@@ -425,7 +442,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void AnimationUpdate(){
-		if (speedForward > 0.05f || speedStrafe > 0.05f){
+		if (speedForward > 0.05f || speedStrafe > 0.05f || speedForward < -0.05f || speedStrafe < -0.05f){
 			playerAnimator.SetBool("isRunning", true);
 			isRunning = true;
 		} else {
