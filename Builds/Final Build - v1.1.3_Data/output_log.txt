@@ -1,0 +1,70 @@
+Initialize engine version: 5.2.1f1 (44735ea161b3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 880M  (ID=0x1198)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.286 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: D:\Unity Projects\GitHub\PinkSkiesInteractive\Builds\Final Build - v1.1.3_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: e54 -> priority: 1 
+  Thread -> id: 2158 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 19.244368 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 199.
+Total: 0.194276 ms (FindLiveObjects: 0.026392 ms CreateObjectMapping: 0.009163 ms MarkObjects: 0.154321 ms  DeleteObjects: 0.003665 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.303511 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 271.
+Total: 0.211504 ms (FindLiveObjects: 0.019427 ms CreateObjectMapping: 0.008064 ms MarkObjects: 0.177414 ms  DeleteObjects: 0.005864 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.616186 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4854.
+Total: 0.562668 ms (FindLiveObjects: 0.105569 ms CreateObjectMapping: 0.037022 ms MarkObjects: 0.404314 ms  DeleteObjects: 0.015762 ms)
+
+Platform Pressed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ElevatorPressed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Pressed Take off 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Ship Taking Off
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Pressed Take Off
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.317754 ms
+
+Unloading 87 unused Assets to reduce memory usage. Loaded Objects now: 5534.
+Total: 1.015369 ms (FindLiveObjects: 0.245961 ms CreateObjectMapping: 0.036289 ms MarkObjects: 0.517581 ms  DeleteObjects: 0.214437 ms)
+
